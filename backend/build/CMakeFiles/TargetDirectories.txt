@@ -5,6 +5,12 @@
 /home/tim/OverGuard/backend/build/CMakeFiles/install.dir
 /home/tim/OverGuard/backend/build/CMakeFiles/install/local.dir
 /home/tim/OverGuard/backend/build/CMakeFiles/install/strip.dir
+/home/tim/OverGuard/backend/build/_deps/json-build/CMakeFiles/edit_cache.dir
+/home/tim/OverGuard/backend/build/_deps/json-build/CMakeFiles/rebuild_cache.dir
+/home/tim/OverGuard/backend/build/_deps/json-build/CMakeFiles/list_install_components.dir
+/home/tim/OverGuard/backend/build/_deps/json-build/CMakeFiles/install.dir
+/home/tim/OverGuard/backend/build/_deps/json-build/CMakeFiles/install/local.dir
+/home/tim/OverGuard/backend/build/_deps/json-build/CMakeFiles/install/strip.dir
 /home/tim/OverGuard/backend/build/_deps/cpr-build/CMakeFiles/edit_cache.dir
 /home/tim/OverGuard/backend/build/_deps/cpr-build/CMakeFiles/rebuild_cache.dir
 /home/tim/OverGuard/backend/build/_deps/cpr-build/CMakeFiles/list_install_components.dir

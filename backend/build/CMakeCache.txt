@@ -624,6 +624,10 @@ FETCHCONTENT_SOURCE_DIR_CPR:PATH=
 FETCHCONTENT_SOURCE_DIR_CURL:PATH=
 
 //When not empty, overrides where to find pre-populated content
+// for json
+FETCHCONTENT_SOURCE_DIR_JSON:PATH=
+
+//When not empty, overrides where to find pre-populated content
 // for zlib
 FETCHCONTENT_SOURCE_DIR_ZLIB:PATH=
 
@@ -636,6 +640,9 @@ FETCHCONTENT_UPDATES_DISCONNECTED_CPR:BOOL=OFF
 //Enables UPDATE_DISCONNECTED behavior just for population of curl
 FETCHCONTENT_UPDATES_DISCONNECTED_CURL:BOOL=OFF
 
+//Enables UPDATE_DISCONNECTED behavior just for population of json
+FETCHCONTENT_UPDATES_DISCONNECTED_JSON:BOOL=OFF
+
 //Enables UPDATE_DISCONNECTED behavior just for population of zlib
 FETCHCONTENT_UPDATES_DISCONNECTED_ZLIB:BOOL=OFF
 
@@ -647,6 +654,36 @@ INC_INSTALL_DIR:PATH=/usr/local/include
 
 //Copy minigzip and minideflate during install
 INSTALL_UTILS:BOOL=OFF
+
+//Build the unit tests when BUILD_TESTING is enabled.
+JSON_BuildTests:BOOL=OFF
+
+//Enable CI build targets.
+JSON_CI:BOOL=OFF
+
+//Use extended diagnostic messages.
+JSON_Diagnostics:BOOL=OFF
+
+//Disable default integer enum serialization.
+JSON_DisableEnumSerialization:BOOL=OFF
+
+//Place use-defined string literals in the global namespace.
+JSON_GlobalUDLs:BOOL=ON
+
+//Enable implicit conversions.
+JSON_ImplicitConversions:BOOL=ON
+
+//Install CMake targets during install step.
+JSON_Install:BOOL=OFF
+
+//Enable legacy discarded value comparison.
+JSON_LegacyDiscardedValueComparison:BOOL=OFF
+
+//Use non-amalgamated version of the library.
+JSON_MultipleHeaders:BOOL=ON
+
+//Include as system headers (skip for clang-tidy).
+JSON_SystemInclude:BOOL=OFF
 
 //Basename of the curl library
 LIBCURL_OUTPUT_NAME:STRING=libcurl
@@ -786,6 +823,15 @@ cpr_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 cpr_SOURCE_DIR:STATIC=/home/tim/OverGuard/backend/build/_deps/cpr-src
+
+//Value Computed by CMake
+nlohmann_json_BINARY_DIR:STATIC=/home/tim/OverGuard/backend/build/_deps/json-build
+
+//Value Computed by CMake
+nlohmann_json_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+nlohmann_json_SOURCE_DIR:STATIC=/home/tim/OverGuard/backend/build/_deps/json-src
 
 //Path to a library.
 pkgcfg_lib__OPENSSL_crypto:FILEPATH=/usr/lib/x86_64-linux-gnu/libcrypto.so
@@ -955,7 +1001,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -1473,6 +1519,7 @@ LIBPSL_LIBRARY-ADVANCED:INTERNAL=1
 LIBSSH2_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: LIBSSH2_LIBRARY
 LIBSSH2_LIBRARY-ADVANCED:INTERNAL=1
+NLOHMANN_JSON_CONFIG_INSTALL_DIR:INTERNAL=share/cmake/nlohmann_json
 //CHECK_TYPE_SIZE: sizeof(off64_t)
 OFF64_T:INTERNAL=8
 //ADVANCED property for variable: OPENSSL_CRYPTO_LIBRARY

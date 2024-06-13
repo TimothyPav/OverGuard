@@ -4,7 +4,8 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/backend/build/_deps/curl-src/include"
+                "${workspaceFolder}/backend/build/_deps/curl-src/include",
+                "${workspaceFolder}/backend/build/_deps/json-src/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",

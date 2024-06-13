@@ -37,6 +37,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "_deps/curl-src/lib/Makefile.soname"
   "_deps/curl-src/lib/curl_config.h.cmake"
   "_deps/curl-src/libcurl.pc.in"
+  "_deps/json-src/CMakeLists.txt"
+  "_deps/json-src/cmake/config.cmake.in"
+  "_deps/json-src/cmake/nlohmann_jsonConfigVersion.cmake.in"
+  "_deps/json-src/cmake/pkg-config.pc.in"
   "_deps/zlib-build/zconf.h.cmakein"
   "_deps/zlib-src/CMakeLists.txt"
   "_deps/zlib-src/cmake/detect-arch.c"
@@ -77,6 +81,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.28/Modules/Compiler/GNU-C.cmake"
   "/usr/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake"
   "/usr/share/cmake-3.28/Modules/Compiler/GNU.cmake"
+  "/usr/share/cmake-3.28/Modules/ExternalProject.cmake"
   "/usr/share/cmake-3.28/Modules/ExternalProject/shared_internal_commands.cmake"
   "/usr/share/cmake-3.28/Modules/FeatureSummary.cmake"
   "/usr/share/cmake-3.28/Modules/FetchContent.cmake"
@@ -114,8 +119,13 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
+  "_deps/json-subbuild/CMakeLists.txt"
   "_deps/cpr-subbuild/CMakeLists.txt"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "_deps/json-build/nlohmann_json.pc"
+  "_deps/json-build/nlohmann_jsonConfigVersion.cmake"
+  "_deps/json-build/nlohmann_jsonConfig.cmake"
+  "_deps/json-build/CMakeFiles/CMakeDirectoryInformation.cmake"
   "_deps/cpr-build/cpr_generated_includes/cpr/cprver.h"
   "_deps/zlib-subbuild/CMakeLists.txt"
   "_deps/curl-subbuild/CMakeLists.txt"
