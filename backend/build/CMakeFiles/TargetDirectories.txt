@@ -1,3 +1,4 @@
+/home/tim/OverGuard/backend/build/CMakeFiles/sqlite.dir
 /home/tim/OverGuard/backend/build/CMakeFiles/OverGuard.dir
 /home/tim/OverGuard/backend/build/CMakeFiles/edit_cache.dir
 /home/tim/OverGuard/backend/build/CMakeFiles/rebuild_cache.dir

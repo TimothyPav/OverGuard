@@ -69,10 +69,24 @@ include CMakeFiles/OverGuard.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/OverGuard.dir/flags.make
 
+CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o: CMakeFiles/OverGuard.dir/flags.make
+CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o: /home/tim/OverGuard/backend/src/Database_Operations.cpp
+CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o: CMakeFiles/OverGuard.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tim/OverGuard/backend/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o -MF CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o.d -o CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o -c /home/tim/OverGuard/backend/src/Database_Operations.cpp
+
+CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tim/OverGuard/backend/src/Database_Operations.cpp > CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.i
+
+CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tim/OverGuard/backend/src/Database_Operations.cpp -o CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.s
+
 CMakeFiles/OverGuard.dir/src/main.cpp.o: CMakeFiles/OverGuard.dir/flags.make
 CMakeFiles/OverGuard.dir/src/main.cpp.o: /home/tim/OverGuard/backend/src/main.cpp
 CMakeFiles/OverGuard.dir/src/main.cpp.o: CMakeFiles/OverGuard.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tim/OverGuard/backend/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/OverGuard.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tim/OverGuard/backend/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/OverGuard.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OverGuard.dir/src/main.cpp.o -MF CMakeFiles/OverGuard.dir/src/main.cpp.o.d -o CMakeFiles/OverGuard.dir/src/main.cpp.o -c /home/tim/OverGuard/backend/src/main.cpp
 
 CMakeFiles/OverGuard.dir/src/main.cpp.i: cmake_force
@@ -86,7 +100,7 @@ CMakeFiles/OverGuard.dir/src/main.cpp.s: cmake_force
 CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o: CMakeFiles/OverGuard.dir/flags.make
 CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o: /home/tim/OverGuard/backend/src/APIHandler.cpp
 CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o: CMakeFiles/OverGuard.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tim/OverGuard/backend/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tim/OverGuard/backend/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o -MF CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o.d -o CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o -c /home/tim/OverGuard/backend/src/APIHandler.cpp
 
 CMakeFiles/OverGuard.dir/src/APIHandler.cpp.i: cmake_force
@@ -97,21 +111,40 @@ CMakeFiles/OverGuard.dir/src/APIHandler.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OverGuard.dir/src/APIHandler.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tim/OverGuard/backend/src/APIHandler.cpp -o CMakeFiles/OverGuard.dir/src/APIHandler.cpp.s
 
+CMakeFiles/OverGuard.dir/lib/sqlite/sqlite3.c.o: CMakeFiles/OverGuard.dir/flags.make
+CMakeFiles/OverGuard.dir/lib/sqlite/sqlite3.c.o: /home/tim/OverGuard/backend/lib/sqlite/sqlite3.c
+CMakeFiles/OverGuard.dir/lib/sqlite/sqlite3.c.o: CMakeFiles/OverGuard.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tim/OverGuard/backend/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/OverGuard.dir/lib/sqlite/sqlite3.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/OverGuard.dir/lib/sqlite/sqlite3.c.o -MF CMakeFiles/OverGuard.dir/lib/sqlite/sqlite3.c.o.d -o CMakeFiles/OverGuard.dir/lib/sqlite/sqlite3.c.o -c /home/tim/OverGuard/backend/lib/sqlite/sqlite3.c
+
+CMakeFiles/OverGuard.dir/lib/sqlite/sqlite3.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/OverGuard.dir/lib/sqlite/sqlite3.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/tim/OverGuard/backend/lib/sqlite/sqlite3.c > CMakeFiles/OverGuard.dir/lib/sqlite/sqlite3.c.i
+
+CMakeFiles/OverGuard.dir/lib/sqlite/sqlite3.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/OverGuard.dir/lib/sqlite/sqlite3.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/tim/OverGuard/backend/lib/sqlite/sqlite3.c -o CMakeFiles/OverGuard.dir/lib/sqlite/sqlite3.c.s
+
 # Object files for target OverGuard
 OverGuard_OBJECTS = \
+"CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o" \
 "CMakeFiles/OverGuard.dir/src/main.cpp.o" \
-"CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o"
+"CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o" \
+"CMakeFiles/OverGuard.dir/lib/sqlite/sqlite3.c.o"
 
 # External object files for target OverGuard
 OverGuard_EXTERNAL_OBJECTS =
 
+OverGuard: CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o
 OverGuard: CMakeFiles/OverGuard.dir/src/main.cpp.o
 OverGuard: CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o
+OverGuard: CMakeFiles/OverGuard.dir/lib/sqlite/sqlite3.c.o
 OverGuard: CMakeFiles/OverGuard.dir/build.make
 OverGuard: _deps/cpr-build/cpr/libcpr.so.1.10.5
+OverGuard: libsqlite.a
 OverGuard: _deps/curl-build/lib/libcurl.so.4.8.0
 OverGuard: CMakeFiles/OverGuard.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/tim/OverGuard/backend/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable OverGuard"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/tim/OverGuard/backend/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable OverGuard"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/OverGuard.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

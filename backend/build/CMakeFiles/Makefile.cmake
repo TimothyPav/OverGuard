@@ -147,6 +147,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/sqlite.dir/DependInfo.cmake"
   "CMakeFiles/OverGuard.dir/DependInfo.cmake"
   "_deps/zlib-build/CMakeFiles/zlib.dir/DependInfo.cmake"
   "_deps/curl-build/CMakeFiles/curl_uninstall.dir/DependInfo.cmake"

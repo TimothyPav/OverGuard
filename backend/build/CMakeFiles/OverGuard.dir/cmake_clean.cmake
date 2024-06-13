@@ -1,6 +1,10 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/OverGuard.dir/lib/sqlite/sqlite3.c.o"
+  "CMakeFiles/OverGuard.dir/lib/sqlite/sqlite3.c.o.d"
   "CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o"
   "CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o.d"
+  "CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o"
+  "CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o.d"
   "CMakeFiles/OverGuard.dir/src/main.cpp.o"
   "CMakeFiles/OverGuard.dir/src/main.cpp.o.d"
   "OverGuard"
@@ -8,6 +12,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
+foreach(lang C CXX)
   include(CMakeFiles/OverGuard.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

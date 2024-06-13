@@ -8,7 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/tim/OverGuard/backend/lib/sqlite/sqlite3.c" "CMakeFiles/OverGuard.dir/lib/sqlite/sqlite3.c.o" "gcc" "CMakeFiles/OverGuard.dir/lib/sqlite/sqlite3.c.o.d"
   "/home/tim/OverGuard/backend/src/APIHandler.cpp" "CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o" "gcc" "CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o.d"
+  "/home/tim/OverGuard/backend/src/Database_Operations.cpp" "CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o" "gcc" "CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o.d"
   "/home/tim/OverGuard/backend/src/main.cpp" "CMakeFiles/OverGuard.dir/src/main.cpp.o" "gcc" "CMakeFiles/OverGuard.dir/src/main.cpp.o.d"
   )
 

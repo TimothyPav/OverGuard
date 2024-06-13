@@ -162,6 +162,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named sqlite
+
+# Build rule for target.
+sqlite: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sqlite
+.PHONY : sqlite
+
+# fast build rule for target.
+sqlite/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sqlite.dir/build.make CMakeFiles/sqlite.dir/build
+.PHONY : sqlite/fast
+
+#=============================================================================
 # Target rules for targets named OverGuard
 
 # Build rule for target.
@@ -239,6 +252,33 @@ cpr/fast:
 	$(MAKE) $(MAKESILENT) -f _deps/cpr-build/cpr/CMakeFiles/cpr.dir/build.make _deps/cpr-build/cpr/CMakeFiles/cpr.dir/build
 .PHONY : cpr/fast
 
+lib/sqlite/sqlite3.o: lib/sqlite/sqlite3.c.o
+.PHONY : lib/sqlite/sqlite3.o
+
+# target to build an object file
+lib/sqlite/sqlite3.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sqlite.dir/build.make CMakeFiles/sqlite.dir/lib/sqlite/sqlite3.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/lib/sqlite/sqlite3.c.o
+.PHONY : lib/sqlite/sqlite3.c.o
+
+lib/sqlite/sqlite3.i: lib/sqlite/sqlite3.c.i
+.PHONY : lib/sqlite/sqlite3.i
+
+# target to preprocess a source file
+lib/sqlite/sqlite3.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sqlite.dir/build.make CMakeFiles/sqlite.dir/lib/sqlite/sqlite3.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/lib/sqlite/sqlite3.c.i
+.PHONY : lib/sqlite/sqlite3.c.i
+
+lib/sqlite/sqlite3.s: lib/sqlite/sqlite3.c.s
+.PHONY : lib/sqlite/sqlite3.s
+
+# target to generate assembly for a file
+lib/sqlite/sqlite3.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sqlite.dir/build.make CMakeFiles/sqlite.dir/lib/sqlite/sqlite3.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/lib/sqlite/sqlite3.c.s
+.PHONY : lib/sqlite/sqlite3.c.s
+
 src/APIHandler.o: src/APIHandler.cpp.o
 .PHONY : src/APIHandler.o
 
@@ -262,6 +302,30 @@ src/APIHandler.s: src/APIHandler.cpp.s
 src/APIHandler.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/src/APIHandler.cpp.s
 .PHONY : src/APIHandler.cpp.s
+
+src/Database_Operations.o: src/Database_Operations.cpp.o
+.PHONY : src/Database_Operations.o
+
+# target to build an object file
+src/Database_Operations.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o
+.PHONY : src/Database_Operations.cpp.o
+
+src/Database_Operations.i: src/Database_Operations.cpp.i
+.PHONY : src/Database_Operations.i
+
+# target to preprocess a source file
+src/Database_Operations.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.i
+.PHONY : src/Database_Operations.cpp.i
+
+src/Database_Operations.s: src/Database_Operations.cpp.s
+.PHONY : src/Database_Operations.s
+
+# target to generate assembly for a file
+src/Database_Operations.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.s
+.PHONY : src/Database_Operations.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -304,10 +368,17 @@ help:
 	@echo "... cpr"
 	@echo "... curlu"
 	@echo "... libcurl_shared"
+	@echo "... sqlite"
 	@echo "... zlib"
+	@echo "... lib/sqlite/sqlite3.o"
+	@echo "... lib/sqlite/sqlite3.i"
+	@echo "... lib/sqlite/sqlite3.s"
 	@echo "... src/APIHandler.o"
 	@echo "... src/APIHandler.i"
 	@echo "... src/APIHandler.s"
+	@echo "... src/Database_Operations.o"
+	@echo "... src/Database_Operations.i"
+	@echo "... src/Database_Operations.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

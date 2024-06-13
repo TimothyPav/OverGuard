@@ -63,6 +63,7 @@ CMAKE_BINARY_DIR = /home/tim/OverGuard/backend/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/sqlite.dir/all
 all: CMakeFiles/OverGuard.dir/all
 all: _deps/json-build/all
 all: _deps/cpr-build/all
@@ -74,6 +75,7 @@ preinstall: _deps/cpr-build/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/sqlite.dir/clean
 clean: CMakeFiles/OverGuard.dir/clean
 clean: _deps/json-build/clean
 clean: _deps/cpr-build/clean
@@ -196,14 +198,41 @@ _deps/zlib-build/clean: _deps/zlib-build/CMakeFiles/zlib.dir/clean
 .PHONY : _deps/zlib-build/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/sqlite.dir
+
+# All Build rule for target.
+CMakeFiles/sqlite.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sqlite.dir/build.make CMakeFiles/sqlite.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sqlite.dir/build.make CMakeFiles/sqlite.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/tim/OverGuard/backend/build/CMakeFiles --progress-num=91 "Built target sqlite"
+.PHONY : CMakeFiles/sqlite.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/sqlite.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tim/OverGuard/backend/build/CMakeFiles 1
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/sqlite.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tim/OverGuard/backend/build/CMakeFiles 0
+.PHONY : CMakeFiles/sqlite.dir/rule
+
+# Convenience name for target.
+sqlite: CMakeFiles/sqlite.dir/rule
+.PHONY : sqlite
+
+# clean rule for target.
+CMakeFiles/sqlite.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sqlite.dir/build.make CMakeFiles/sqlite.dir/clean
+.PHONY : CMakeFiles/sqlite.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/OverGuard.dir
 
 # All Build rule for target.
 CMakeFiles/OverGuard.dir/all: _deps/cpr-build/cpr/CMakeFiles/cpr.dir/all
+CMakeFiles/OverGuard.dir/all: CMakeFiles/sqlite.dir/all
 CMakeFiles/OverGuard.dir/all: _deps/curl-build/lib/CMakeFiles/libcurl_shared.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/tim/OverGuard/backend/build/CMakeFiles --progress-num= "Built target OverGuard"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/tim/OverGuard/backend/build/CMakeFiles --progress-num=1 "Built target OverGuard"
 .PHONY : CMakeFiles/OverGuard.dir/all
 
 # Build rule for subdir invocation for target.
@@ -307,12 +336,12 @@ _deps/curl-build/lib/CMakeFiles/curlu.dir/clean:
 _deps/curl-build/lib/CMakeFiles/libcurl_shared.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/curl-build/lib/CMakeFiles/libcurl_shared.dir/build.make _deps/curl-build/lib/CMakeFiles/libcurl_shared.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/curl-build/lib/CMakeFiles/libcurl_shared.dir/build.make _deps/curl-build/lib/CMakeFiles/libcurl_shared.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/tim/OverGuard/backend/build/CMakeFiles --progress-num=50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91 "Built target libcurl_shared"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/tim/OverGuard/backend/build/CMakeFiles --progress-num=50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90 "Built target libcurl_shared"
 .PHONY : _deps/curl-build/lib/CMakeFiles/libcurl_shared.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/curl-build/lib/CMakeFiles/libcurl_shared.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tim/OverGuard/backend/build/CMakeFiles 42
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tim/OverGuard/backend/build/CMakeFiles 41
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/curl-build/lib/CMakeFiles/libcurl_shared.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/tim/OverGuard/backend/build/CMakeFiles 0
 .PHONY : _deps/curl-build/lib/CMakeFiles/libcurl_shared.dir/rule
@@ -333,12 +362,12 @@ _deps/curl-build/lib/CMakeFiles/libcurl_shared.dir/clean:
 _deps/cpr-build/cpr/CMakeFiles/cpr.dir/all: _deps/curl-build/lib/CMakeFiles/libcurl_shared.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/cpr-build/cpr/CMakeFiles/cpr.dir/build.make _deps/cpr-build/cpr/CMakeFiles/cpr.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/cpr-build/cpr/CMakeFiles/cpr.dir/build.make _deps/cpr-build/cpr/CMakeFiles/cpr.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/tim/OverGuard/backend/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target cpr"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/tim/OverGuard/backend/build/CMakeFiles --progress-num=2,3,4,5,6,7,8 "Built target cpr"
 .PHONY : _deps/cpr-build/cpr/CMakeFiles/cpr.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/cpr-build/cpr/CMakeFiles/cpr.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tim/OverGuard/backend/build/CMakeFiles 50
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tim/OverGuard/backend/build/CMakeFiles 48
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/cpr-build/cpr/CMakeFiles/cpr.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/tim/OverGuard/backend/build/CMakeFiles 0
 .PHONY : _deps/cpr-build/cpr/CMakeFiles/cpr.dir/rule
