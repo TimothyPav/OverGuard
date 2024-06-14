@@ -9,7 +9,7 @@
 using json = nlohmann::json;
 
 int main(int argc, char** argv) {
-    //test_call();
+    test_call();
     //get_name_from_blizzard_ID(R"(da47b981e13cc9f8b0a0%257C9ce73afb3dc641f023475ff233d0a876)");
-    load_players_into_playersDatabase();
+    //load_players_into_playersDatabase();
 }
