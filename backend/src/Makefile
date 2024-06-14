@@ -1,3 +1,3 @@
 default:
-	g++ Database_Operations.cpp -o Database_Operations -lsqlite3
-	./Database_Operations
+	g++ test.cpp -o test -lsqlite3
+	./test
