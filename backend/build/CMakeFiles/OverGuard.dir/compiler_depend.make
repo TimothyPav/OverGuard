@@ -483,6 +483,7 @@ CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o: /home/tim/OverGuard/backend/src/A
   /usr/include/c++/13/unordered_set \
   /usr/include/c++/13/utility \
   /usr/include/c++/13/valarray \
+  /usr/include/c++/13/variant \
   /usr/include/c++/13/vector \
   /usr/include/c++/13/version \
   /usr/include/ctype.h \
@@ -659,6 +660,8 @@ CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o: /home/tim/OverGuard/back
   /usr/include/c++/13/bits/cpp_type_traits.h \
   /usr/include/c++/13/bits/cxxabi_forced.h \
   /usr/include/c++/13/bits/cxxabi_init_exception.h \
+  /usr/include/c++/13/bits/enable_special_members.h \
+  /usr/include/c++/13/bits/erase_if.h \
   /usr/include/c++/13/bits/exception.h \
   /usr/include/c++/13/bits/exception_defines.h \
   /usr/include/c++/13/bits/exception_ptr.h \
@@ -679,6 +682,7 @@ CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o: /home/tim/OverGuard/back
   /usr/include/c++/13/bits/move.h \
   /usr/include/c++/13/bits/nested_exception.h \
   /usr/include/c++/13/bits/new_allocator.h \
+  /usr/include/c++/13/bits/node_handle.h \
   /usr/include/c++/13/bits/ostream.tcc \
   /usr/include/c++/13/bits/ostream_insert.h \
   /usr/include/c++/13/bits/parse_numbers.h \
@@ -696,7 +700,10 @@ CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o: /home/tim/OverGuard/back
   /usr/include/c++/13/bits/stl_iterator.h \
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
+  /usr/include/c++/13/bits/stl_map.h \
+  /usr/include/c++/13/bits/stl_multimap.h \
   /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_tree.h \
   /usr/include/c++/13/bits/streambuf.tcc \
   /usr/include/c++/13/bits/streambuf_iterator.h \
   /usr/include/c++/13/bits/string_view.tcc \
@@ -720,6 +727,7 @@ CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o: /home/tim/OverGuard/back
   /usr/include/c++/13/debug/assertions.h \
   /usr/include/c++/13/debug/debug.h \
   /usr/include/c++/13/exception \
+  /usr/include/c++/13/ext/aligned_buffer.h \
   /usr/include/c++/13/ext/alloc_traits.h \
   /usr/include/c++/13/ext/atomicity.h \
   /usr/include/c++/13/ext/numeric_traits.h \
@@ -732,6 +740,7 @@ CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o: /home/tim/OverGuard/back
   /usr/include/c++/13/iostream \
   /usr/include/c++/13/istream \
   /usr/include/c++/13/limits \
+  /usr/include/c++/13/map \
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/pstl/pstl_config.h \
@@ -745,6 +754,7 @@ CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o: /home/tim/OverGuard/back
   /usr/include/c++/13/tuple \
   /usr/include/c++/13/type_traits \
   /usr/include/c++/13/typeinfo \
+  /usr/include/c++/13/variant \
   /usr/include/ctype.h \
   /usr/include/endian.h \
   /usr/include/errno.h \
@@ -1184,6 +1194,7 @@ CMakeFiles/OverGuard.dir/src/main.cpp.o: /home/tim/OverGuard/backend/src/main.cp
   /usr/include/c++/13/unordered_set \
   /usr/include/c++/13/utility \
   /usr/include/c++/13/valarray \
+  /usr/include/c++/13/variant \
   /usr/include/c++/13/vector \
   /usr/include/c++/13/version \
   /usr/include/ctype.h \
@@ -1893,6 +1904,8 @@ _deps/cpr-src/include/cpr/util.h:
 /usr/include/c++/13/bits/stl_multimap.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
+
+/usr/include/c++/13/variant:
 
 _deps/cpr-src/include/cpr/redirect.h:
 
