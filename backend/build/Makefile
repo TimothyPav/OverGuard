@@ -327,6 +327,30 @@ src/Database_Operations.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.s
 .PHONY : src/Database_Operations.cpp.s
 
+src/Heroes.o: src/Heroes.cpp.o
+.PHONY : src/Heroes.o
+
+# target to build an object file
+src/Heroes.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/src/Heroes.cpp.o
+.PHONY : src/Heroes.cpp.o
+
+src/Heroes.i: src/Heroes.cpp.i
+.PHONY : src/Heroes.i
+
+# target to preprocess a source file
+src/Heroes.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/src/Heroes.cpp.i
+.PHONY : src/Heroes.cpp.i
+
+src/Heroes.s: src/Heroes.cpp.s
+.PHONY : src/Heroes.s
+
+# target to generate assembly for a file
+src/Heroes.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/src/Heroes.cpp.s
+.PHONY : src/Heroes.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -379,6 +403,9 @@ help:
 	@echo "... src/Database_Operations.o"
 	@echo "... src/Database_Operations.i"
 	@echo "... src/Database_Operations.s"
+	@echo "... src/Heroes.o"
+	@echo "... src/Heroes.i"
+	@echo "... src/Heroes.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

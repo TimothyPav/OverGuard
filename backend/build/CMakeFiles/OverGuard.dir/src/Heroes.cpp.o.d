@@ -1,8 +1,5 @@
-CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o: \
- /home/tim/OverGuard/backend/src/Database_Operations.cpp \
- /usr/include/stdc-predef.h \
- /home/tim/OverGuard/backend/include/Database_Operations.h \
- /home/tim/OverGuard/backend/include/API_Handler.h \
+CMakeFiles/OverGuard.dir/src/Heroes.cpp.o: \
+ /home/tim/OverGuard/backend/src/Heroes.cpp /usr/include/stdc-predef.h \
  /home/tim/OverGuard/backend/include/Heroes.h /usr/include/c++/13/string \
  /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -184,18 +181,4 @@ CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o: \
  /usr/include/c++/13/bits/algorithmfwd.h \
  /usr/include/c++/13/bits/stl_heap.h \
  /usr/include/c++/13/bits/uniform_int_dist.h \
- /usr/include/c++/13/bits/stl_tempbuf.h \
- /home/tim/OverGuard/backend/lib/sqlite/sqlite3.h \
- /usr/include/c++/13/chrono /usr/include/c++/13/bits/chrono.h \
- /usr/include/c++/13/ratio /usr/include/c++/13/cstdint \
- /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
- /usr/include/c++/13/limits /usr/include/c++/13/ctime \
- /usr/include/c++/13/thread /usr/include/c++/13/bits/std_thread.h \
- /usr/include/c++/13/bits/unique_ptr.h \
- /usr/include/c++/13/bits/this_thread_sleep.h /usr/include/c++/13/fstream \
- /usr/include/c++/13/bits/codecvt.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
- /usr/include/c++/13/bits/fstream.tcc
+ /usr/include/c++/13/bits/stl_tempbuf.h

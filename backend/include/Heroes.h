@@ -1,5 +1,5 @@
 #ifndef HEROES_H
-#define HEREOS_H
+#define HEROES_H
 
 #include <string>
 #include <iostream>
@@ -14,6 +14,7 @@ class Heroes {
         double final_blows_per_10_mins;
         double solo_kills_per_10_mins;
         double hero_damage_done_per_10_mins;
+        bool is_enough_playtime;
 
     public:
         Heroes() {}
@@ -23,12 +24,14 @@ class Heroes {
         void set_final_blows_per_10_mins(double final_blows);
         void set_solo_kills_per_10_mins(double solo_kills);
         void set_hero_damage_done_per_10_mins(double damage);
+        void set_is_enough_playtime(bool val);
 
         // getters
         double get_deaths_per_10_mins();
         double get_final_blows_per_10_mins();
         double get_solo_kills_per_10_mins();
         double get_hero_damage_done_per_10_mins();
+        bool get_is_enough_playtime();
 };
 
 class Widowmaker : public Heroes {
@@ -40,7 +43,20 @@ class Widowmaker : public Heroes {
         std::map<std::string, std::function<void(Widowmaker*, std::variant<int, double>)>> setter_map;
 
     public:
-        Widowmaker() {}
+        Widowmaker() {
+            setter_map["scoped_accuracy"] = [](Widowmaker* obj, std::variant<int, double> value) {
+                std::visit([&](auto&& arg){ obj->set_scoped_accuracy(arg); }, value);
+            };
+            setter_map["scoped_critical_hit_accuracy"] = [](Widowmaker* obj, std::variant<int, double> value) {
+                std::visit([&](auto&& arg){ obj->set_scoped_crit_accuracy(arg); }, value);
+            };
+            setter_map["scoped_critical_hits_avg_per_10_min"] = [](Widowmaker* obj, std::variant<int, double> value) {
+                std::visit([&](auto&& arg){ obj->set_scoped_crit_hits_per_10_mins(arg); }, value);
+            };
+            setter_map["scoped_critical_hit_kills_avg_per_10_min"] = [](Widowmaker* obj, std::variant<int, double> value) {
+                std::visit([&](auto&& arg){ obj->set_scoped_crit_kills_per_10_mins(arg); }, value);
+            };
+        }
 
         // setters
         void set_scoped_accuracy(int scoped_acc);
@@ -53,6 +69,7 @@ class Widowmaker : public Heroes {
         int get_scoped_crit_accuracy();
         double get_scoped_crit_hits_per_10_mins();
         double get_scoped_crit_kills_per_10_mins();
+        std::string get_hero_name();
 
         // methods
         void set_hero_specific_stats(const std::string& key, std::variant<int, double> value);
@@ -67,7 +84,20 @@ class Ashe: public Heroes {
         std::map<std::string, std::function<void(Ashe*, std::variant<int, double>)>> setter_map;
 
     public:
-        Ashe() {}
+        Ashe() {
+            setter_map["scoped_accuracy"] = [](Ashe* obj, std::variant<int, double> value) {
+                std::visit([&](auto&& arg){ obj->set_scoped_accuracy(arg); }, value);
+            };
+            setter_map["scoped_critical_hit_accuracy"] = [](Ashe* obj, std::variant<int, double> value) {
+                std::visit([&](auto&& arg){ obj->set_scoped_crit_accuracy(arg); }, value);
+            };
+            setter_map["scoped_critical_hits_avg_per_10_min"] = [](Ashe* obj, std::variant<int, double> value) {
+                std::visit([&](auto&& arg){ obj->set_scoped_crit_hits_per_10_mins(arg); }, value);
+            };
+            setter_map["scoped_critical_hit_kills_avg_per_10_min"] = [](Ashe* obj, std::variant<int, double> value) {
+                std::visit([&](auto&& arg){ obj->set_scoped_crit_kills_per_10_mins(arg); }, value);
+            };
+        }
 
         // setters
         void set_scoped_accuracy(int scoped_acc);
@@ -80,6 +110,7 @@ class Ashe: public Heroes {
         int get_scoped_crit_accuracy();
         double get_scoped_crit_hits_per_10_mins();
         double get_scoped_crit_kills_per_10_mins();
+        std::string get_hero_name();
 
         // methods
         void set_hero_specific_stats(const std::string& key, std::variant<int, double> value);
@@ -90,10 +121,20 @@ class Cassidy: public Heroes {
         int critical_hit_accuracy;
         double critical_hits_per_10_mins;
         double critical_hit_kills_per_10_mins;
-        std::map<std::string, std::function<void(Widowmaker*, std::variant<int, double>)>> setter_map;
+        std::map<std::string, std::function<void(Cassidy*, std::variant<int, double>)>> setter_map;
 
     public:
-        Cassidy() {}
+        Cassidy() {
+            setter_map["critical_hit_accuracy"] = [](Cassidy* obj, std::variant<int, double> value) {
+                std::visit([&](auto&& arg){ obj->set_critical_hit_accuracy(arg); }, value);
+            };
+            setter_map["critical_hits_avg_per_10_min"] = [](Cassidy* obj, std::variant<int, double> value) {
+                std::visit([&](auto&& arg){ obj->set_critical_hits_per_10_mins(arg); }, value);
+            };
+            setter_map["critical_hit_kills_avg_per_10_min"] = [](Cassidy* obj, std::variant<int, double> value) {
+                std::visit([&](auto&& arg){ obj->set_critical_hit_kills_per_10_mins(arg); }, value);
+            };
+        }
 
         // setters
         void set_critical_hit_accuracy(int crit_acc);
@@ -104,6 +145,10 @@ class Cassidy: public Heroes {
         int get_critical_hit_accuracy();
         double get_critical_hits_per_10_mins();
         double get_critical_hit_kills_per_10_mins();
+        std::string get_hero_name();
+
+        // methods
+        void set_hero_specific_stats(const std::string& key, std::variant<int, double> value);
 };
 
 class Hanzo: public Heroes {
@@ -111,10 +156,20 @@ class Hanzo: public Heroes {
         int critical_hit_accuracy;
         double critical_hits_per_10_mins;
         double critical_hit_kills_per_10_mins;
-        std::map<std::string, std::function<void(Widowmaker*, std::variant<int, double>)>> setter_map;
+        std::map<std::string, std::function<void(Hanzo*, std::variant<int, double>)>> setter_map;
 
     public:
-        Hanzo() {}
+        Hanzo() {
+            setter_map["critical_hit_accuracy"] = [](Hanzo* obj, std::variant<int, double> value) {
+                std::visit([&](auto&& arg){ obj->set_critical_hit_accuracy(arg); }, value);
+            };
+            setter_map["critical_hits_avg_per_10_min"] = [](Hanzo* obj, std::variant<int, double> value) {
+                std::visit([&](auto&& arg){ obj->set_critical_hits_per_10_mins(arg); }, value);
+            };
+            setter_map["critical_hit_kills_avg_per_10_min"] = [](Hanzo* obj, std::variant<int, double> value) {
+                std::visit([&](auto&& arg){ obj->set_critical_hit_kills_per_10_mins(arg); }, value);
+            };
+        }
 
         // setters
         void set_critical_hit_accuracy(int crit_acc);
@@ -125,6 +180,10 @@ class Hanzo: public Heroes {
         int get_critical_hit_accuracy();
         double get_critical_hits_per_10_mins();
         double get_critical_hit_kills_per_10_mins();
+        std::string get_hero_name();
+
+        // methods
+        void set_hero_specific_stats(const std::string& key, std::variant<int, double> value);
 };
 
 class Sojourn: public Heroes {
@@ -132,10 +191,20 @@ class Sojourn: public Heroes {
         int charged_shot_accuracy;
         int charged_shot_crit_accuracy;
         double charged_shot_kills_per_10_mins;
-        std::map<std::string, std::function<void(Widowmaker*, std::variant<int, double>)>> setter_map;
+        std::map<std::string, std::function<void(Sojourn*, std::variant<int, double>)>> setter_map;
 
     public:
-        Sojourn() {}
+        Sojourn() {
+            setter_map["charged_shot_accuracy"] = [](Sojourn* obj, std::variant<int, double> value) {
+                std::visit([&](auto&& arg){ obj->set_charged_shot_accuracy(arg); }, value);
+            };
+            setter_map["charged_shot_critical_accuracy"] = [](Sojourn* obj, std::variant<int, double> value) {
+                std::visit([&](auto&& arg){ obj->set_charged_shot_crit_accuracy(arg); }, value);
+            };
+            setter_map["charged_shot_kills_avg_per_10_min"] = [](Sojourn* obj, std::variant<int, double> value) {
+                std::visit([&](auto&& arg){ obj->set_charged_shot_kills_per_10_mins(arg); }, value);
+            };
+        }
 
         // setters
         void set_charged_shot_accuracy(int charged_shot_acc);
@@ -146,16 +215,27 @@ class Sojourn: public Heroes {
         int get_charged_shot_accuracy();
         int get_charged_shot_crit_accuracy();
         double get_charged_shot_kills_per_10_mins();
+        std::string get_hero_name();
+
+        // methods
+        void set_hero_specific_stats(const std::string& key, std::variant<int, double> value);
 };
 
 class Soldier76: public Heroes {
     private:
         int critical_hit_accuracy;
         double critical_hits_per_10_mins;
-        std::map<std::string, std::function<void(Widowmaker*, std::variant<int, double>)>> setter_map;
+        std::map<std::string, std::function<void(Soldier76*, std::variant<int, double>)>> setter_map;
 
     public:
-        Soldier76() {}
+        Soldier76() {
+            setter_map["critical_hit_accuracy"] = [](Soldier76* obj, std::variant<int, double> value) {
+                std::visit([&](auto&& arg){ obj->set_critical_hit_accuracy(arg); }, value);
+            };
+            setter_map["critical_hits_avg_per_10_min"] = [](Soldier76* obj, std::variant<int, double> value) {
+                std::visit([&](auto&& arg){ obj->set_critical_hits_per_10_mins(arg); }, value);
+            };
+        }
 
         // setters
         void set_critical_hit_accuracy(int crit_acc);
@@ -164,21 +244,33 @@ class Soldier76: public Heroes {
         // getters
         int get_critical_hit_accuracy();
         double get_critical_hits_per_10_mins();
+        std::string get_hero_name();
+
+        // methods
+        void set_hero_specific_stats(const std::string& key, std::variant<int, double> value);
 };
 
 class Tracer: public Heroes {
     private:
         double critical_hits_per_10_mins;
-        std::map<std::string, std::function<void(Widowmaker*, std::variant<int, double>)>> setter_map;
+        std::map<std::string, std::function<void(Tracer*, std::variant<int, double>)>> setter_map;
 
     public:
-        Tracer() {}
+        Tracer() {
+            setter_map["critical_hits_avg_per_10_min"] = [](Tracer* obj, std::variant<int, double> value) {
+                std::visit([&](auto&& arg){ obj->set_critical_hits_per_10_mins(arg); }, value);
+            };
+        }
 
         // setters
         void set_critical_hits_per_10_mins(double hits_per_10);
 
         // getters
         double get_critical_hits_per_10_mins();
+        std::string get_hero_name();
+
+        // methods
+        void set_hero_specific_stats(const std::string& key, std::variant<int, double> value);
 };
 
 
