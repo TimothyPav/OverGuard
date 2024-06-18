@@ -261,6 +261,7 @@ CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o: /home/tim/OverGuard/backend/src/A
   _deps/json-src/include/nlohmann/thirdparty/hedley/hedley.hpp \
   _deps/json-src/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
   /home/tim/OverGuard/backend/include/API_Handler.h \
+  /home/tim/OverGuard/backend/include/Database_Operations.h \
   /home/tim/OverGuard/backend/include/Heroes.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
@@ -2417,9 +2418,9 @@ _deps/cpr-src/include/cpr/user_agent.h:
 
 _deps/json-src/include/nlohmann/detail/conversions/to_chars.hpp:
 
-/home/tim/OverGuard/backend/include/Database_Operations.h:
-
 /usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h:
+
+/home/tim/OverGuard/backend/include/Database_Operations.h:
 
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
 

@@ -2,7 +2,6 @@ CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o: \
  /home/tim/OverGuard/backend/src/Database_Operations.cpp \
  /usr/include/stdc-predef.h \
  /home/tim/OverGuard/backend/include/Database_Operations.h \
- /home/tim/OverGuard/backend/include/API_Handler.h \
  /home/tim/OverGuard/backend/include/Heroes.h /usr/include/c++/13/string \
  /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -185,6 +184,8 @@ CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o: \
  /usr/include/c++/13/bits/stl_heap.h \
  /usr/include/c++/13/bits/uniform_int_dist.h \
  /usr/include/c++/13/bits/stl_tempbuf.h \
+ /home/tim/OverGuard/backend/include/API_Handler.h \
+ /home/tim/OverGuard/backend/include/Heroes.h \
  /home/tim/OverGuard/backend/lib/sqlite/sqlite3.h \
  /usr/include/c++/13/chrono /usr/include/c++/13/bits/chrono.h \
  /usr/include/c++/13/ratio /usr/include/c++/13/cstdint \

@@ -1,5 +1,6 @@
 #include "Database_Operations.h"
 #include "API_Handler.h"
+#include "Heroes.h"
 
 #include <iostream> 
 #include <sqlite3.h>
@@ -62,6 +63,44 @@ int load_players_into_playersDatabase(){
     sqlite3_close(players_db);
     return 0;
 }
+
+int insert_hero_into_database(std::string blizzard_ID, Heroes& hero){
+    std::string name = hero.get_hero_name();
+    std::cout << "HELPER FUNCTION RESULT --> " << name << std::endl;
+    if(hero.get_hero_name() == "ashe") insert_stats_into_asheDatabase(blizzard_ID, hero);
+    return 0;
+}
+
+int insert_stats_into_cassidyDatabase(std::string blizzard_ID, Heroes& ashe){
+    std::cout << "THIS HAS WORKED VERY AWESOMELY: --> " << ashe.get_hero_name() << std::endl;
+    return 0;
+}
+
+int insert_stats_into_hanzoDatabase(std::string blizzard_ID, Heroes& ashe){
+    std::cout << "THIS HAS WORKED VERY AWESOMELY: --> " << ashe.get_hero_name() << std::endl;
+    return 0;
+}
+
+int insert_stats_into_sojournDatabase(std::string blizzard_ID, Heroes& ashe){
+    std::cout << "THIS HAS WORKED VERY AWESOMELY: --> " << ashe.get_hero_name() << std::endl;
+    return 0;
+}
+
+int insert_stats_into_solider76Database(std::string blizzard_ID, Heroes& ashe){
+    std::cout << "THIS HAS WORKED VERY AWESOMELY: --> " << ashe.get_hero_name() << std::endl;
+    return 0;
+}
+
+int insert_stats_into_tracerDatabase(std::string blizzard_ID, Heroes& ashe){
+    std::cout << "THIS HAS WORKED VERY AWESOMELY: --> " << ashe.get_hero_name() << std::endl;
+    return 0;
+}
+
+int insert_stats_into_widowmakerDatabase(std::string blizzard_ID, Heroes& ashe){
+    std::cout << "THIS HAS WORKED VERY AWESOMELY: --> " << ashe.get_hero_name() << std::endl;
+    return 0;
+}
+
 
 int create_table() 
 { 

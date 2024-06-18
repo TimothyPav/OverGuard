@@ -185,6 +185,7 @@ CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o: \
  /usr/include/c++/13/bits/uniform_int_dist.h \
  /usr/include/c++/13/bits/stl_tempbuf.h \
  /home/tim/OverGuard/backend/include/Heroes.h \
+ /home/tim/OverGuard/backend/include/Database_Operations.h \
  /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/cpr.h \
  /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/api.h \
  /usr/include/c++/13/fstream /usr/include/c++/13/bits/codecvt.h \

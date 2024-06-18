@@ -25,6 +25,7 @@ class Heroes {
         void set_solo_kills_per_10_mins(double solo_kills);
         void set_hero_damage_done_per_10_mins(double damage);
         void set_is_enough_playtime(bool val);
+        virtual void set_hero_specific_stats(const std::string& key, std::variant<int, double> value);
 
         // getters
         double get_deaths_per_10_mins();
@@ -32,6 +33,19 @@ class Heroes {
         double get_solo_kills_per_10_mins();
         double get_hero_damage_done_per_10_mins();
         bool get_is_enough_playtime();
+        virtual std::string get_hero_name() const;
+
+        // hero stats to be overriden...
+        virtual int get_scoped_accuracy() const;
+        virtual int get_scoped_crit_accuracy() const;
+        virtual double get_scoped_crit_hits_per_10_mins() const;
+        virtual double get_scoped_crit_kills_per_10_mins() const;
+        virtual int get_critical_hit_accuracy() const;
+        virtual double get_critical_hits_per_10_mins() const;
+        virtual double get_critical_hit_kills_per_10_mins() const;
+        virtual int get_charged_shot_accuracy() const;
+        virtual int get_charged_shot_crit_accuracy() const;
+        virtual double get_charged_shot_kills_per_10_mins() const;
 };
 
 class Widowmaker : public Heroes {
@@ -69,10 +83,10 @@ class Widowmaker : public Heroes {
         int get_scoped_crit_accuracy();
         double get_scoped_crit_hits_per_10_mins();
         double get_scoped_crit_kills_per_10_mins();
-        std::string get_hero_name();
+        std::string get_hero_name()const override;
 
         // methods
-        void set_hero_specific_stats(const std::string& key, std::variant<int, double> value);
+        void set_hero_specific_stats(const std::string& key, std::variant<int, double> value) override;
 };
 
 class Ashe: public Heroes {
@@ -110,10 +124,10 @@ class Ashe: public Heroes {
         int get_scoped_crit_accuracy();
         double get_scoped_crit_hits_per_10_mins();
         double get_scoped_crit_kills_per_10_mins();
-        std::string get_hero_name();
+        std::string get_hero_name() const override;
 
         // methods
-        void set_hero_specific_stats(const std::string& key, std::variant<int, double> value);
+        void set_hero_specific_stats(const std::string& key, std::variant<int, double> value) override;
 };
 
 class Cassidy: public Heroes {
@@ -145,10 +159,10 @@ class Cassidy: public Heroes {
         int get_critical_hit_accuracy();
         double get_critical_hits_per_10_mins();
         double get_critical_hit_kills_per_10_mins();
-        std::string get_hero_name();
+        std::string get_hero_name() const override;
 
         // methods
-        void set_hero_specific_stats(const std::string& key, std::variant<int, double> value);
+        void set_hero_specific_stats(const std::string& key, std::variant<int, double> value) override;
 };
 
 class Hanzo: public Heroes {
@@ -180,10 +194,10 @@ class Hanzo: public Heroes {
         int get_critical_hit_accuracy();
         double get_critical_hits_per_10_mins();
         double get_critical_hit_kills_per_10_mins();
-        std::string get_hero_name();
+        std::string get_hero_name() const override;
 
         // methods
-        void set_hero_specific_stats(const std::string& key, std::variant<int, double> value);
+        void set_hero_specific_stats(const std::string& key, std::variant<int, double> value) override;
 };
 
 class Sojourn: public Heroes {
@@ -215,10 +229,10 @@ class Sojourn: public Heroes {
         int get_charged_shot_accuracy();
         int get_charged_shot_crit_accuracy();
         double get_charged_shot_kills_per_10_mins();
-        std::string get_hero_name();
+        std::string get_hero_name() const override;
 
         // methods
-        void set_hero_specific_stats(const std::string& key, std::variant<int, double> value);
+        void set_hero_specific_stats(const std::string& key, std::variant<int, double> value) override;
 };
 
 class Soldier76: public Heroes {
@@ -244,10 +258,10 @@ class Soldier76: public Heroes {
         // getters
         int get_critical_hit_accuracy();
         double get_critical_hits_per_10_mins();
-        std::string get_hero_name();
+        std::string get_hero_name() const override;
 
         // methods
-        void set_hero_specific_stats(const std::string& key, std::variant<int, double> value);
+        void set_hero_specific_stats(const std::string& key, std::variant<int, double> value) override;
 };
 
 class Tracer: public Heroes {
@@ -267,10 +281,10 @@ class Tracer: public Heroes {
 
         // getters
         double get_critical_hits_per_10_mins();
-        std::string get_hero_name();
+        std::string get_hero_name() const override;
 
         // methods
-        void set_hero_specific_stats(const std::string& key, std::variant<int, double> value);
+        void set_hero_specific_stats(const std::string& key, std::variant<int, double> value) override;
 };
 
 

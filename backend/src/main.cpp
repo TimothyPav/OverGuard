@@ -17,5 +17,5 @@ int main(int argc, char** argv) {
     //load_players_into_playersDatabase();
     std::map<std::string, std::variant<int, double>> hero_stats;
 
-    get_stats("Cash-11893");
+    get_stats("de57a999e223b0a8e0bd26a8d507%7Cf2c062c8e8b4397d38db747abb397475");
 }
