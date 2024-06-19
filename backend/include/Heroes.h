@@ -46,6 +46,8 @@ class Heroes {
         virtual int get_charged_shot_accuracy() const;
         virtual int get_charged_shot_crit_accuracy() const;
         virtual double get_charged_shot_kills_per_10_mins() const;
+
+        virtual void printStats();
 };
 
 class Widowmaker : public Heroes {
@@ -79,10 +81,10 @@ class Widowmaker : public Heroes {
         void set_scoped_crit_kills_per_10_mins(double scoped_crit_kills);
 
         // getters
-        int get_scoped_accuracy();
-        int get_scoped_crit_accuracy();
-        double get_scoped_crit_hits_per_10_mins();
-        double get_scoped_crit_kills_per_10_mins();
+        int get_scoped_accuracy()const override;
+        int get_scoped_crit_accuracy()const override;
+        double get_scoped_crit_hits_per_10_mins()const override;
+        double get_scoped_crit_kills_per_10_mins()const override;
         std::string get_hero_name()const override;
 
         // methods
@@ -120,10 +122,10 @@ class Ashe: public Heroes {
         void set_scoped_crit_kills_per_10_mins(double scoped_crit_kills);
 
         // getters
-        int get_scoped_accuracy();
-        int get_scoped_crit_accuracy();
-        double get_scoped_crit_hits_per_10_mins();
-        double get_scoped_crit_kills_per_10_mins();
+        int get_scoped_accuracy()const override;
+        int get_scoped_crit_accuracy()const override;
+        double get_scoped_crit_hits_per_10_mins()const override;
+        double get_scoped_crit_kills_per_10_mins()const override;
         std::string get_hero_name() const override;
 
         // methods
@@ -156,9 +158,9 @@ class Cassidy: public Heroes {
         void set_critical_hit_kills_per_10_mins(double kills_per_10);
 
         // getters
-        int get_critical_hit_accuracy();
-        double get_critical_hits_per_10_mins();
-        double get_critical_hit_kills_per_10_mins();
+        int get_critical_hit_accuracy()const override;
+        double get_critical_hits_per_10_mins()const override;
+        double get_critical_hit_kills_per_10_mins()const override;
         std::string get_hero_name() const override;
 
         // methods
@@ -191,9 +193,9 @@ class Hanzo: public Heroes {
         void set_critical_hit_kills_per_10_mins(double kills_per_10);
 
         // getters
-        int get_critical_hit_accuracy();
-        double get_critical_hits_per_10_mins();
-        double get_critical_hit_kills_per_10_mins();
+        int get_critical_hit_accuracy()const override;
+        double get_critical_hits_per_10_mins()const override;
+        double get_critical_hit_kills_per_10_mins()const override;
         std::string get_hero_name() const override;
 
         // methods
@@ -226,9 +228,9 @@ class Sojourn: public Heroes {
         void set_charged_shot_kills_per_10_mins(double charged_shot_per_10);
 
         // getters
-        int get_charged_shot_accuracy();
-        int get_charged_shot_crit_accuracy();
-        double get_charged_shot_kills_per_10_mins();
+        int get_charged_shot_accuracy()const override;
+        int get_charged_shot_crit_accuracy()const override;
+        double get_charged_shot_kills_per_10_mins()const override;
         std::string get_hero_name() const override;
 
         // methods
@@ -256,8 +258,8 @@ class Soldier76: public Heroes {
         void set_critical_hits_per_10_mins(double hits_per_10);
 
         // getters
-        int get_critical_hit_accuracy();
-        double get_critical_hits_per_10_mins();
+        int get_critical_hit_accuracy()const override;
+        double get_critical_hits_per_10_mins()const override;
         std::string get_hero_name() const override;
 
         // methods
@@ -280,7 +282,7 @@ class Tracer: public Heroes {
         void set_critical_hits_per_10_mins(double hits_per_10);
 
         // getters
-        double get_critical_hits_per_10_mins();
+        double get_critical_hits_per_10_mins()const override;
         std::string get_hero_name() const override;
 
         // methods

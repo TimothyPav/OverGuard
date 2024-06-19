@@ -18,17 +18,55 @@ double Heroes::get_hero_damage_done_per_10_mins(){ return this->hero_damage_done
 bool Heroes::get_is_enough_playtime(){ return this->is_enough_playtime; }
 std::string Heroes::get_hero_name()const { return "hero_name"; }
 // hero stats to be overriden...
- int Heroes::get_scoped_accuracy()const { return 0; }
- int Heroes::get_scoped_crit_accuracy()const { return 0; }
- double Heroes::get_scoped_crit_hits_per_10_mins()const { return 0; }
- double Heroes::get_scoped_crit_kills_per_10_mins()const { return 0; }
- int Heroes::get_critical_hit_accuracy()const { return 0; }
- double Heroes::get_critical_hits_per_10_mins()const { return 0; }
- double Heroes::get_critical_hit_kills_per_10_mins()const { return 0; }
- int Heroes::get_charged_shot_accuracy()const { return 0; }
- int Heroes::get_charged_shot_crit_accuracy()const { return 0; }
- double Heroes::get_charged_shot_kills_per_10_mins()const { return 0; }
+int Heroes::get_scoped_accuracy()const { return 0; }
+int Heroes::get_scoped_crit_accuracy()const { return 0; }
+double Heroes::get_scoped_crit_hits_per_10_mins()const { return 0; }
+double Heroes::get_scoped_crit_kills_per_10_mins()const { return 0; }
+int Heroes::get_critical_hit_accuracy()const { return 0; }
+double Heroes::get_critical_hits_per_10_mins()const { return 0; }
+double Heroes::get_critical_hit_kills_per_10_mins()const { return 0; }
+int Heroes::get_charged_shot_accuracy()const { return 0; }
+int Heroes::get_charged_shot_crit_accuracy()const { return 0; }
+double Heroes::get_charged_shot_kills_per_10_mins()const { return 0; }
 
+void Heroes::printStats() {
+    std::cout << "-------" << get_hero_name() << "-------" << std::endl;
+
+    // Check and print only non-zero stats
+    if (get_deaths_per_10_mins() != 0)
+        std::cout << "Deaths per 10 mins: " << get_deaths_per_10_mins() << std::endl;
+    if (get_final_blows_per_10_mins() != 0)
+        std::cout << "Final blows per 10 mins: " << get_final_blows_per_10_mins() << std::endl;
+    if (get_solo_kills_per_10_mins() != 0)
+        std::cout << "Solo kills per 10 mins: " << get_solo_kills_per_10_mins() << std::endl;
+    if (get_hero_damage_done_per_10_mins() != 0)
+        std::cout << "Hero damage done per 10 mins: " << get_hero_damage_done_per_10_mins() << std::endl;
+    
+    // Print boolean status
+    std::cout << "Is enough playtime: " << (get_is_enough_playtime() ? "Yes" : "No") << std::endl;
+
+    // Print overridden stats only if non-zero
+    if (get_scoped_accuracy() != 0)
+        std::cout << "Scoped Accuracy: " << get_scoped_accuracy() << std::endl;
+    if (get_scoped_crit_accuracy() != 0)
+        std::cout << "Scoped Crit Accuracy: " << get_scoped_crit_accuracy() << std::endl;
+    if (get_scoped_crit_hits_per_10_mins() != 0)
+        std::cout << "Scoped Crit Hits per 10 mins: " << get_scoped_crit_hits_per_10_mins() << std::endl;
+    if (get_scoped_crit_kills_per_10_mins() != 0)
+        std::cout << "Scoped Crit Kills per 10 mins: " << get_scoped_crit_kills_per_10_mins() << std::endl;
+    if (get_critical_hit_accuracy() != 0)
+        std::cout << "Critical Hit Accuracy: " << get_critical_hit_accuracy() << std::endl;
+    if (get_critical_hits_per_10_mins() != 0)
+        std::cout << "Critical Hits per 10 mins: " << get_critical_hits_per_10_mins() << std::endl;
+    if (get_critical_hit_kills_per_10_mins() != 0)
+        std::cout << "Critical Hit Kills per 10 mins: " << get_critical_hit_kills_per_10_mins() << std::endl;
+    if (get_charged_shot_accuracy() != 0)
+        std::cout << "Charged Shot Accuracy: " << get_charged_shot_accuracy() << std::endl;
+    if (get_charged_shot_crit_accuracy() != 0)
+        std::cout << "Charged Shot Crit Accuracy: " << get_charged_shot_crit_accuracy() << std::endl;
+    if (get_charged_shot_kills_per_10_mins() != 0)
+        std::cout << "Charged Shot Kills per 10 mins: " << get_charged_shot_kills_per_10_mins() << std::endl;
+}
 
 // setters
 void Widowmaker::set_scoped_accuracy(int scoped_acc){ scoped_accuracy = scoped_acc; }
@@ -36,10 +74,10 @@ void Widowmaker::set_scoped_crit_accuracy(int scoped_crit_acc){ scoped_crit_accu
 void Widowmaker::set_scoped_crit_hits_per_10_mins(double scoped_crit_hits){ scoped_crit_hits_per_10_mins = scoped_crit_hits; }
 void Widowmaker::set_scoped_crit_kills_per_10_mins(double scoped_crit_kills){ scoped_crit_kills_per_10_mins = scoped_crit_kills; }
 // getters
-int Widowmaker::get_scoped_accuracy(){ return scoped_accuracy; }
-int Widowmaker::get_scoped_crit_accuracy(){ return scoped_crit_accuracy; }
-double Widowmaker::get_scoped_crit_hits_per_10_mins(){ return scoped_crit_hits_per_10_mins; }
-double Widowmaker::get_scoped_crit_kills_per_10_mins(){ return scoped_crit_kills_per_10_mins; }
+int Widowmaker::get_scoped_accuracy()const { return scoped_accuracy; }
+int Widowmaker::get_scoped_crit_accuracy()const { return scoped_crit_accuracy; }
+double Widowmaker::get_scoped_crit_hits_per_10_mins()const { return scoped_crit_hits_per_10_mins; }
+double Widowmaker::get_scoped_crit_kills_per_10_mins()const { return scoped_crit_kills_per_10_mins; }
 std::string Widowmaker::get_hero_name()const { return "widowmaker"; }
 // methods
 void Widowmaker::set_hero_specific_stats(const std::string& key, std::variant<int, double> value) {
@@ -55,10 +93,10 @@ void Ashe::set_scoped_crit_accuracy(int scoped_crit_acc){ scoped_crit_accuracy =
 void Ashe::set_scoped_crit_hits_per_10_mins(double scoped_crit_hits){ scoped_crit_hits_per_10_mins = scoped_crit_hits; }
 void Ashe::set_scoped_crit_kills_per_10_mins(double scoped_crit_kills){ scoped_crit_kills_per_10_mins = scoped_crit_kills; }
 // getters
-int Ashe::get_scoped_accuracy(){ return scoped_accuracy; }
-int Ashe::get_scoped_crit_accuracy(){ return scoped_crit_accuracy; }
-double Ashe::get_scoped_crit_hits_per_10_mins(){ return scoped_crit_hits_per_10_mins; }
-double Ashe::get_scoped_crit_kills_per_10_mins(){ return scoped_crit_kills_per_10_mins; }
+int Ashe::get_scoped_accuracy()const { return scoped_accuracy; }
+int Ashe::get_scoped_crit_accuracy()const { return scoped_crit_accuracy; }
+double Ashe::get_scoped_crit_hits_per_10_mins()const { return scoped_crit_hits_per_10_mins; }
+double Ashe::get_scoped_crit_kills_per_10_mins()const { return scoped_crit_kills_per_10_mins; }
 std::string Ashe::get_hero_name()const { return "ashe"; }
 // methods
 void Ashe::set_hero_specific_stats(const std::string& key, std::variant<int, double> value) {
@@ -74,9 +112,9 @@ void Cassidy::set_critical_hit_accuracy(int crit_acc){ critical_hit_accuracy = c
 void Cassidy::set_critical_hits_per_10_mins(double hits_per_10){ critical_hits_per_10_mins = hits_per_10; }
 void Cassidy::set_critical_hit_kills_per_10_mins(double kills_per_10){ critical_hit_kills_per_10_mins = kills_per_10; }
 // getters
-int Cassidy::get_critical_hit_accuracy(){ return critical_hit_accuracy; }
-double Cassidy::get_critical_hits_per_10_mins(){ return critical_hits_per_10_mins; }
-double Cassidy::get_critical_hit_kills_per_10_mins(){ return critical_hit_kills_per_10_mins; }
+int Cassidy::get_critical_hit_accuracy()const { return critical_hit_accuracy; }
+double Cassidy::get_critical_hits_per_10_mins()const { return critical_hits_per_10_mins; }
+double Cassidy::get_critical_hit_kills_per_10_mins()const { return critical_hit_kills_per_10_mins; }
 std::string Cassidy::get_hero_name()const { return "cassidy"; }
 void Cassidy::set_hero_specific_stats(const std::string& key, std::variant<int, double> value) {
     auto it = setter_map.find(key);
@@ -90,9 +128,9 @@ void Hanzo::set_critical_hit_accuracy(int crit_acc){ critical_hit_accuracy = cri
 void Hanzo::set_critical_hits_per_10_mins(double hits_per_10){ critical_hits_per_10_mins = hits_per_10; }
 void Hanzo::set_critical_hit_kills_per_10_mins(double kills_per_10){ critical_hit_kills_per_10_mins = kills_per_10; }
 // getters
-int Hanzo::get_critical_hit_accuracy(){ return critical_hit_accuracy; }
-double Hanzo::get_critical_hits_per_10_mins(){ return critical_hits_per_10_mins; }
-double Hanzo::get_critical_hit_kills_per_10_mins(){ return critical_hit_kills_per_10_mins; }
+int Hanzo::get_critical_hit_accuracy()const { return critical_hit_accuracy; }
+double Hanzo::get_critical_hits_per_10_mins()const { return critical_hits_per_10_mins; }
+double Hanzo::get_critical_hit_kills_per_10_mins()const { return critical_hit_kills_per_10_mins; }
 std::string Hanzo::get_hero_name()const { return "hanzo"; }
 void Hanzo::set_hero_specific_stats(const std::string& key, std::variant<int, double> value) {
     auto it = setter_map.find(key);
@@ -106,9 +144,9 @@ void Sojourn::set_charged_shot_accuracy(int charged_shot_acc){ charged_shot_accu
 void Sojourn::set_charged_shot_crit_accuracy(int charged_shot_crit_acc){ charged_shot_crit_accuracy = charged_shot_crit_acc; }
 void Sojourn::set_charged_shot_kills_per_10_mins(double charged_shot_per_10){ charged_shot_kills_per_10_mins = charged_shot_per_10; }
 // getters
-int Sojourn::get_charged_shot_accuracy(){ return charged_shot_accuracy; }
-int Sojourn::get_charged_shot_crit_accuracy(){ return charged_shot_crit_accuracy; }
-double Sojourn::get_charged_shot_kills_per_10_mins(){ return charged_shot_kills_per_10_mins; }
+int Sojourn::get_charged_shot_accuracy()const { return charged_shot_accuracy; }
+int Sojourn::get_charged_shot_crit_accuracy()const { return charged_shot_crit_accuracy; }
+double Sojourn::get_charged_shot_kills_per_10_mins()const { return charged_shot_kills_per_10_mins; }
 std::string Sojourn::get_hero_name()const { return "sojourn"; }
 void Sojourn::set_hero_specific_stats(const std::string& key, std::variant<int, double> value) {
     auto it = setter_map.find(key);
@@ -121,8 +159,8 @@ void Sojourn::set_hero_specific_stats(const std::string& key, std::variant<int, 
 void Soldier76::set_critical_hit_accuracy(int crit_acc){ critical_hit_accuracy = crit_acc; }
 void Soldier76::set_critical_hits_per_10_mins(double hits_per_10){ critical_hits_per_10_mins = hits_per_10; }
 // getters
-int Soldier76::get_critical_hit_accuracy(){ return critical_hit_accuracy; }
-double Soldier76::get_critical_hits_per_10_mins(){ return critical_hits_per_10_mins; }
+int Soldier76::get_critical_hit_accuracy()const { return critical_hit_accuracy; }
+double Soldier76::get_critical_hits_per_10_mins()const { return critical_hits_per_10_mins; }
 std::string Soldier76::get_hero_name()const { return "soldier-76"; }
 void Soldier76::set_hero_specific_stats(const std::string& key, std::variant<int, double> value) {
     auto it = setter_map.find(key);
@@ -134,7 +172,7 @@ void Soldier76::set_hero_specific_stats(const std::string& key, std::variant<int
 // setters
 void Tracer::set_critical_hits_per_10_mins(double hits_per_10){ critical_hits_per_10_mins = hits_per_10; }
 // getters
-double Tracer::get_critical_hits_per_10_mins(){ return critical_hits_per_10_mins; }
+double Tracer::get_critical_hits_per_10_mins()const { return critical_hits_per_10_mins; }
 std::string Tracer::get_hero_name()const { return "tracer"; }
 void Tracer::set_hero_specific_stats(const std::string& key, std::variant<int, double> value) {
     auto it = setter_map.find(key);

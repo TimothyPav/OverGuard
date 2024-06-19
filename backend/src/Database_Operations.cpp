@@ -65,39 +65,50 @@ int load_players_into_playersDatabase(){
 }
 
 int insert_hero_into_database(std::string blizzard_ID, Heroes& hero){
-    std::string name = hero.get_hero_name();
-    std::cout << "HELPER FUNCTION RESULT --> " << name << std::endl;
     if(hero.get_hero_name() == "ashe") insert_stats_into_asheDatabase(blizzard_ID, hero);
+    else if(hero.get_hero_name() == "cassidy") insert_stats_into_cassidyDatabase(blizzard_ID, hero);
+    else if(hero.get_hero_name() == "hanzo") insert_stats_into_hanzoDatabase(blizzard_ID, hero);
+    else if(hero.get_hero_name() == "sojourn") insert_stats_into_sojournDatabase(blizzard_ID, hero);
+    else if(hero.get_hero_name() == "soldier-76") insert_stats_into_soldier76Database(blizzard_ID, hero);
+    else if(hero.get_hero_name() == "tracer") insert_stats_into_tracerDatabase(blizzard_ID, hero);
+    else if(hero.get_hero_name() == "widowmaker") insert_stats_into_widowmakerDatabase(blizzard_ID, hero);
     return 0;
 }
 
-int insert_stats_into_cassidyDatabase(std::string blizzard_ID, Heroes& ashe){
-    std::cout << "THIS HAS WORKED VERY AWESOMELY: --> " << ashe.get_hero_name() << std::endl;
+int insert_stats_into_asheDatabase(std::string blizzard_ID, Heroes& ashe){
+    std::cout << "TESTING INDIVIDUAL METHOD CALL: --> " << ashe.get_critical_hit_accuracy() << std::endl;
+    ashe.printStats();
     return 0;
 }
 
-int insert_stats_into_hanzoDatabase(std::string blizzard_ID, Heroes& ashe){
-    std::cout << "THIS HAS WORKED VERY AWESOMELY: --> " << ashe.get_hero_name() << std::endl;
+int insert_stats_into_cassidyDatabase(std::string blizzard_ID, Heroes& cassidy){
+    cassidy.printStats();
     return 0;
 }
 
-int insert_stats_into_sojournDatabase(std::string blizzard_ID, Heroes& ashe){
-    std::cout << "THIS HAS WORKED VERY AWESOMELY: --> " << ashe.get_hero_name() << std::endl;
+int insert_stats_into_hanzoDatabase(std::string blizzard_ID, Heroes& hanzo){
+    hanzo.printStats();
     return 0;
 }
 
-int insert_stats_into_solider76Database(std::string blizzard_ID, Heroes& ashe){
-    std::cout << "THIS HAS WORKED VERY AWESOMELY: --> " << ashe.get_hero_name() << std::endl;
+int insert_stats_into_sojournDatabase(std::string blizzard_ID, Heroes& sojourn){
+    sojourn.printStats();
     return 0;
 }
 
-int insert_stats_into_tracerDatabase(std::string blizzard_ID, Heroes& ashe){
-    std::cout << "THIS HAS WORKED VERY AWESOMELY: --> " << ashe.get_hero_name() << std::endl;
+int insert_stats_into_soldier76Database(std::string blizzard_ID, Heroes& soldier76){
+    soldier76.printStats();
     return 0;
 }
 
-int insert_stats_into_widowmakerDatabase(std::string blizzard_ID, Heroes& ashe){
-    std::cout << "THIS HAS WORKED VERY AWESOMELY: --> " << ashe.get_hero_name() << std::endl;
+int insert_stats_into_tracerDatabase(std::string blizzard_ID, Heroes& tracer){
+    tracer.printStats();
+    return 0;
+}
+
+int insert_stats_into_widowmakerDatabase(std::string blizzard_ID, Heroes& widowmaker){
+    widowmaker.printStats();
+    std::cout << "TESTING INDIVIDUAL METHOD CALL: --> " << widowmaker.get_critical_hit_accuracy() << std::endl;
     return 0;
 }
 

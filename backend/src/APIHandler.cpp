@@ -49,19 +49,14 @@ void get_stats(const std::string& blizzard_ID){
     heroes[6] = std::make_unique<Widowmaker>();
 
     for(const auto& hero : heroes){
-
         std::string hero_name = hero->get_hero_name();
-        std::cout << "--GETTING DATA FOR : " << hero->get_hero_name() << std::endl;
         for (const auto& category : j[hero_name]) {
-
             if(category["category"] == "hero_specific"){
                 for(const auto& stat: category["stats"]){
                     if (stat["value"].is_number_float()) {
                         hero->set_hero_specific_stats(stat["key"], (float) stat["value"]);
-                        //std::cout << stat["key"] << ": " << stat["value"] << std::endl;
                     } else if (stat["value"].is_number_integer()) {
                         hero->set_hero_specific_stats(stat["key"], (int) stat["value"]);
-                        //std::cout << stat["key"] << ": " << stat["value"] << std::endl;
                     }
                 }
             }
@@ -76,10 +71,8 @@ void get_stats(const std::string& blizzard_ID){
             else if(category["category"] == "game") {
                 for(const auto& stat : category["stats"]){
                     if(stat["key"] == "time_played"){
-                        //std::cout << stat["key"] << ": " << stat["value"] << std::endl;
                         if(stat["value"] >= MIN_PLAYTIME_REQUIRED){
                             hero->set_is_enough_playtime(true);
-                            //std::cout << "Hero with enough playtime " << hero->get_hero_name() << std::endl;
                         } else hero->set_is_enough_playtime(false);
                     }
                 }
@@ -88,15 +81,13 @@ void get_stats(const std::string& blizzard_ID){
                 for(const auto& stat: category["stats"]){
                     if (stat["value"].is_number_float()) {
                         hero->set_hero_specific_stats(stat["key"], (float) stat["value"]);
-                        //std::cout << stat["key"] << ": " << stat["value"] << std::endl;
                     } else if (stat["value"].is_number_integer()) {
                         hero->set_hero_specific_stats(stat["key"], (int) stat["value"]);
-                        //std::cout << stat["key"] << ": " << stat["value"] << std::endl;
                     }
                 }
             }
         }
-        insert_hero_into_database(blizzard_ID, *hero);
+        if(hero->get_is_enough_playtime()) insert_hero_into_database(blizzard_ID, *hero);
     }
 
     //std::cout << hero.get_deaths_per_10_mins() << " " << hero.get_final_blows_per_10_mins() << " " << hero.get_hero_damage_done_per_10_mins() << " " << hero.get_solo_kills_per_10_mins() << std::endl;
