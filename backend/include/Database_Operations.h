@@ -9,6 +9,7 @@ int create_table();
 int load_players_into_playersDatabase();
 
 int insert_hero_into_database(std::string blizzard_ID, Heroes& hero);
+std::string select_name_from_blizzard_ID_from_database(std::string blizzard_ID);
 
 int insert_stats_into_asheDatabase(std::string blizzard_ID, Heroes& ashe);
 int insert_stats_into_cassidyDatabase(std::string blizzard_ID, Heroes& ashe);

@@ -37,6 +37,8 @@ void get_stats(const std::string& blizzard_ID){
     
     cpr::Response r = cpr::Get(cpr::Url{url});
 
+    if(r.status_code != 200) std::cout << "Error finding player. Status code: " << r.status_code << std::endl;
+
     std::map<std::string, std::variant<int, double>> hero_stats;
     json j = json::parse(r.text);
     std::array<std::unique_ptr<Heroes>, 7> heroes;
@@ -87,7 +89,8 @@ void get_stats(const std::string& blizzard_ID){
                 }
             }
         }
-        if(hero->get_is_enough_playtime()) insert_hero_into_database(blizzard_ID, *hero);
+        //if(hero->get_is_enough_playtime()) insert_hero_into_database(blizzard_ID, *hero);
+        insert_hero_into_database(blizzard_ID, *hero);
     }
 
     //std::cout << hero.get_deaths_per_10_mins() << " " << hero.get_final_blows_per_10_mins() << " " << hero.get_hero_damage_done_per_10_mins() << " " << hero.get_solo_kills_per_10_mins() << std::endl;
