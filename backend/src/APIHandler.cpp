@@ -8,6 +8,7 @@
 #include <string>
 #include <map>
 #include <variant>
+#include <cmath>
 
 using json = nlohmann::json;
 using StatsMap = std::map<std::string, std::variant<int, double>>;
@@ -59,6 +60,7 @@ void get_stats(const std::string &blizzard_ID)
     for (const auto &hero : heroes)
     {
         std::string hero_name = hero->get_hero_name();
+        hero->set_is_enough_playtime(false);
         for (const auto &category : j[hero_name])
         {
             if (category["category"] == "hero_specific")
@@ -67,7 +69,7 @@ void get_stats(const std::string &blizzard_ID)
                 {
                     if (stat["value"].is_number_float())
                     {
-                        hero->set_hero_specific_stats(stat["key"], (float)stat["value"]);
+                        hero->set_hero_specific_stats(stat["key"], std::round(static_cast<double>(stat["value"]) * 100) / 100.0f);
                     }
                     else if (stat["value"].is_number_integer())
                     {
@@ -80,13 +82,22 @@ void get_stats(const std::string &blizzard_ID)
                 for (const auto &stat : category["stats"])
                 {
                     if (stat["key"] == "deaths_avg_per_10_min")
-                        hero->set_deaths_per_10_mins((double)stat["value"]);
+                        hero->set_deaths_per_10_mins(std::round(static_cast<double>(stat["value"]) * 100) / 100);
                     else if (stat["key"] == "final_blows_avg_per_10_min")
-                        hero->set_final_blows_per_10_mins((double)stat["value"]);
+                        hero->set_final_blows_per_10_mins(std::round(static_cast<double>(stat["value"]) * 100) / 100);
                     else if (stat["key"] == "solo_kills_avg_per_10_min")
-                        hero->set_solo_kills_per_10_mins((double)stat["value"]);
+                        hero->set_solo_kills_per_10_mins(std::round(static_cast<double>(stat["value"]) * 100) / 100);
                     else if (stat["key"] == "hero_damage_done_avg_per_10_min")
-                        hero->set_hero_damage_done_per_10_mins((double)stat["value"]);
+                        hero->set_hero_damage_done_per_10_mins(std::round(static_cast<double>(stat["value"]) * 100) / 100);
+
+                    if (stat["value"].is_number_float())
+                    {
+                        hero->set_hero_specific_stats(stat["key"], std::round(static_cast<double>(stat["value"]) * 100) / 100.0f);
+                    }
+                    else if (stat["value"].is_number_integer())
+                    {
+                        hero->set_hero_specific_stats(stat["key"], (int)stat["value"]);
+                    }
                 }
             }
             else if (category["category"] == "game")
@@ -110,7 +121,7 @@ void get_stats(const std::string &blizzard_ID)
                 {
                     if (stat["value"].is_number_float())
                     {
-                        hero->set_hero_specific_stats(stat["key"], (float)stat["value"]);
+                        hero->set_hero_specific_stats(stat["key"], std::round(static_cast<double>(stat["value"]) * 100) / 100.0f);
                     }
                     else if (stat["value"].is_number_integer())
                     {

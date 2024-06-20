@@ -410,8 +410,8 @@ int create_table()
 
     const char *sqlCreateTable = R"(
     CREATE TABLE IF NOT EXISTS "widowmaker" (
-	"Entry"	INTEGER NOT NULL UNIQUE,
-	"Blizzard_ID"	TEXT NOT NULL,
+    "Entry" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "Blizzard_ID"	TEXT NOT NULL,
 	"Name"	TEXT NOT NULL,
 	"Deaths per 10 mins"	REAL NOT NULL,
 	"Final Blows per 10 mins"	REAL NOT NULL,
@@ -422,8 +422,7 @@ int create_table()
 	"Scoped Crit Hits per 10 mins"	REAL NOT NULL,
 	"Scoped Crit Kills per 10 mins"	REAL NOT NULL,
 	FOREIGN KEY("Blizzard_ID") REFERENCES "players"("Blizzard_ID"),
-	FOREIGN KEY("Name") REFERENCES "players"("Name"),
-	PRIMARY KEY("Entry" AUTOINCREMENT)
+	FOREIGN KEY("Name") REFERENCES "players"("Name")
 );)";
 
     char *errMsg;
