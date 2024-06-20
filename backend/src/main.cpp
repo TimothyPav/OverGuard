@@ -13,9 +13,7 @@ using json = nlohmann::json;
 
 int main(int argc, char** argv) {
     //test_call();
-    //get_name_from_blizzard_ID(R"(da47b981e13cc9f8b0a0%257C9ce73afb3dc641f023475ff233d0a876)");
-    //load_players_into_playersDatabase();
-    //std::map<std::string, std::variant<int, double>> hero_stats;
-    
+    //std::cout << get_name_from_blizzard_ID("c14ea584b47089e0b8a126a7d5%7Cb10cc510931ea354796176e1bc6f966c") << "\n";
+    //load_players_into_playersDatabase(); 
     loop_over_blizzard_ID();
 }

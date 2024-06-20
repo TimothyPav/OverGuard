@@ -6,20 +6,18 @@
 #include <cpr/cpr.h>
 #include <nlohmann/json.hpp>
 #include <string>
-#include <map>
 #include <variant>
 #include <cmath>
 
 using json = nlohmann::json;
-using StatsMap = std::map<std::string, std::variant<int, double>>;
 
-#define BASE_OVERFAST_API_URL "https://overfast-api.tekrop.fr/players/"
+#define BASE_OVERFAST_API_URL "https://overfast-api.tekrop.fr/players"
 #define MIN_PLAYTIME_REQUIRED 5400
 #define HEROES_COUNT 8
 
 std::string get_name_from_blizzard_ID(const std::string &blizzard_ID)
 {
-    std::string player_summary_url = BASE_OVERFAST_API_URL + blizzard_ID + "/summary";
+    std::string player_summary_url = BASE_OVERFAST_API_URL "/" + blizzard_ID + "/summary";
     cpr::Response response = cpr::Get(cpr::Url{player_summary_url});
     if (response.status_code == 200)
     {
@@ -35,18 +33,63 @@ std::string get_name_from_blizzard_ID(const std::string &blizzard_ID)
     return "";
 }
 
+std::string get_blizzard_ID_from_name(const std::string name)
+{
+    // https://overfast-api.tekrop.fr/players?name=crab&order_by=name%3Aasc&offset=0&limit=40
+    std::string url_for_battletags = BASE_OVERFAST_API_URL "?name=" + name + "&order_by=name%3Adesc&offset=0&limit=99";
+    cpr::Response r1 = cpr::Get(cpr::Url{url_for_battletags});
+
+    if (r1.status_code != 200)
+    {
+        std::cout << "Error finding player. Status code: " << r1.status_code << std::endl;
+    }
+    else
+    {
+        std::string blizzard_ID = "";
+        json j = json::parse(r1.text);
+        for (const auto &result : j["results"])
+        {
+            std::cout << "searching player id --> " << result["player_id"] << "\n";
+            blizzard_ID = result["blizzard_id"];
+            std::string url_for_specific_players = result["career_url"];
+            cpr::Response r2 = cpr::Get(cpr::Url{url_for_specific_players});
+            if (r2.status_code != 200)
+            {
+                std::cout << "Error finding player career profile: Status code: " << r1.status_code << std::endl;
+            }
+            else
+            {
+                json j2 = json::parse(r2.text);
+                // std::cout << "j2[comp] --> " << j2["summary"]["competitive"] << "\n";
+                if (j2["summary"]["competitive"]["pc"]["damage"] != "null")
+                {
+                    if (j2["summary"]["competitive"]["pc"]["damage"]["division"] == "grandmaster" || j2["summary"]["competitive"]["pc"]["damage"]["division"] == "ultimate")
+                    {
+                        if (j2["summary"]["competitive"]["pc"]["season"] >= 10)
+                        {
+                            return blizzard_ID;
+                        }
+                    }
+                }
+            }
+        }
+        return "";
+    }
+    return "";
+}
+
 void get_stats(const std::string &blizzard_ID)
 {
-    std::string url = std::string(BASE_OVERFAST_API_URL) + blizzard_ID + "/stats?gamemode=competitive&platform=pc";
+    std::string url = BASE_OVERFAST_API_URL "/" + blizzard_ID + "/stats?gamemode=competitive&platform=pc";
 
     cpr::Response r = cpr::Get(cpr::Url{url});
 
-    if (r.status_code != 200){
+    if (r.status_code != 200)
+    {
         std::cout << "Error finding player. Status code: " << r.status_code << std::endl;
         return;
     }
 
-    std::map<std::string, std::variant<int, double>> hero_stats;
     json j = json::parse(r.text);
     std::array<std::unique_ptr<Heroes>, 7> heroes;
     heroes[0] = std::make_unique<Ashe>();
@@ -133,6 +176,4 @@ void get_stats(const std::string &blizzard_ID)
         if (hero->get_is_enough_playtime())
             insert_hero_into_database(blizzard_ID, *hero);
     }
-
-    std::map<std::string, std::variant<int, double>> empty;
 }
