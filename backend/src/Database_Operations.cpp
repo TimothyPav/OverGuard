@@ -13,6 +13,31 @@ bool sql_open_check(int return_code, sqlite3 *db);
 bool sql_prepare_check(int return_code, sqlite3 *db);
 bool sql_step_check(int return_code, sqlite3 *db);
 
+int loop_over_blizzard_ID()
+{
+    sqlite3 *players_db;
+    sqlite3_open("../databases/players.db", &players_db);
+
+    const char *sql_select = "SELECT Blizzard_ID FROM players;";
+    sqlite3_stmt *stmt;
+    sqlite3_prepare_v2(players_db, sql_select, -1, &stmt, NULL);
+    if (!sql_prepare_check)
+        return 1;
+
+    while (sqlite3_step(stmt) == SQLITE_ROW)
+    {
+        std::string blizzard_ID = reinterpret_cast<const char *>(sqlite3_column_text(stmt, 0));
+        std::string name = select_name_from_blizzard_ID_from_database(blizzard_ID);
+
+        get_stats(blizzard_ID);
+        std::cout << "INSERTED!!: " << name << " : " << blizzard_ID << std::endl;
+    }
+
+    sqlite3_finalize(stmt);
+    sqlite3_close(players_db);
+    return 0;
+}
+
 int load_players_into_playersDatabase()
 {
     std::ifstream inputFile("../databases/player_ids.txt");
@@ -32,7 +57,7 @@ int load_players_into_playersDatabase()
         return 1;
 
     // sql command
-    const char *sql_insert = "INSERT INTO players (Name, Blizzard_ID) VALUES (?, ?);";
+    const char *sql_insert = "INSERT INTO players (Name,Blizzard_ID) VALUES (?,?);";
     return_code = sqlite3_prepare_v2(players_db, sql_insert, -1, &stmt, NULL);
     if (!sql_prepare_check(return_code, players_db))
         return 1;
@@ -122,59 +147,249 @@ int insert_stats_into_asheDatabase(std::string blizzard_ID, Heroes &ashe)
     sqlite3_stmt *stmt;
 
     int return_code = sqlite3_open("../databases/ashe.db", &ashe_db);
-    if (return_code)
-    {
-        std::cerr << "Error opening database: " << sqlite3_errmsg(ashe_db) << std::endl;
+    if (!sql_open_check(return_code, ashe_db))
         return 1;
-    }
     // sql command
-    const char *sql_insert = "INSERT INTO ashe (Blizzard_ID, Name, Deaths per 10 mins, Final Blows per 10 mins, Hero Damage Done per 10 mins, Scoped Accuracy, Scoped Crit Hits per 10 mins, Scoped Crit Kills per 10 mins) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
-    return_code = sqlite3_prepare_v2(ashe_db, sql_insert, -1, &stmt, NULL);
-    if (return_code != SQLITE_OK)
-    {
-        std::cerr << "Failed to prepare statement: " << sqlite3_errmsg(ashe_db) << std::endl;
-        sqlite3_close(ashe_db);
+    const char *sql_insert = "INSERT INTO ashe (\"Blizzard_ID\", \"Name\", \"Deaths per 10 mins\", \"Final Blows per 10 mins\", \"Solo Kills per 10 mins\", \"Hero Damage Done per 10 mins\", \"Scoped Accuracy\", \"Scoped Crit Accuracy\", \"Scoped Crit Hits per 10 mins\", \"Scoped Crit Kills per 10 mins\") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+
+    return_code = sqlite3_prepare_v2(ashe_db, sql_insert, -1, &stmt, nullptr);
+    if (!sql_prepare_check(return_code, ashe_db))
         return 1;
-    }
 
-    // bind blizzard_ID, name, and all stats to be inserted into the database
+    // loading statements
+    sqlite3_bind_text(stmt, 1, blizzard_ID.c_str(), -1, SQLITE_TRANSIENT);
+    sqlite3_bind_text(stmt, 2, select_name_from_blizzard_ID_from_database(blizzard_ID).c_str(), -1, SQLITE_TRANSIENT);
+    sqlite3_bind_double(stmt, 3, ashe.get_deaths_per_10_mins());
+    sqlite3_bind_double(stmt, 4, ashe.get_final_blows_per_10_mins());
+    sqlite3_bind_double(stmt, 5, ashe.get_solo_kills_per_10_mins());
+    sqlite3_bind_double(stmt, 6, ashe.get_hero_damage_done_per_10_mins());
+    sqlite3_bind_int(stmt, 7, ashe.get_scoped_accuracy());
+    sqlite3_bind_int(stmt, 8, ashe.get_scoped_crit_accuracy());
+    sqlite3_bind_double(stmt, 9, ashe.get_scoped_crit_hits_per_10_mins());
+    sqlite3_bind_double(stmt, 10, ashe.get_scoped_crit_kills_per_10_mins());
 
+    // execute statement
+    return_code = sqlite3_step(stmt);
+    sql_step_check(return_code, ashe_db);
+
+    // finalize and close all related files
+    sqlite3_finalize(stmt);
+    sqlite3_close(ashe_db);
     return 0;
 }
 
 int insert_stats_into_cassidyDatabase(std::string blizzard_ID, Heroes &cassidy)
 {
-    cassidy.printStats();
+    sqlite3 *cassidy_db;
+    char *error_message = 0;
+    sqlite3_stmt *stmt;
+
+    int return_code = sqlite3_open("../databases/cassidy.db", &cassidy_db);
+    if (!sql_open_check(return_code, cassidy_db))
+        return 1;
+    // sql command
+    const char *sql_insert = "INSERT INTO cassidy (\"Blizzard_ID\", \"Name\", \"Deaths per 10 mins\", \"Final Blows per 10 mins\", \"Solo Kills per 10 mins\", \"Hero Damage Done per 10 mins\", \"Critical Hit Accuracy\", \"Critical Hits per 10 mins\", \"Critical Hit kills per 10 mins\") VALUES (?,?,?,?,?,?,?,?,?);";
+    return_code = sqlite3_prepare_v2(cassidy_db, sql_insert, -1, &stmt, nullptr);
+    if (!sql_prepare_check(return_code, cassidy_db))
+        return 1;
+
+    // loading statements
+    sqlite3_bind_text(stmt, 1, blizzard_ID.c_str(), -1, SQLITE_TRANSIENT);
+    sqlite3_bind_text(stmt, 2, select_name_from_blizzard_ID_from_database(blizzard_ID).c_str(), -1, SQLITE_TRANSIENT);
+    sqlite3_bind_double(stmt, 3, cassidy.get_deaths_per_10_mins());
+    sqlite3_bind_double(stmt, 4, cassidy.get_final_blows_per_10_mins());
+    sqlite3_bind_double(stmt, 5, cassidy.get_solo_kills_per_10_mins());
+    sqlite3_bind_double(stmt, 6, cassidy.get_hero_damage_done_per_10_mins());
+    sqlite3_bind_int(stmt, 7, cassidy.get_critical_hit_accuracy());
+    sqlite3_bind_double(stmt, 8, cassidy.get_critical_hits_per_10_mins());
+    sqlite3_bind_double(stmt, 9, cassidy.get_critical_hit_kills_per_10_mins());
+
+    // execute statement
+    return_code = sqlite3_step(stmt);
+    sql_step_check(return_code, cassidy_db);
+
+    // finalize and close all related files
+    sqlite3_finalize(stmt);
+    sqlite3_close(cassidy_db);
     return 0;
 }
 
 int insert_stats_into_hanzoDatabase(std::string blizzard_ID, Heroes &hanzo)
 {
-    hanzo.printStats();
+    sqlite3 *hanzo_db;
+    char *error_message = 0;
+    sqlite3_stmt *stmt;
+
+    int return_code = sqlite3_open("../databases/hanzo.db", &hanzo_db);
+    if (!sql_open_check(return_code, hanzo_db))
+        return 1;
+    // sql command
+    const char *sql_insert = "INSERT INTO hanzo (\"Blizzard_ID\", \"Name\", \"Deaths per 10 mins\", \"Final Blows per 10 mins\", \"Solo Kills per 10 mins\", \"Hero Damage Done per 10 mins\", \"Critical Hit Accuracy\", \"Critical Hits per 10 mins\", \"Critical Hit kills per 10 mins\") VALUES (?,?,?,?,?,?,?,?,?);";
+    return_code = sqlite3_prepare_v2(hanzo_db, sql_insert, -1, &stmt, nullptr);
+    if (!sql_prepare_check(return_code, hanzo_db))
+        return 1;
+
+    // loading statements
+    sqlite3_bind_text(stmt, 1, blizzard_ID.c_str(), -1, SQLITE_TRANSIENT);
+    sqlite3_bind_text(stmt, 2, select_name_from_blizzard_ID_from_database(blizzard_ID).c_str(), -1, SQLITE_TRANSIENT);
+    sqlite3_bind_double(stmt, 3, hanzo.get_deaths_per_10_mins());
+    sqlite3_bind_double(stmt, 4, hanzo.get_final_blows_per_10_mins());
+    sqlite3_bind_double(stmt, 5, hanzo.get_solo_kills_per_10_mins());
+    sqlite3_bind_double(stmt, 6, hanzo.get_hero_damage_done_per_10_mins());
+    sqlite3_bind_int(stmt, 7, hanzo.get_critical_hit_accuracy());
+    sqlite3_bind_double(stmt, 8, hanzo.get_critical_hits_per_10_mins());
+    sqlite3_bind_double(stmt, 9, hanzo.get_critical_hit_kills_per_10_mins());
+
+    // execute statement
+    return_code = sqlite3_step(stmt);
+    sql_step_check(return_code, hanzo_db);
+
+    // finalize and close all related files
+    sqlite3_finalize(stmt);
+    sqlite3_close(hanzo_db);
     return 0;
 }
 
 int insert_stats_into_sojournDatabase(std::string blizzard_ID, Heroes &sojourn)
 {
-    sojourn.printStats();
+    sqlite3 *sojourn_db;
+    char *error_message = 0;
+    sqlite3_stmt *stmt;
+
+    int return_code = sqlite3_open("../databases/sojourn.db", &sojourn_db);
+    if (!sql_open_check(return_code, sojourn_db))
+        return 1;
+    // sql command
+    const char *sql_insert = "INSERT INTO sojourn (\"Blizzard_ID\", \"Name\", \"Deaths per 10 mins\", \"Final Blows per 10 mins\", \"Solo Kills per 10 mins\", \"Hero Damage Done per 10 mins\", \"Charged Shot Accuracy\", \"Charged Shot Crit Accuracy\", \"Charged Shot Kills per 10 mins\") VALUES (?,?,?,?,?,?,?,?,?);";
+    return_code = sqlite3_prepare_v2(sojourn_db, sql_insert, -1, &stmt, nullptr);
+    if (!sql_prepare_check(return_code, sojourn_db))
+        return 1;
+
+    // loading statements
+    sqlite3_bind_text(stmt, 1, blizzard_ID.c_str(), -1, SQLITE_TRANSIENT);
+    sqlite3_bind_text(stmt, 2, select_name_from_blizzard_ID_from_database(blizzard_ID).c_str(), -1, SQLITE_TRANSIENT);
+    sqlite3_bind_double(stmt, 3, sojourn.get_deaths_per_10_mins());
+    sqlite3_bind_double(stmt, 4, sojourn.get_final_blows_per_10_mins());
+    sqlite3_bind_double(stmt, 5, sojourn.get_solo_kills_per_10_mins());
+    sqlite3_bind_double(stmt, 6, sojourn.get_hero_damage_done_per_10_mins());
+    sqlite3_bind_int(stmt, 7, sojourn.get_charged_shot_accuracy());
+    sqlite3_bind_int(stmt, 8, sojourn.get_charged_shot_crit_accuracy());
+    sqlite3_bind_double(stmt, 9, sojourn.get_charged_shot_kills_per_10_mins());
+
+    // execute statement
+    return_code = sqlite3_step(stmt);
+    sql_step_check(return_code, sojourn_db);
+
+    // finalize and close all related files
+    sqlite3_finalize(stmt);
+    sqlite3_close(sojourn_db);
     return 0;
 }
 
 int insert_stats_into_soldier76Database(std::string blizzard_ID, Heroes &soldier76)
 {
-    soldier76.printStats();
+    sqlite3 *soldier76_db;
+    char *error_message = 0;
+    sqlite3_stmt *stmt;
+
+    int return_code = sqlite3_open("../databases/soldier76.db", &soldier76_db);
+    if (!sql_open_check(return_code, soldier76_db))
+        return 1;
+    // sql command
+    const char *sql_insert = "INSERT INTO soldier76 (\"Blizzard_ID\", \"Name\", \"Deaths per 10 mins\", \"Final Blows per 10 mins\", \"Solo Kills per 10 mins\", \"Hero Damage Done per 10 mins\", \"Critical Hit Accuracy\", \"Critical Hits per 10 mins\") VALUES (?,?,?,?,?,?,?,?);";
+    return_code = sqlite3_prepare_v2(soldier76_db, sql_insert, -1, &stmt, nullptr);
+    if (!sql_prepare_check(return_code, soldier76_db))
+        return 1;
+
+    // loading statements
+    sqlite3_bind_text(stmt, 1, blizzard_ID.c_str(), -1, SQLITE_TRANSIENT);
+    sqlite3_bind_text(stmt, 2, select_name_from_blizzard_ID_from_database(blizzard_ID).c_str(), -1, SQLITE_TRANSIENT);
+    sqlite3_bind_double(stmt, 3, soldier76.get_deaths_per_10_mins());
+    sqlite3_bind_double(stmt, 4, soldier76.get_final_blows_per_10_mins());
+    sqlite3_bind_double(stmt, 5, soldier76.get_solo_kills_per_10_mins());
+    sqlite3_bind_double(stmt, 6, soldier76.get_hero_damage_done_per_10_mins());
+    sqlite3_bind_int(stmt, 7, soldier76.get_critical_hit_accuracy());
+    sqlite3_bind_double(stmt, 8, soldier76.get_critical_hits_per_10_mins());
+
+    // execute statement
+    return_code = sqlite3_step(stmt);
+    sql_step_check(return_code, soldier76_db);
+
+    // finalize and close all related files
+    sqlite3_finalize(stmt);
+    sqlite3_close(soldier76_db);
     return 0;
 }
 
 int insert_stats_into_tracerDatabase(std::string blizzard_ID, Heroes &tracer)
 {
-    tracer.printStats();
+    sqlite3 *tracer_db;
+    char *error_message = 0;
+    sqlite3_stmt *stmt;
+
+    int return_code = sqlite3_open("../databases/tracer.db", &tracer_db);
+    if (!sql_open_check(return_code, tracer_db))
+        return 1;
+    // sql command
+    const char *sql_insert = "INSERT INTO tracer (\"Blizzard_ID\", \"Name\", \"Deaths per 10 mins\", \"Final Blows per 10 mins\", \"Solo Kills per 10 mins\", \"Hero Damage Done per 10 mins\", \"Critical Hits per 10 mins\") VALUES (?,?,?,?,?,?,?);";
+    return_code = sqlite3_prepare_v2(tracer_db, sql_insert, -1, &stmt, nullptr);
+    if (!sql_prepare_check(return_code, tracer_db))
+        return 1;
+
+    // loading statements
+    sqlite3_bind_text(stmt, 1, blizzard_ID.c_str(), -1, SQLITE_TRANSIENT);
+    sqlite3_bind_text(stmt, 2, select_name_from_blizzard_ID_from_database(blizzard_ID).c_str(), -1, SQLITE_TRANSIENT);
+    sqlite3_bind_double(stmt, 3, tracer.get_deaths_per_10_mins());
+    sqlite3_bind_double(stmt, 4, tracer.get_final_blows_per_10_mins());
+    sqlite3_bind_double(stmt, 5, tracer.get_solo_kills_per_10_mins());
+    sqlite3_bind_double(stmt, 6, tracer.get_hero_damage_done_per_10_mins());
+    sqlite3_bind_double(stmt, 7, tracer.get_critical_hits_per_10_mins());
+
+    // execute statement
+    return_code = sqlite3_step(stmt);
+    sql_step_check(return_code, tracer_db);
+
+    // finalize and close all related files
+    sqlite3_finalize(stmt);
+    sqlite3_close(tracer_db);
     return 0;
 }
 
 int insert_stats_into_widowmakerDatabase(std::string blizzard_ID, Heroes &widowmaker)
 {
-    widowmaker.printStats();
+    sqlite3 *widowmaker_db;
+    char *error_message = 0;
+    sqlite3_stmt *stmt;
+
+    int return_code = sqlite3_open("../databases/widowmaker.db", &widowmaker_db);
+    if (!sql_open_check(return_code, widowmaker_db))
+        return 1;
+    // sql command
+    const char *sql_insert = "INSERT INTO widowmaker (\"Blizzard_ID\", \"Name\", \"Deaths per 10 mins\", \"Final Blows per 10 mins\", \"Solo Kills per 10 mins\", \"Hero Damage Done per 10 mins\", \"Scoped Accuracy\", \"Scoped Crit Accuracy\", \"Scoped Crit Hits per 10 mins\", \"Scoped Crit Kills per 10 mins\") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+
+    return_code = sqlite3_prepare_v2(widowmaker_db, sql_insert, -1, &stmt, nullptr);
+    if (!sql_prepare_check(return_code, widowmaker_db))
+        return 1;
+
+    // loading statements
+    sqlite3_bind_text(stmt, 1, blizzard_ID.c_str(), -1, SQLITE_TRANSIENT);
+    sqlite3_bind_text(stmt, 2, select_name_from_blizzard_ID_from_database(blizzard_ID).c_str(), -1, SQLITE_TRANSIENT);
+    sqlite3_bind_double(stmt, 3, widowmaker.get_deaths_per_10_mins());
+    sqlite3_bind_double(stmt, 4, widowmaker.get_final_blows_per_10_mins());
+    sqlite3_bind_double(stmt, 5, widowmaker.get_solo_kills_per_10_mins());
+    sqlite3_bind_double(stmt, 6, widowmaker.get_hero_damage_done_per_10_mins());
+    sqlite3_bind_int(stmt, 7, widowmaker.get_scoped_accuracy());
+    sqlite3_bind_int(stmt, 8, widowmaker.get_scoped_crit_accuracy());
+    sqlite3_bind_double(stmt, 9, widowmaker.get_scoped_crit_hits_per_10_mins());
+    sqlite3_bind_double(stmt, 10, widowmaker.get_scoped_crit_kills_per_10_mins());
+
+    // execute statement
+    return_code = sqlite3_step(stmt);
+    sql_step_check(return_code, widowmaker_db);
+
+    // finalize and close all related files
+    sqlite3_finalize(stmt);
+    sqlite3_close(widowmaker_db);
     return 0;
 }
 
@@ -183,7 +398,7 @@ int create_table()
     sqlite3 *DB;
     int exit = 0;
 
-    exit = sqlite3_open("../databases/tracer.db", &DB);
+    exit = sqlite3_open("../databases/widowmaker.db", &DB);
 
     if (exit)
     {
@@ -194,18 +409,21 @@ int create_table()
         std::cout << "Opened Database Successfully!" << std::endl;
 
     const char *sqlCreateTable = R"(
-    CREATE TABLE IF NOT EXISTS "tracer" (
-        "Entry" INTEGER NOT NULL UNIQUE,
-        "Blizzard_ID"   TEXT NOT NULL,
-        "Name"  TEXT NOT NULL,
-        "Deaths per 10 mins"    REAL NOT NULL,
-        "Final Blows per 10 mins"       REAL NOT NULL,
-        "Solo Kills per 10 mins"        REAL NOT NULL,
-        "Hero Damage Done per 10 mins"  REAL NOT NULL,
-        "Critical Hits per 10 mins"     REAL,
-        FOREIGN KEY("Blizzard_ID") REFERENCES "players"("Blizzard_ID"),
-        FOREIGN KEY("Name") REFERENCES "players"("Name"),
-        PRIMARY KEY("Entry" AUTOINCREMENT)
+    CREATE TABLE IF NOT EXISTS "widowmaker" (
+	"Entry"	INTEGER NOT NULL UNIQUE,
+	"Blizzard_ID"	TEXT NOT NULL,
+	"Name"	TEXT NOT NULL,
+	"Deaths per 10 mins"	REAL NOT NULL,
+	"Final Blows per 10 mins"	REAL NOT NULL,
+	"Solo Kills per 10 mins"	REAL NOT NULL,
+	"Hero Damage Done per 10 mins"	REAL NOT NULL,
+	"Scoped Accuracy"	INTEGER NOT NULL,
+	"Scoped Crit Accuracy"	INTEGER NOT NULL,
+	"Scoped Crit Hits per 10 mins"	REAL NOT NULL,
+	"Scoped Crit Kills per 10 mins"	REAL NOT NULL,
+	FOREIGN KEY("Blizzard_ID") REFERENCES "players"("Blizzard_ID"),
+	FOREIGN KEY("Name") REFERENCES "players"("Name"),
+	PRIMARY KEY("Entry" AUTOINCREMENT)
 );)";
 
     char *errMsg;
@@ -240,8 +458,10 @@ bool sql_prepare_check(int return_code, sqlite3 *db)
     return true;
 }
 
-bool sql_step_check(int return_code, sqlite3 *db) {
-    if (return_code != SQLITE_ROW && return_code != SQLITE_DONE) {
+bool sql_step_check(int return_code, sqlite3 *db)
+{
+    if (return_code != SQLITE_ROW && return_code != SQLITE_DONE)
+    {
         std::cerr << "Execution failed: " << sqlite3_errmsg(db) << std::endl;
         return false;
     }

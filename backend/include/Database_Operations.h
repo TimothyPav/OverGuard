@@ -8,6 +8,7 @@
 int create_table();
 int load_players_into_playersDatabase();
 
+int loop_over_blizzard_ID();
 int insert_hero_into_database(std::string blizzard_ID, Heroes& hero);
 std::string select_name_from_blizzard_ID_from_database(std::string blizzard_ID);
 
