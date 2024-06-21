@@ -15033,3 +15033,42 @@ events:
       variable: "run_result_unused"
       cached: true
 ...
+
+---
+events:
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "build/_deps/zlib-src/cmake/detect-arch.cmake:24 (try_run)"
+      - "build/_deps/zlib-src/CMakeLists.txt:49 (include)"
+    directories:
+      source: "/home/tim/OverGuard/backend/build/_deps/zlib-build/CMakeFiles/CMakeTmp"
+      binary: "/home/tim/OverGuard/backend/build/_deps/zlib-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/tim/OverGuard/backend/build/_deps/cpr-src/cmake;"
+    buildResult:
+      variable: "compile_result_unused"
+      cached: true
+      stdout: |
+        Change Dir: '/home/tim/OverGuard/backend/build/_deps/zlib-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_5bff2/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_5bff2.dir/build.make CMakeFiles/cmTC_5bff2.dir/build
+        gmake[1]: Entering directory '/home/tim/OverGuard/backend/build/_deps/zlib-build/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_5bff2.dir/detect-arch.c.o
+        /usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_5bff2.dir/detect-arch.c.o -c /home/tim/OverGuard/backend/build/_deps/zlib-src/cmake/detect-arch.c
+        /home/tim/OverGuard/backend/build/_deps/zlib-src/cmake/detect-arch.c:8:6: error: #error archfound x86_64
+            8 |     #error archfound x86_64
+              |      ^~~~~
+        gmake[1]: *** [CMakeFiles/cmTC_5bff2.dir/build.make:78: CMakeFiles/cmTC_5bff2.dir/detect-arch.c.o] Error 1
+        gmake[1]: Leaving directory '/home/tim/OverGuard/backend/build/_deps/zlib-build/CMakeFiles/CMakeTmp'
+        gmake: *** [Makefile:127: cmTC_5bff2/fast] Error 2
+        
+      exitCode: 2
+    runResult:
+      variable: "run_result_unused"
+      cached: true
+...

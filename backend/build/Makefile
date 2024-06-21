@@ -351,6 +351,30 @@ src/Heroes.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/src/Heroes.cpp.s
 .PHONY : src/Heroes.cpp.s
 
+src/JsonSerializer.o: src/JsonSerializer.cpp.o
+.PHONY : src/JsonSerializer.o
+
+# target to build an object file
+src/JsonSerializer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/src/JsonSerializer.cpp.o
+.PHONY : src/JsonSerializer.cpp.o
+
+src/JsonSerializer.i: src/JsonSerializer.cpp.i
+.PHONY : src/JsonSerializer.i
+
+# target to preprocess a source file
+src/JsonSerializer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/src/JsonSerializer.cpp.i
+.PHONY : src/JsonSerializer.cpp.i
+
+src/JsonSerializer.s: src/JsonSerializer.cpp.s
+.PHONY : src/JsonSerializer.s
+
+# target to generate assembly for a file
+src/JsonSerializer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/src/JsonSerializer.cpp.s
+.PHONY : src/JsonSerializer.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -406,6 +430,9 @@ help:
 	@echo "... src/Heroes.o"
 	@echo "... src/Heroes.i"
 	@echo "... src/Heroes.s"
+	@echo "... src/JsonSerializer.o"
+	@echo "... src/JsonSerializer.i"
+	@echo "... src/JsonSerializer.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

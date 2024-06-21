@@ -29,7 +29,7 @@ int loop_over_blizzard_ID()
         std::string blizzard_ID = reinterpret_cast<const char *>(sqlite3_column_text(stmt, 0));
         std::string name = select_name_from_blizzard_ID_from_database(blizzard_ID);
 
-        get_stats(blizzard_ID);
+        get_stats(blizzard_ID, true);
         std::cout << "INSERTED!!: " << name << " : " << blizzard_ID << std::endl;
     }
 
@@ -38,16 +38,8 @@ int loop_over_blizzard_ID()
     return 0;
 }
 
-int load_players_into_playersDatabase()
+int load_players_into_playersDatabase(std::string blizzard_ID)
 {
-    std::ifstream inputFile("../databases/player_ids.txt");
-
-    if (!inputFile.is_open())
-    {
-        std::cerr << "Error opening the file!" << std::endl;
-        return 1;
-    }
-
     sqlite3 *players_db;
     char *error_message = 0;
     sqlite3_stmt *stmt;
@@ -62,24 +54,15 @@ int load_players_into_playersDatabase()
     if (!sql_prepare_check(return_code, players_db))
         return 1;
 
-    std::string line; // variable to store each line
-    while (getline(inputFile, line))
-    {
-        std::string name = get_name_from_blizzard_ID(line);
-        if (name.size() > 0)
-        {
-            sqlite3_bind_text(stmt, 1, name.c_str(), -1, SQLITE_TRANSIENT);
-            sqlite3_bind_text(stmt, 2, line.c_str(), -1, SQLITE_TRANSIENT);
+    std::string name = get_name_from_blizzard_ID(blizzard_ID);
 
-            return_code = sqlite3_step(stmt);
-            sql_step_check(return_code, players_db);
-        }
+    sqlite3_bind_text(stmt, 1, name.c_str(), -1, SQLITE_TRANSIENT);
+    sqlite3_bind_text(stmt, 2, blizzard_ID.c_str(), -1, SQLITE_TRANSIENT);
 
-        sqlite3_reset(stmt);
-    }
+    return_code = sqlite3_step(stmt);
+    sql_step_check(return_code, players_db);
 
     // Close the file
-    inputFile.close();
     sqlite3_finalize(stmt);
     sqlite3_close(players_db);
     return 0;
@@ -123,6 +106,8 @@ std::string select_name_from_blizzard_ID_from_database(std::string blizzard_ID)
 
 int insert_hero_into_database(std::string blizzard_ID, Heroes &hero)
 {
+
+
     if (hero.get_hero_name() == "ashe")
         insert_stats_into_asheDatabase(blizzard_ID, hero);
     else if (hero.get_hero_name() == "cassidy")
@@ -149,6 +134,17 @@ int insert_stats_into_asheDatabase(std::string blizzard_ID, Heroes &ashe)
     int return_code = sqlite3_open("../databases/ashe.db", &ashe_db);
     if (!sql_open_check(return_code, ashe_db))
         return 1;
+    
+
+    // delete old entry if new (updated) one is being insterted
+    std::string sql_delete = "DELETE FROM ashe WHERE Blizzard_ID = ?";
+    int delete_return_code = sqlite3_prepare_v2(ashe_db, sql_delete.c_str(), -1, &stmt, nullptr);
+    if(!sql_prepare_check(delete_return_code, ashe_db)) return 1;
+    sqlite3_bind_text(stmt, 1, blizzard_ID.c_str(), -1, SQLITE_TRANSIENT);
+    delete_return_code = sqlite3_step(stmt);\
+    sql_step_check(delete_return_code, ashe_db);
+    sqlite3_reset(stmt);
+
     // sql command
     const char *sql_insert = "INSERT INTO ashe (\"Blizzard_ID\", \"Name\", \"Deaths per 10 mins\", \"Final Blows per 10 mins\", \"Solo Kills per 10 mins\", \"Hero Damage Done per 10 mins\", \"Scoped Accuracy\", \"Scoped Crit Accuracy\", \"Scoped Crit Hits per 10 mins\", \"Scoped Crit Kills per 10 mins\") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
@@ -187,6 +183,16 @@ int insert_stats_into_cassidyDatabase(std::string blizzard_ID, Heroes &cassidy)
     int return_code = sqlite3_open("../databases/cassidy.db", &cassidy_db);
     if (!sql_open_check(return_code, cassidy_db))
         return 1;
+    
+    // delete old entry if new (updated) one is being insterted
+    std::string sql_delete = "DELETE FROM cassidy WHERE Blizzard_ID = ?";
+    int delete_return_code = sqlite3_prepare_v2(cassidy_db, sql_delete.c_str(), -1, &stmt, nullptr);
+    if(!sql_prepare_check(delete_return_code, cassidy_db)) return 1;
+    sqlite3_bind_text(stmt, 1, blizzard_ID.c_str(), -1, SQLITE_TRANSIENT);
+    delete_return_code = sqlite3_step(stmt);\
+    sql_step_check(delete_return_code, cassidy_db);
+    sqlite3_reset(stmt);
+    
     // sql command
     const char *sql_insert = "INSERT INTO cassidy (\"Blizzard_ID\", \"Name\", \"Deaths per 10 mins\", \"Final Blows per 10 mins\", \"Solo Kills per 10 mins\", \"Hero Damage Done per 10 mins\", \"Critical Hit Accuracy\", \"Critical Hits per 10 mins\", \"Critical Hit kills per 10 mins\") VALUES (?,?,?,?,?,?,?,?,?);";
     return_code = sqlite3_prepare_v2(cassidy_db, sql_insert, -1, &stmt, nullptr);
@@ -223,6 +229,16 @@ int insert_stats_into_hanzoDatabase(std::string blizzard_ID, Heroes &hanzo)
     int return_code = sqlite3_open("../databases/hanzo.db", &hanzo_db);
     if (!sql_open_check(return_code, hanzo_db))
         return 1;
+
+    // delete old entry if new (updated) one is being insterted
+    std::string sql_delete = "DELETE FROM hanzo WHERE Blizzard_ID = ?";
+    int delete_return_code = sqlite3_prepare_v2(hanzo_db, sql_delete.c_str(), -1, &stmt, nullptr);
+    if(!sql_prepare_check(delete_return_code, hanzo_db)) return 1;
+    sqlite3_bind_text(stmt, 1, blizzard_ID.c_str(), -1, SQLITE_TRANSIENT);
+    delete_return_code = sqlite3_step(stmt);\
+    sql_step_check(delete_return_code, hanzo_db);
+    sqlite3_reset(stmt);
+
     // sql command
     const char *sql_insert = "INSERT INTO hanzo (\"Blizzard_ID\", \"Name\", \"Deaths per 10 mins\", \"Final Blows per 10 mins\", \"Solo Kills per 10 mins\", \"Hero Damage Done per 10 mins\", \"Critical Hit Accuracy\", \"Critical Hits per 10 mins\", \"Critical Hit kills per 10 mins\") VALUES (?,?,?,?,?,?,?,?,?);";
     return_code = sqlite3_prepare_v2(hanzo_db, sql_insert, -1, &stmt, nullptr);
@@ -259,6 +275,16 @@ int insert_stats_into_sojournDatabase(std::string blizzard_ID, Heroes &sojourn)
     int return_code = sqlite3_open("../databases/sojourn.db", &sojourn_db);
     if (!sql_open_check(return_code, sojourn_db))
         return 1;
+
+    // delete old entry if new (updated) one is being insterted
+    std::string sql_delete = "DELETE FROM sojourn WHERE Blizzard_ID = ?";
+    int delete_return_code = sqlite3_prepare_v2(sojourn_db, sql_delete.c_str(), -1, &stmt, nullptr);
+    if(!sql_prepare_check(delete_return_code, sojourn_db)) return 1;
+    sqlite3_bind_text(stmt, 1, blizzard_ID.c_str(), -1, SQLITE_TRANSIENT);
+    delete_return_code = sqlite3_step(stmt);\
+    sql_step_check(delete_return_code, sojourn_db);
+    sqlite3_reset(stmt);
+
     // sql command
     const char *sql_insert = "INSERT INTO sojourn (\"Blizzard_ID\", \"Name\", \"Deaths per 10 mins\", \"Final Blows per 10 mins\", \"Solo Kills per 10 mins\", \"Hero Damage Done per 10 mins\", \"Charged Shot Accuracy\", \"Charged Shot Crit Accuracy\", \"Charged Shot Kills per 10 mins\") VALUES (?,?,?,?,?,?,?,?,?);";
     return_code = sqlite3_prepare_v2(sojourn_db, sql_insert, -1, &stmt, nullptr);
@@ -295,6 +321,16 @@ int insert_stats_into_soldier76Database(std::string blizzard_ID, Heroes &soldier
     int return_code = sqlite3_open("../databases/soldier76.db", &soldier76_db);
     if (!sql_open_check(return_code, soldier76_db))
         return 1;
+    
+    // delete old entry if new (updated) one is being insterted
+    std::string sql_delete = "DELETE FROM soldier76 WHERE Blizzard_ID = ?";
+    int delete_return_code = sqlite3_prepare_v2(soldier76_db, sql_delete.c_str(), -1, &stmt, nullptr);
+    if(!sql_prepare_check(delete_return_code, soldier76_db)) return 1;
+    sqlite3_bind_text(stmt, 1, blizzard_ID.c_str(), -1, SQLITE_TRANSIENT);
+    delete_return_code = sqlite3_step(stmt);\
+    sql_step_check(delete_return_code, soldier76_db);
+    sqlite3_reset(stmt);
+    
     // sql command
     const char *sql_insert = "INSERT INTO soldier76 (\"Blizzard_ID\", \"Name\", \"Deaths per 10 mins\", \"Final Blows per 10 mins\", \"Solo Kills per 10 mins\", \"Hero Damage Done per 10 mins\", \"Critical Hit Accuracy\", \"Critical Hits per 10 mins\") VALUES (?,?,?,?,?,?,?,?);";
     return_code = sqlite3_prepare_v2(soldier76_db, sql_insert, -1, &stmt, nullptr);
@@ -330,6 +366,16 @@ int insert_stats_into_tracerDatabase(std::string blizzard_ID, Heroes &tracer)
     int return_code = sqlite3_open("../databases/tracer.db", &tracer_db);
     if (!sql_open_check(return_code, tracer_db))
         return 1;
+    
+    // delete old entry if new (updated) one is being insterted
+    std::string sql_delete = "DELETE FROM tracer WHERE Blizzard_ID = ?";
+    int delete_return_code = sqlite3_prepare_v2(tracer_db, sql_delete.c_str(), -1, &stmt, nullptr);
+    if(!sql_prepare_check(delete_return_code, tracer_db)) return 1;
+    sqlite3_bind_text(stmt, 1, blizzard_ID.c_str(), -1, SQLITE_TRANSIENT);
+    delete_return_code = sqlite3_step(stmt);\
+    sql_step_check(delete_return_code, tracer_db);
+    sqlite3_reset(stmt);
+    
     // sql command
     const char *sql_insert = "INSERT INTO tracer (\"Blizzard_ID\", \"Name\", \"Deaths per 10 mins\", \"Final Blows per 10 mins\", \"Solo Kills per 10 mins\", \"Hero Damage Done per 10 mins\", \"Critical Hits per 10 mins\") VALUES (?,?,?,?,?,?,?);";
     return_code = sqlite3_prepare_v2(tracer_db, sql_insert, -1, &stmt, nullptr);
@@ -364,6 +410,16 @@ int insert_stats_into_widowmakerDatabase(std::string blizzard_ID, Heroes &widowm
     int return_code = sqlite3_open("../databases/widowmaker.db", &widowmaker_db);
     if (!sql_open_check(return_code, widowmaker_db))
         return 1;
+    
+    // delete old entry if new (updated) one is being insterted
+    std::string sql_delete = "DELETE FROM widowmaker WHERE Blizzard_ID = ?";
+    int delete_return_code = sqlite3_prepare_v2(widowmaker_db, sql_delete.c_str(), -1, &stmt, nullptr);
+    if(!sql_prepare_check(delete_return_code, widowmaker_db)) return 1;
+    sqlite3_bind_text(stmt, 1, blizzard_ID.c_str(), -1, SQLITE_TRANSIENT);
+    delete_return_code = sqlite3_step(stmt);\
+    sql_step_check(delete_return_code, widowmaker_db);
+    sqlite3_reset(stmt);
+    
     // sql command
     const char *sql_insert = "INSERT INTO widowmaker (\"Blizzard_ID\", \"Name\", \"Deaths per 10 mins\", \"Final Blows per 10 mins\", \"Solo Kills per 10 mins\", \"Hero Damage Done per 10 mins\", \"Scoped Accuracy\", \"Scoped Crit Accuracy\", \"Scoped Crit Hits per 10 mins\", \"Scoped Crit Kills per 10 mins\") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 

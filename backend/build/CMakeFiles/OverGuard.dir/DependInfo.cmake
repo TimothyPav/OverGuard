@@ -12,6 +12,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/tim/OverGuard/backend/src/APIHandler.cpp" "CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o" "gcc" "CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o.d"
   "/home/tim/OverGuard/backend/src/Database_Operations.cpp" "CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o" "gcc" "CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o.d"
   "/home/tim/OverGuard/backend/src/Heroes.cpp" "CMakeFiles/OverGuard.dir/src/Heroes.cpp.o" "gcc" "CMakeFiles/OverGuard.dir/src/Heroes.cpp.o.d"
+  "/home/tim/OverGuard/backend/src/JsonSerializer.cpp" "CMakeFiles/OverGuard.dir/src/JsonSerializer.cpp.o" "gcc" "CMakeFiles/OverGuard.dir/src/JsonSerializer.cpp.o.d"
   "/home/tim/OverGuard/backend/src/main.cpp" "CMakeFiles/OverGuard.dir/src/main.cpp.o" "gcc" "CMakeFiles/OverGuard.dir/src/main.cpp.o.d"
   )
 

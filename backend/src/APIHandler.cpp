@@ -8,6 +8,9 @@
 #include <string>
 #include <variant>
 #include <cmath>
+#include <array>
+#include <memory>
+#include <optional>
 
 using json = nlohmann::json;
 
@@ -78,7 +81,7 @@ std::string get_blizzard_ID_from_name(const std::string name)
     return "";
 }
 
-void get_stats(const std::string &blizzard_ID)
+std::optional<std::array<std::unique_ptr<Heroes>, 7>> get_stats(const std::string &blizzard_ID, const bool store_in_database)
 {
     std::string url = BASE_OVERFAST_API_URL "/" + blizzard_ID + "/stats?gamemode=competitive&platform=pc";
 
@@ -87,7 +90,8 @@ void get_stats(const std::string &blizzard_ID)
     if (r.status_code != 200)
     {
         std::cout << "Error finding player. Status code: " << r.status_code << std::endl;
-        return;
+        std::array<std::unique_ptr<Heroes>, 7> error;
+        return std::nullopt;
     }
 
     json j = json::parse(r.text);
@@ -173,7 +177,8 @@ void get_stats(const std::string &blizzard_ID)
                 }
             }
         }
-        if (hero->get_is_enough_playtime())
+        if (store_in_database && hero->get_is_enough_playtime())
             insert_hero_into_database(blizzard_ID, *hero);
     }
+    return heroes;
 }

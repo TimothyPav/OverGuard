@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o.d"
   "CMakeFiles/OverGuard.dir/src/Heroes.cpp.o"
   "CMakeFiles/OverGuard.dir/src/Heroes.cpp.o.d"
+  "CMakeFiles/OverGuard.dir/src/JsonSerializer.cpp.o"
+  "CMakeFiles/OverGuard.dir/src/JsonSerializer.cpp.o.d"
   "CMakeFiles/OverGuard.dir/src/main.cpp.o"
   "CMakeFiles/OverGuard.dir/src/main.cpp.o.d"
   "OverGuard"

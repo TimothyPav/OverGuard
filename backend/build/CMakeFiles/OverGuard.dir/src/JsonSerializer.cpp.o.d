@@ -1,5 +1,5 @@
-CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o: \
- /home/tim/OverGuard/backend/src/APIHandler.cpp \
+CMakeFiles/OverGuard.dir/src/JsonSerializer.cpp.o: \
+ /home/tim/OverGuard/backend/src/JsonSerializer.cpp \
  /usr/include/stdc-predef.h \
  /home/tim/OverGuard/backend/include/API_Handler.h \
  /home/tim/OverGuard/backend/include/Heroes.h /usr/include/c++/13/string \
@@ -203,139 +203,13 @@ CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o: \
  /usr/include/c++/13/pstl/glue_memory_defs.h \
  /usr/include/c++/13/pstl/execution_defs.h /usr/include/c++/13/optional \
  /home/tim/OverGuard/backend/include/Heroes.h \
- /home/tim/OverGuard/backend/include/Database_Operations.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/cpr.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/api.h \
- /usr/include/c++/13/fstream /usr/include/c++/13/bits/codecvt.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
- /usr/include/c++/13/bits/fstream.tcc /usr/include/c++/13/future \
- /usr/include/c++/13/mutex /usr/include/c++/13/bits/chrono.h \
- /usr/include/c++/13/ratio /usr/include/c++/13/cstdint \
- /usr/include/c++/13/limits /usr/include/c++/13/ctime \
- /usr/include/c++/13/bits/std_mutex.h \
- /usr/include/c++/13/bits/unique_lock.h \
- /usr/include/c++/13/condition_variable \
- /usr/include/c++/13/bits/atomic_futex.h /usr/include/c++/13/atomic \
- /usr/include/c++/13/bits/std_thread.h /usr/include/c++/13/utility \
- /usr/include/c++/13/bits/stl_relops.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/async.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/async_wrapper.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/response.h \
- /usr/include/c++/13/cassert /usr/include/assert.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/cert_info.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/cookies.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/curlholder.h \
- /home/tim/OverGuard/backend/build/_deps/curl-src/include/curl/curl.h \
- /home/tim/OverGuard/backend/build/_deps/curl-src/include/curl/curlver.h \
- /home/tim/OverGuard/backend/build/_deps/curl-src/include/curl/system.h \
- /usr/include/x86_64-linux-gnu/sys/socket.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
- /usr/include/x86_64-linux-gnu/bits/socket.h \
- /usr/include/x86_64-linux-gnu/bits/socket_type.h \
- /usr/include/x86_64-linux-gnu/bits/sockaddr.h \
- /usr/include/x86_64-linux-gnu/asm/socket.h \
- /usr/include/asm-generic/socket.h /usr/include/linux/posix_types.h \
- /usr/include/linux/stddef.h \
- /usr/include/x86_64-linux-gnu/asm/posix_types.h \
- /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
- /usr/include/asm-generic/posix_types.h \
- /usr/include/x86_64-linux-gnu/asm/bitsperlong.h \
- /usr/include/asm-generic/bitsperlong.h \
- /usr/include/x86_64-linux-gnu/asm/sockios.h \
- /usr/include/asm-generic/sockios.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
- /usr/include/x86_64-linux-gnu/bits/socket2.h \
- /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h \
- /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h \
- /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
- /usr/include/x86_64-linux-gnu/bits/local_lim.h \
- /usr/include/linux/limits.h \
- /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
- /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
- /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
- /usr/include/x86_64-linux-gnu/sys/time.h \
- /home/tim/OverGuard/backend/build/_deps/curl-src/include/curl/easy.h \
- /home/tim/OverGuard/backend/build/_deps/curl-src/include/curl/multi.h \
- /home/tim/OverGuard/backend/build/_deps/curl-src/include/curl/curl.h \
- /home/tim/OverGuard/backend/build/_deps/curl-src/include/curl/urlapi.h \
- /home/tim/OverGuard/backend/build/_deps/curl-src/include/curl/options.h \
- /home/tim/OverGuard/backend/build/_deps/curl-src/include/curl/header.h \
- /home/tim/OverGuard/backend/build/_deps/curl-src/include/curl/websockets.h \
- /usr/include/c++/13/chrono /usr/include/c++/13/sstream \
- /usr/include/c++/13/bits/sstream.tcc \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/cprtypes.h \
- /home/tim/OverGuard/backend/build/_deps/curl-src/include/curl/system.h \
- /usr/include/c++/13/numeric /usr/include/c++/13/bits/stl_numeric.h \
- /usr/include/c++/13/pstl/glue_numeric_defs.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/error.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/ssl_options.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/filesystem.h \
- /usr/include/c++/13/filesystem /usr/include/c++/13/bits/fs_fwd.h \
- /usr/include/c++/13/bits/fs_path.h /usr/include/c++/13/locale \
- /usr/include/c++/13/bits/locale_facets_nonio.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h \
- /usr/include/libintl.h /usr/include/c++/13/bits/locale_facets_nonio.tcc \
- /usr/include/c++/13/bits/locale_conv.h /usr/include/c++/13/iomanip \
- /usr/include/c++/13/bits/quoted_string.h /usr/include/c++/13/codecvt \
- /usr/include/c++/13/bits/fs_dir.h /usr/include/c++/13/bits/fs_ops.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/util.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/callback.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/cprtypes.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/singleton.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/threadpool.h \
- /usr/include/c++/13/list /usr/include/c++/13/bits/stl_list.h \
- /usr/include/c++/13/bits/list.tcc /usr/include/c++/13/queue \
- /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_deque.h \
- /usr/include/c++/13/bits/deque.tcc /usr/include/c++/13/bits/stl_queue.h \
- /usr/include/c++/13/thread /usr/include/c++/13/bits/this_thread_sleep.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/async_wrapper.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/auth.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/bearer.h \
- /home/tim/OverGuard/backend/build/_deps/curl-src/include/curl/curlver.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/multipart.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/buffer.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/file.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/multiperform.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/curlmultiholder.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/session.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/accept_encoding.h \
- /usr/include/c++/13/unordered_set \
- /usr/include/c++/13/bits/unordered_set.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/body.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/buffer.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/file.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/connect_timeout.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/timeout.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/http_version.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/interface.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/limit_rate.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/local_port.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/local_port_range.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/low_speed.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/parameters.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/curl_container.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/payload.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/proxies.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/proxyauth.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/range.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/redirect.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/reserve_size.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/resolve.h \
- /usr/include/c++/13/set /usr/include/c++/13/bits/stl_set.h \
- /usr/include/c++/13/bits/stl_multiset.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/unix_socket.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/user_agent.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/verbose.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-build/cpr_generated_includes/cpr/cprver.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/interceptor.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/ssl_ctx.h \
- /home/tim/OverGuard/backend/build/_deps/cpr-src/include/cpr/status_codes.h \
+ /home/tim/OverGuard/backend/include/JsonSerializer.h \
+ /home/tim/OverGuard/backend/include/API_Handler.h \
  /home/tim/OverGuard/backend/build/_deps/json-src/include/nlohmann/json.hpp \
  /usr/include/c++/13/algorithm \
  /usr/include/c++/13/pstl/glue_algorithm_defs.h \
  /usr/include/c++/13/iterator /usr/include/c++/13/bits/stream_iterator.h \
+ /usr/include/c++/13/utility /usr/include/c++/13/bits/stl_relops.h \
  /home/tim/OverGuard/backend/build/_deps/json-src/include/nlohmann/adl_serializer.hpp \
  /home/tim/OverGuard/backend/build/_deps/json-src/include/nlohmann/detail/abi_macros.hpp \
  /home/tim/OverGuard/backend/build/_deps/json-src/include/nlohmann/detail/conversions/from_json.hpp \
@@ -351,7 +225,8 @@ CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
- /usr/include/c++/13/bits/specfun.h /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/bits/specfun.h /usr/include/c++/13/limits \
+ /usr/include/c++/13/tr1/gamma.tcc \
  /usr/include/c++/13/tr1/special_function_util.h \
  /usr/include/c++/13/tr1/bessel_function.tcc \
  /usr/include/c++/13/tr1/beta_function.tcc \
@@ -374,11 +249,13 @@ CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o: \
  /usr/include/c++/13/bits/indirect_array.h \
  /home/tim/OverGuard/backend/build/_deps/json-src/include/nlohmann/detail/exceptions.hpp \
  /home/tim/OverGuard/backend/build/_deps/json-src/include/nlohmann/detail/value_t.hpp \
+ /usr/include/c++/13/cstdint \
  /home/tim/OverGuard/backend/build/_deps/json-src/include/nlohmann/detail/macro_scope.hpp \
  /home/tim/OverGuard/backend/build/_deps/json-src/include/nlohmann/detail/meta/detected.hpp \
  /home/tim/OverGuard/backend/build/_deps/json-src/include/nlohmann/detail/meta/void_t.hpp \
  /home/tim/OverGuard/backend/build/_deps/json-src/include/nlohmann/thirdparty/hedley/hedley.hpp \
- /usr/include/c++/13/version \
+ /usr/include/c++/13/version /usr/include/c++/13/cassert \
+ /usr/include/assert.h \
  /home/tim/OverGuard/backend/build/_deps/json-src/include/nlohmann/detail/string_escape.hpp \
  /home/tim/OverGuard/backend/build/_deps/json-src/include/nlohmann/detail/input/position_t.hpp \
  /home/tim/OverGuard/backend/build/_deps/json-src/include/nlohmann/detail/meta/cpp_future.hpp \
@@ -393,12 +270,27 @@ CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
  /home/tim/OverGuard/backend/build/_deps/json-src/include/nlohmann/detail/meta/identity_tag.hpp \
  /home/tim/OverGuard/backend/build/_deps/json-src/include/nlohmann/detail/meta/std_fs.hpp \
+ /usr/include/c++/13/filesystem /usr/include/c++/13/bits/fs_fwd.h \
+ /usr/include/c++/13/bits/chrono.h /usr/include/c++/13/ratio \
+ /usr/include/c++/13/ctime /usr/include/c++/13/bits/fs_path.h \
+ /usr/include/c++/13/locale \
+ /usr/include/c++/13/bits/locale_facets_nonio.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/13/bits/codecvt.h \
+ /usr/include/c++/13/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/13/bits/locale_conv.h /usr/include/c++/13/iomanip \
+ /usr/include/c++/13/bits/quoted_string.h /usr/include/c++/13/sstream \
+ /usr/include/c++/13/bits/sstream.tcc /usr/include/c++/13/codecvt \
+ /usr/include/c++/13/bits/fs_dir.h /usr/include/c++/13/bits/fs_ops.h \
  /home/tim/OverGuard/backend/build/_deps/json-src/include/nlohmann/detail/conversions/to_json.hpp \
  /home/tim/OverGuard/backend/build/_deps/json-src/include/nlohmann/detail/iterators/iteration_proxy.hpp \
  /home/tim/OverGuard/backend/build/_deps/json-src/include/nlohmann/byte_container_with_subtype.hpp \
  /home/tim/OverGuard/backend/build/_deps/json-src/include/nlohmann/detail/hash.hpp \
  /home/tim/OverGuard/backend/build/_deps/json-src/include/nlohmann/detail/input/binary_reader.hpp \
  /home/tim/OverGuard/backend/build/_deps/json-src/include/nlohmann/detail/input/input_adapters.hpp \
+ /usr/include/c++/13/numeric /usr/include/c++/13/bits/stl_numeric.h \
+ /usr/include/c++/13/pstl/glue_numeric_defs.h \
  /home/tim/OverGuard/backend/build/_deps/json-src/include/nlohmann/detail/input/json_sax.hpp \
  /home/tim/OverGuard/backend/build/_deps/json-src/include/nlohmann/detail/input/lexer.hpp \
  /home/tim/OverGuard/backend/build/_deps/json-src/include/nlohmann/detail/meta/is_sax.hpp \
