@@ -6,7 +6,7 @@
 #include <string>
 
 int create_table();
-int load_players_into_playersDatabase();
+int load_players_into_playersDatabase(std::string blizzard_ID);
 
 int loop_over_blizzard_ID();
 int insert_hero_into_database(std::string blizzard_ID, Heroes& hero);

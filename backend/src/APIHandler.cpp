@@ -70,6 +70,7 @@ std::string get_blizzard_ID_from_name(const std::string name)
                     {
                         if (j2["summary"]["competitive"]["pc"]["season"] >= 10)
                         {
+                            load_players_into_playersDatabase(blizzard_ID);
                             return blizzard_ID;
                         }
                     }

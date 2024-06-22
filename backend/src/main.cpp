@@ -18,6 +18,7 @@ int main(int argc, char** argv) {
     //load_players_into_playersDatabase(); 
     //loop_over_blizzard_ID();
 
-    nlohmann::json j = serialize_player_input("Hydron-11348");
+    json j;
+    j = serialize_player_input("Cash-11893");
     std::cout << j << "\n";
 }

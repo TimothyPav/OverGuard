@@ -16,8 +16,12 @@ class Heroes {
         double hero_damage_done_per_10_mins;
         bool is_enough_playtime;
 
+        
+
     public:
         Heroes() {}
+
+        std::map<std::string, std::function<std::variant<int, double>()>> getters;
 
         // setters
         void set_deaths_per_10_mins(double deaths);
@@ -48,6 +52,7 @@ class Heroes {
         virtual double get_charged_shot_kills_per_10_mins() const;
 
         virtual void printStats();
+        virtual void initialize_getters();
 };
 
 class Widowmaker : public Heroes {
