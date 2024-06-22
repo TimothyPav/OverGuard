@@ -97,19 +97,19 @@ CMakeFiles/OverGuard.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OverGuard.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tim/OverGuard/backend/src/main.cpp -o CMakeFiles/OverGuard.dir/src/main.cpp.s
 
-CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o: CMakeFiles/OverGuard.dir/flags.make
-CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o: /home/tim/OverGuard/backend/src/APIHandler.cpp
-CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o: CMakeFiles/OverGuard.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tim/OverGuard/backend/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o -MF CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o.d -o CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o -c /home/tim/OverGuard/backend/src/APIHandler.cpp
+CMakeFiles/OverGuard.dir/src/API_Handler.cpp.o: CMakeFiles/OverGuard.dir/flags.make
+CMakeFiles/OverGuard.dir/src/API_Handler.cpp.o: /home/tim/OverGuard/backend/src/API_Handler.cpp
+CMakeFiles/OverGuard.dir/src/API_Handler.cpp.o: CMakeFiles/OverGuard.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tim/OverGuard/backend/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/OverGuard.dir/src/API_Handler.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OverGuard.dir/src/API_Handler.cpp.o -MF CMakeFiles/OverGuard.dir/src/API_Handler.cpp.o.d -o CMakeFiles/OverGuard.dir/src/API_Handler.cpp.o -c /home/tim/OverGuard/backend/src/API_Handler.cpp
 
-CMakeFiles/OverGuard.dir/src/APIHandler.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/OverGuard.dir/src/APIHandler.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tim/OverGuard/backend/src/APIHandler.cpp > CMakeFiles/OverGuard.dir/src/APIHandler.cpp.i
+CMakeFiles/OverGuard.dir/src/API_Handler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/OverGuard.dir/src/API_Handler.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tim/OverGuard/backend/src/API_Handler.cpp > CMakeFiles/OverGuard.dir/src/API_Handler.cpp.i
 
-CMakeFiles/OverGuard.dir/src/APIHandler.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OverGuard.dir/src/APIHandler.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tim/OverGuard/backend/src/APIHandler.cpp -o CMakeFiles/OverGuard.dir/src/APIHandler.cpp.s
+CMakeFiles/OverGuard.dir/src/API_Handler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OverGuard.dir/src/API_Handler.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tim/OverGuard/backend/src/API_Handler.cpp -o CMakeFiles/OverGuard.dir/src/API_Handler.cpp.s
 
 CMakeFiles/OverGuard.dir/src/Heroes.cpp.o: CMakeFiles/OverGuard.dir/flags.make
 CMakeFiles/OverGuard.dir/src/Heroes.cpp.o: /home/tim/OverGuard/backend/src/Heroes.cpp
@@ -125,19 +125,19 @@ CMakeFiles/OverGuard.dir/src/Heroes.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OverGuard.dir/src/Heroes.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tim/OverGuard/backend/src/Heroes.cpp -o CMakeFiles/OverGuard.dir/src/Heroes.cpp.s
 
-CMakeFiles/OverGuard.dir/src/JsonSerializer.cpp.o: CMakeFiles/OverGuard.dir/flags.make
-CMakeFiles/OverGuard.dir/src/JsonSerializer.cpp.o: /home/tim/OverGuard/backend/src/JsonSerializer.cpp
-CMakeFiles/OverGuard.dir/src/JsonSerializer.cpp.o: CMakeFiles/OverGuard.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tim/OverGuard/backend/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/OverGuard.dir/src/JsonSerializer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OverGuard.dir/src/JsonSerializer.cpp.o -MF CMakeFiles/OverGuard.dir/src/JsonSerializer.cpp.o.d -o CMakeFiles/OverGuard.dir/src/JsonSerializer.cpp.o -c /home/tim/OverGuard/backend/src/JsonSerializer.cpp
+CMakeFiles/OverGuard.dir/src/Json_Serializer.cpp.o: CMakeFiles/OverGuard.dir/flags.make
+CMakeFiles/OverGuard.dir/src/Json_Serializer.cpp.o: /home/tim/OverGuard/backend/src/Json_Serializer.cpp
+CMakeFiles/OverGuard.dir/src/Json_Serializer.cpp.o: CMakeFiles/OverGuard.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tim/OverGuard/backend/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/OverGuard.dir/src/Json_Serializer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OverGuard.dir/src/Json_Serializer.cpp.o -MF CMakeFiles/OverGuard.dir/src/Json_Serializer.cpp.o.d -o CMakeFiles/OverGuard.dir/src/Json_Serializer.cpp.o -c /home/tim/OverGuard/backend/src/Json_Serializer.cpp
 
-CMakeFiles/OverGuard.dir/src/JsonSerializer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/OverGuard.dir/src/JsonSerializer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tim/OverGuard/backend/src/JsonSerializer.cpp > CMakeFiles/OverGuard.dir/src/JsonSerializer.cpp.i
+CMakeFiles/OverGuard.dir/src/Json_Serializer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/OverGuard.dir/src/Json_Serializer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tim/OverGuard/backend/src/Json_Serializer.cpp > CMakeFiles/OverGuard.dir/src/Json_Serializer.cpp.i
 
-CMakeFiles/OverGuard.dir/src/JsonSerializer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OverGuard.dir/src/JsonSerializer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tim/OverGuard/backend/src/JsonSerializer.cpp -o CMakeFiles/OverGuard.dir/src/JsonSerializer.cpp.s
+CMakeFiles/OverGuard.dir/src/Json_Serializer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OverGuard.dir/src/Json_Serializer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tim/OverGuard/backend/src/Json_Serializer.cpp -o CMakeFiles/OverGuard.dir/src/Json_Serializer.cpp.s
 
 CMakeFiles/OverGuard.dir/lib/sqlite/sqlite3.c.o: CMakeFiles/OverGuard.dir/flags.make
 CMakeFiles/OverGuard.dir/lib/sqlite/sqlite3.c.o: /home/tim/OverGuard/backend/lib/sqlite/sqlite3.c
@@ -157,9 +157,9 @@ CMakeFiles/OverGuard.dir/lib/sqlite/sqlite3.c.s: cmake_force
 OverGuard_OBJECTS = \
 "CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o" \
 "CMakeFiles/OverGuard.dir/src/main.cpp.o" \
-"CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o" \
+"CMakeFiles/OverGuard.dir/src/API_Handler.cpp.o" \
 "CMakeFiles/OverGuard.dir/src/Heroes.cpp.o" \
-"CMakeFiles/OverGuard.dir/src/JsonSerializer.cpp.o" \
+"CMakeFiles/OverGuard.dir/src/Json_Serializer.cpp.o" \
 "CMakeFiles/OverGuard.dir/lib/sqlite/sqlite3.c.o"
 
 # External object files for target OverGuard
@@ -167,9 +167,9 @@ OverGuard_EXTERNAL_OBJECTS =
 
 OverGuard: CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o
 OverGuard: CMakeFiles/OverGuard.dir/src/main.cpp.o
-OverGuard: CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o
+OverGuard: CMakeFiles/OverGuard.dir/src/API_Handler.cpp.o
 OverGuard: CMakeFiles/OverGuard.dir/src/Heroes.cpp.o
-OverGuard: CMakeFiles/OverGuard.dir/src/JsonSerializer.cpp.o
+OverGuard: CMakeFiles/OverGuard.dir/src/Json_Serializer.cpp.o
 OverGuard: CMakeFiles/OverGuard.dir/lib/sqlite/sqlite3.c.o
 OverGuard: CMakeFiles/OverGuard.dir/build.make
 OverGuard: _deps/cpr-build/cpr/libcpr.so.1.10.5

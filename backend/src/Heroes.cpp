@@ -20,7 +20,6 @@ double Heroes::get_solo_kills_per_10_mins() { return this->solo_kills_per_10_min
 double Heroes::get_hero_damage_done_per_10_mins() { return this->hero_damage_done_per_10_mins; }
 bool Heroes::get_is_enough_playtime() { return this->is_enough_playtime; }
 std::string Heroes::get_hero_name() const { return "hero_name"; }
-// std::map<std::string, std::function<int()>> Heroes::get_getters() const { return getters; }
 //  hero stats to be overriden...
 int Heroes::get_scoped_accuracy() const { return 0; }
 int Heroes::get_scoped_crit_accuracy() const { return 0; }

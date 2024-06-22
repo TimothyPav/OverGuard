@@ -1,6 +1,6 @@
 #include "API_Handler.h"
 #include "Heroes.h"
-#include "JsonSerializer.h"
+#include "Json_Serializer.h"
 
 #include <iostream>
 #include <nlohmann/json.hpp>
@@ -9,6 +9,13 @@
 #include <memory>
 #include <optional>
 #include <variant>
+#include <map>
+
+
+nlohmann::json serialize_specific_hero_stat(std::string hero_name, std::string column){
+    std::unordered_map<std::string, std::variant<int, double>> stat_map = get_column(hero_name, column);
+    if(stat_map.empty()) return {};
+}
 
 nlohmann::json serialize_player_input(std::string player_id)
 {

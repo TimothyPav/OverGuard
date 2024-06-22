@@ -1,7 +1,7 @@
 #include "API_Handler.h"
 #include "Database_Operations.h"
 #include "Heroes.h"
-#include "JsonSerializer.h"
+#include "Json_Serializer.h"
 
 #include <iostream>
 #include <cpr/cpr.h>
@@ -9,6 +9,7 @@
 #include <string>
 #include <map>
 #include <variant>
+#include <crow.h>
 
 using json = nlohmann::json;
 
@@ -18,7 +19,5 @@ int main(int argc, char** argv) {
     //load_players_into_playersDatabase(); 
     //loop_over_blizzard_ID();
 
-    json j;
-    j = serialize_player_input("Cash-11893");
-    std::cout << j << "\n";
+    get_column("widowmaker", "Solo Kills per 10 mins");
 }

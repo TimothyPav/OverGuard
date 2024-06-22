@@ -279,29 +279,29 @@ lib/sqlite/sqlite3.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/lib/sqlite/sqlite3.c.s
 .PHONY : lib/sqlite/sqlite3.c.s
 
-src/APIHandler.o: src/APIHandler.cpp.o
-.PHONY : src/APIHandler.o
+src/API_Handler.o: src/API_Handler.cpp.o
+.PHONY : src/API_Handler.o
 
 # target to build an object file
-src/APIHandler.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/src/APIHandler.cpp.o
-.PHONY : src/APIHandler.cpp.o
+src/API_Handler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/src/API_Handler.cpp.o
+.PHONY : src/API_Handler.cpp.o
 
-src/APIHandler.i: src/APIHandler.cpp.i
-.PHONY : src/APIHandler.i
+src/API_Handler.i: src/API_Handler.cpp.i
+.PHONY : src/API_Handler.i
 
 # target to preprocess a source file
-src/APIHandler.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/src/APIHandler.cpp.i
-.PHONY : src/APIHandler.cpp.i
+src/API_Handler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/src/API_Handler.cpp.i
+.PHONY : src/API_Handler.cpp.i
 
-src/APIHandler.s: src/APIHandler.cpp.s
-.PHONY : src/APIHandler.s
+src/API_Handler.s: src/API_Handler.cpp.s
+.PHONY : src/API_Handler.s
 
 # target to generate assembly for a file
-src/APIHandler.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/src/APIHandler.cpp.s
-.PHONY : src/APIHandler.cpp.s
+src/API_Handler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/src/API_Handler.cpp.s
+.PHONY : src/API_Handler.cpp.s
 
 src/Database_Operations.o: src/Database_Operations.cpp.o
 .PHONY : src/Database_Operations.o
@@ -351,29 +351,29 @@ src/Heroes.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/src/Heroes.cpp.s
 .PHONY : src/Heroes.cpp.s
 
-src/JsonSerializer.o: src/JsonSerializer.cpp.o
-.PHONY : src/JsonSerializer.o
+src/Json_Serializer.o: src/Json_Serializer.cpp.o
+.PHONY : src/Json_Serializer.o
 
 # target to build an object file
-src/JsonSerializer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/src/JsonSerializer.cpp.o
-.PHONY : src/JsonSerializer.cpp.o
+src/Json_Serializer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/src/Json_Serializer.cpp.o
+.PHONY : src/Json_Serializer.cpp.o
 
-src/JsonSerializer.i: src/JsonSerializer.cpp.i
-.PHONY : src/JsonSerializer.i
+src/Json_Serializer.i: src/Json_Serializer.cpp.i
+.PHONY : src/Json_Serializer.i
 
 # target to preprocess a source file
-src/JsonSerializer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/src/JsonSerializer.cpp.i
-.PHONY : src/JsonSerializer.cpp.i
+src/Json_Serializer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/src/Json_Serializer.cpp.i
+.PHONY : src/Json_Serializer.cpp.i
 
-src/JsonSerializer.s: src/JsonSerializer.cpp.s
-.PHONY : src/JsonSerializer.s
+src/Json_Serializer.s: src/Json_Serializer.cpp.s
+.PHONY : src/Json_Serializer.s
 
 # target to generate assembly for a file
-src/JsonSerializer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/src/JsonSerializer.cpp.s
-.PHONY : src/JsonSerializer.cpp.s
+src/Json_Serializer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/src/Json_Serializer.cpp.s
+.PHONY : src/Json_Serializer.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -421,18 +421,18 @@ help:
 	@echo "... lib/sqlite/sqlite3.o"
 	@echo "... lib/sqlite/sqlite3.i"
 	@echo "... lib/sqlite/sqlite3.s"
-	@echo "... src/APIHandler.o"
-	@echo "... src/APIHandler.i"
-	@echo "... src/APIHandler.s"
+	@echo "... src/API_Handler.o"
+	@echo "... src/API_Handler.i"
+	@echo "... src/API_Handler.s"
 	@echo "... src/Database_Operations.o"
 	@echo "... src/Database_Operations.i"
 	@echo "... src/Database_Operations.s"
 	@echo "... src/Heroes.o"
 	@echo "... src/Heroes.i"
 	@echo "... src/Heroes.s"
-	@echo "... src/JsonSerializer.o"
-	@echo "... src/JsonSerializer.i"
-	@echo "... src/JsonSerializer.s"
+	@echo "... src/Json_Serializer.o"
+	@echo "... src/Json_Serializer.i"
+	@echo "... src/Json_Serializer.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

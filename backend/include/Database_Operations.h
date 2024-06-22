@@ -4,9 +4,13 @@
 #include "Heroes.h"
 
 #include <string>
+#include <map>
+#include <variant>
 
 int create_table();
 int load_players_into_playersDatabase(std::string blizzard_ID);
+
+std::unordered_map<std::string, std::variant<int, double>> get_column(const std::string hero_name, const std::string column);
 
 int loop_over_blizzard_ID();
 int insert_hero_into_database(std::string blizzard_ID, Heroes& hero);
