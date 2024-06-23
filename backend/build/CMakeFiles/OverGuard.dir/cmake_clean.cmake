@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/OverGuard.dir/lib/sqlite/sqlite3.c.o.d"
   "CMakeFiles/OverGuard.dir/src/API_Handler.cpp.o"
   "CMakeFiles/OverGuard.dir/src/API_Handler.cpp.o.d"
+  "CMakeFiles/OverGuard.dir/src/Crow_Routes.cpp.o"
+  "CMakeFiles/OverGuard.dir/src/Crow_Routes.cpp.o.d"
   "CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o"
   "CMakeFiles/OverGuard.dir/src/Database_Operations.cpp.o.d"
   "CMakeFiles/OverGuard.dir/src/Heroes.cpp.o"

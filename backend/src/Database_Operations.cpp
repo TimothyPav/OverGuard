@@ -40,7 +40,7 @@ std::unordered_map<std::string, std::variant<int, double>> get_column(const std:
         else
             stat = sqlite3_column_double(stmt, 0);
         const char *name = reinterpret_cast<const char *>(sqlite3_column_text(stmt, 1));
-        stat_map[column] = stat;
+        stat_map[name] = stat;
     }
 
     sqlite3_finalize(stmt);

@@ -28,7 +28,9 @@ add_library(sqlite STATIC lib/sqlite/sqlite3.c)
 target_include_directories(sqlite PUBLIC ${CMAKE_SOURCE_DIR}/lib/sqlite)
 
 # Add source files to executable
-add_executable(OverGuard src/Database_Operations.cpp src/main.cpp src/API_Handler.cpp src/Heroes.cpp src/Json_Serializer.cpp lib/sqlite/sqlite3.c)
+add_executable(OverGuard src/Database_Operations.cpp src/main.cpp src/API_Handler.cpp src/Heroes.cpp src/Json_Serializer.cpp src/Crow_Routes.cpp lib/sqlite/sqlite3.c)
+
+find_package(Crow)
 
 # Link libraries to your target
-target_link_libraries(OverGuard PRIVATE cpr::cpr nlohmann_json::nlohmann_json sqlite)
+target_link_libraries(OverGuard PUBLIC Crow::Crow PRIVATE cpr::cpr nlohmann_json::nlohmann_json sqlite)

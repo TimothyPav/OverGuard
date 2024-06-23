@@ -303,6 +303,30 @@ src/API_Handler.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/src/API_Handler.cpp.s
 .PHONY : src/API_Handler.cpp.s
 
+src/Crow_Routes.o: src/Crow_Routes.cpp.o
+.PHONY : src/Crow_Routes.o
+
+# target to build an object file
+src/Crow_Routes.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/src/Crow_Routes.cpp.o
+.PHONY : src/Crow_Routes.cpp.o
+
+src/Crow_Routes.i: src/Crow_Routes.cpp.i
+.PHONY : src/Crow_Routes.i
+
+# target to preprocess a source file
+src/Crow_Routes.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/src/Crow_Routes.cpp.i
+.PHONY : src/Crow_Routes.cpp.i
+
+src/Crow_Routes.s: src/Crow_Routes.cpp.s
+.PHONY : src/Crow_Routes.s
+
+# target to generate assembly for a file
+src/Crow_Routes.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/src/Crow_Routes.cpp.s
+.PHONY : src/Crow_Routes.cpp.s
+
 src/Database_Operations.o: src/Database_Operations.cpp.o
 .PHONY : src/Database_Operations.o
 
@@ -424,6 +448,9 @@ help:
 	@echo "... src/API_Handler.o"
 	@echo "... src/API_Handler.i"
 	@echo "... src/API_Handler.s"
+	@echo "... src/Crow_Routes.o"
+	@echo "... src/Crow_Routes.i"
+	@echo "... src/Crow_Routes.s"
 	@echo "... src/Database_Operations.o"
 	@echo "... src/Database_Operations.i"
 	@echo "... src/Database_Operations.s"
