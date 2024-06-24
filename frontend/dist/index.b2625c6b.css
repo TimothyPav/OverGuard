@@ -1,0 +1,40 @@
+body {
+  background-image: url("background.b2c4df55.jpg");
+  margin-left: 10em;
+  margin-right: 10em;
+  font-family: Comfortaa, cursive;
+  font-weight: bolder;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 4em;
+}
+
+.container {
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+}
+
+.ui-box {
+  background-color: #fff;
+  width: 21%;
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 1.5em;
+  box-shadow: 0 2px 5px #0003;
+}
+
+#hero-img {
+  opacity: 1;
+  max-width: 100%;
+  height: auto;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  transition: opacity .1s ease-in-out;
+}
+/*# sourceMappingURL=index.b2625c6b.css.map */

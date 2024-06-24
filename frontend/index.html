@@ -22,13 +22,13 @@
         <select name="hero" id="hero">
           <option value="ashe">Ashe</option>
           <option value="cassidy">Cassidy</option>
-          <option value="ashe">Hanzo</option>
+          <option value="hanzo">Hanzo</option>
           <option value="sojourn">Sojourn</option>
           <option value="soldier76">Soldier 76</option>
           <option value="tracer">Tracer</option>
           <option value="widowmaker">Widowmaker</option>
         </select>
-        <img class="hero-img" src="assests/images/ashe.png" alt="ashe picture">
+        <img id="hero-img" src="assets/images/ashe.png" alt="ashe picture">
         <form class="btag_form">
           <p>See where you rank! (capitalization matters)</p>
           <label for="battletag">Battle tag:</label>
@@ -36,8 +36,11 @@
           <button>Submit</button>
         </form>
       </div>
+      <div class="charts-container">
+        <canvas id="acquisitions"></canvas>
+      </div>
     </div>
 
-    <script src="dist/main.js"></script>
+    <script type="module" src="src/main.js"></script>
   </body>
 </html>

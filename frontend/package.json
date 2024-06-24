@@ -2,13 +2,19 @@
   "name": "frontend",
   "version": "1.0.0",
   "description": "Frontend to graph overwatch stats",
-  "main": "main.ts",
+  "main": "src/main.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "tim pavelko",
-  "license": "ISC"
+      "dev": "parcel index.html",
+      "build": "parcel build index.html"
+    },
+    "devDependencies": {
+      "parcel": "^2.6.2"
+    },
+    "dependencies": {
+      "@cubejs-client/core": "^0.31.0",
+      "chart.js": "^4.0.0"
+    }
 }

@@ -1,5 +1,5 @@
 body {
-    background-image: url("../assests/images/background.jpg");
+    background-image: url("../assets/images/background.jpg");
     font-family: 'Comfortaa', cursive;
     margin-left: 10em;
     margin-right: 10em;
@@ -31,8 +31,12 @@ h1 {
     /*align-self: center; /* Center the box in the container */   
 }
 
-.hero-img {
-    width: 100%;  /* or any specific size */
+#hero-img {
+    /*width: 100%;  /* or any specific size */
     height: auto; /* maintain aspect ratio */
     max-width: 100%; /* ensures the image is not larger than its container */
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    transition: opacity 0.1s ease-in-out; /* Adjust time as needed */
+    opacity: 1; /* Start fully visible */
 }

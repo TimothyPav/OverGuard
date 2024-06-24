@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OverGuard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" type="text/css" href="/index.b2625c6b.css">
+  </head>
+  <body>
+    <h1>OverGuard</h1>
+    <div class="container">
+      <div class="ui-box">
+        <label for="hero">Choose a Hero!:</label>
+        <select name="hero" id="hero">
+          <option value="ashe">Ashe</option>
+          <option value="cassidy">Cassidy</option>
+          <option value="hanzo">Hanzo</option>
+          <option value="sojourn">Sojourn</option>
+          <option value="soldier76">Soldier 76</option>
+          <option value="tracer">Tracer</option>
+          <option value="widowmaker">Widowmaker</option>
+        </select>
+        <img id="hero-img" src="/ashe.e6f1d7b9.png" alt="ashe picture">
+        <form class="btag_form">
+          <p>See where you rank! (capitalization matters)</p>
+          <label for="battletag">Battle tag:</label>
+          <input type="text" id="battletag" name="battletag">
+          <button>Submit</button>
+        </form>
+      </div>
+      <div class="charts-container">
+        <canvas id="acquisitions"></canvas>
+      </div>
+    </div>
+
+    <script src="/index.4d6bcbeb.js" defer=""></script>
+  </body>
+</html>
