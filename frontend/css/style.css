@@ -1,0 +1,38 @@
+body {
+    background-image: url("../assests/images/background.jpg");
+    font-family: 'Comfortaa', cursive;
+    margin-left: 10em;
+    margin-right: 10em;
+    font-weight: bolder;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 4em
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Stack vertically */
+    /*align-items: center; /* Center-align children horizontally */
+    justify-content: flex-start; /* Align children to the start vertically */
+    height: 100vh; /* Optional: full viewport height */
+    padding: 20px;
+}
+
+.ui-box {
+    font-size: 1.5em;
+    width: 21%; /* Adjust width as per design */
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    margin-bottom: 20px; /* Space between UI box and charts */
+    /*align-self: center; /* Center the box in the container */   
+}
+
+.hero-img {
+    width: 100%;  /* or any specific size */
+    height: auto; /* maintain aspect ratio */
+    max-width: 100%; /* ensures the image is not larger than its container */
+}
