@@ -29,3 +29,4 @@ export async function get_player_stat(btag) {
         console.log("player not found: ", e);
     }
 }
+console.log("HHELELOEOEE")
