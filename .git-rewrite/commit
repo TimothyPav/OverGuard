@@ -1,0 +1,6 @@
+tree e17c20e048838c26c581abb058ad2e68f686e39b
+parent f823e3cd653c52229562f2efd698ef350534c0d0
+author TimothyPav <1000timka@gmail.com> 1719069352 -0500
+committer TimothyPav <1000timka@gmail.com> 1719069352 -0500
+
+added crow and added a select by column and hero function

@@ -1,0 +1,726 @@
+Performing Curl Test HAVE_FSETXATTR_6 failed with the following output:
+Change Dir: '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c1863/fast
+gmake[1]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_c1863.dir/build.make CMakeFiles/cmTC_c1863.dir/build
+gmake[2]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c1863.dir/CurlTests.c.o
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_FSETXATTR_6  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -o CMakeFiles/cmTC_c1863.dir/CurlTests.c.o -c /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:405:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  405 | main() {
+      | ^~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c: In function ‘main’:
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:406:3: error: too many arguments to function ‘fsetxattr’
+  406 |   fsetxattr(0, 0, 0, 0, 0, 0);
+      |   ^~~~~~~~~
+In file included from /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:403:
+/usr/include/x86_64-linux-gnu/sys/xattr.h:54:12: note: declared here
+   54 | extern int fsetxattr (int __fd, const char *__name, const void *__value,
+      |            ^~~~~~~~~
+gmake[2]: *** [CMakeFiles/cmTC_c1863.dir/build.make:78: CMakeFiles/cmTC_c1863.dir/CurlTests.c.o] Error 1
+gmake[2]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [Makefile:127: cmTC_c1863/fast] Error 2
+gmake[1]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+
+Performing Curl Test HAVE_IOCTLSOCKET failed with the following output:
+Change Dir: '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_06031/fast
+gmake[1]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_06031.dir/build.make CMakeFiles/cmTC_06031.dir/build
+gmake[2]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_06031.dir/CurlTests.c.o
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_IOCTLSOCKET  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -o CMakeFiles/cmTC_06031.dir/CurlTests.c.o -c /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:199:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  199 | main ()
+      | ^~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c: In function ‘main’:
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:204:24: warning: implicit declaration of function ‘ioctlsocket’ [-Wimplicit-function-declaration]
+  204 |  unsigned long flags = ioctlsocket(socket, FIONBIO, &flags);
+      |                        ^~~~~~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:204:24: warning: nested extern declaration of ‘ioctlsocket’ [-Wnested-externs]
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:204:44: error: ‘FIONBIO’ undeclared (first use in this function)
+  204 |  unsigned long flags = ioctlsocket(socket, FIONBIO, &flags);
+      |                                            ^~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:204:44: note: each undeclared identifier is reported only once for each function it appears in
+gmake[2]: *** [CMakeFiles/cmTC_06031.dir/build.make:78: CMakeFiles/cmTC_06031.dir/CurlTests.c.o] Error 1
+gmake[2]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [Makefile:127: cmTC_06031/fast] Error 2
+gmake[1]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+
+Performing Curl Test HAVE_IOCTLSOCKET_CAMEL failed with the following output:
+Change Dir: '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d5833/fast
+gmake[1]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_d5833.dir/build.make CMakeFiles/cmTC_d5833.dir/build
+gmake[2]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d5833.dir/CurlTests.c.o
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_IOCTLSOCKET_CAMEL  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -o CMakeFiles/cmTC_d5833.dir/CurlTests.c.o -c /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:224:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  224 | main ()
+      | ^~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c: In function ‘main’:
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:228:13: warning: implicit declaration of function ‘IoctlSocket’ [-Wimplicit-function-declaration]
+  228 |     if(0 != IoctlSocket(0, 0, 0))
+      |             ^~~~~~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:228:13: warning: nested extern declaration of ‘IoctlSocket’ [-Wnested-externs]
+Linking C executable cmTC_d5833
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d5833.dir/link.txt --verbose=1
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_IOCTLSOCKET_CAMEL  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H CMakeFiles/cmTC_d5833.dir/CurlTests.c.o -o cmTC_d5833 
+/usr/bin/ld: CMakeFiles/cmTC_d5833.dir/CurlTests.c.o: in function `main':
+CurlTests.c:(.text+0x1d): undefined reference to `IoctlSocket'
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/cmTC_d5833.dir/build.make:99: cmTC_d5833] Error 1
+gmake[2]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [Makefile:127: cmTC_d5833/fast] Error 2
+gmake[1]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+
+Performing Curl Test HAVE_IOCTLSOCKET_CAMEL_FIONBIO failed with the following output:
+Change Dir: '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a1057/fast
+gmake[1]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_a1057.dir/build.make CMakeFiles/cmTC_a1057.dir/build
+gmake[2]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a1057.dir/CurlTests.c.o
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_IOCTLSOCKET_CAMEL_FIONBIO  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -o CMakeFiles/cmTC_a1057.dir/CurlTests.c.o -c /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:247:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  247 | main ()
+      | ^~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c: In function ‘main’:
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:252:17: warning: implicit declaration of function ‘IoctlSocket’ [-Wimplicit-function-declaration]
+  252 |         if(0 != IoctlSocket(0, FIONBIO, &flags))
+      |                 ^~~~~~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:252:17: warning: nested extern declaration of ‘IoctlSocket’ [-Wnested-externs]
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:252:32: error: ‘FIONBIO’ undeclared (first use in this function)
+  252 |         if(0 != IoctlSocket(0, FIONBIO, &flags))
+      |                                ^~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:252:32: note: each undeclared identifier is reported only once for each function it appears in
+gmake[2]: *** [CMakeFiles/cmTC_a1057.dir/build.make:78: CMakeFiles/cmTC_a1057.dir/CurlTests.c.o] Error 1
+gmake[2]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [Makefile:127: cmTC_a1057/fast] Error 2
+gmake[1]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+
+Performing Curl Test HAVE_IOCTLSOCKET_FIONBIO failed with the following output:
+Change Dir: '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_6aedb/fast
+gmake[1]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_6aedb.dir/build.make CMakeFiles/cmTC_6aedb.dir/build
+gmake[2]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6aedb.dir/CurlTests.c.o
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_IOCTLSOCKET_FIONBIO  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -o CMakeFiles/cmTC_6aedb.dir/CurlTests.c.o -c /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:271:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  271 | main ()
+      | ^~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c: In function ‘main’:
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:275:17: warning: implicit declaration of function ‘ioctlsocket’ [-Wimplicit-function-declaration]
+  275 |         if(0 != ioctlsocket(0, FIONBIO, &flags))
+      |                 ^~~~~~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:275:17: warning: nested extern declaration of ‘ioctlsocket’ [-Wnested-externs]
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:275:32: error: ‘FIONBIO’ undeclared (first use in this function)
+  275 |         if(0 != ioctlsocket(0, FIONBIO, &flags))
+      |                                ^~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:275:32: note: each undeclared identifier is reported only once for each function it appears in
+gmake[2]: *** [CMakeFiles/cmTC_6aedb.dir/build.make:78: CMakeFiles/cmTC_6aedb.dir/CurlTests.c.o] Error 1
+gmake[2]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [Makefile:127: cmTC_6aedb/fast] Error 2
+gmake[1]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+
+Performing Curl Test HAVE_SETSOCKOPT_SO_NONBLOCK failed with the following output:
+Change Dir: '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_14126/fast
+gmake[1]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_14126.dir/build.make CMakeFiles/cmTC_14126.dir/build
+gmake[2]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_14126.dir/CurlTests.c.o
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_SETSOCKOPT_SO_NONBLOCK  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -o CMakeFiles/cmTC_14126.dir/CurlTests.c.o -c /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:365:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  365 | main ()
+      | ^~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c: In function ‘main’:
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:367:43: error: ‘SO_NONBLOCK’ undeclared (first use in this function); did you mean ‘SOCK_NONBLOCK’?
+  367 |         if(0 != setsockopt(0, SOL_SOCKET, SO_NONBLOCK, 0, 0))
+      |                                           ^~~~~~~~~~~
+      |                                           SOCK_NONBLOCK
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:367:43: note: each undeclared identifier is reported only once for each function it appears in
+gmake[2]: *** [CMakeFiles/cmTC_14126.dir/build.make:78: CMakeFiles/cmTC_14126.dir/CurlTests.c.o] Error 1
+gmake[2]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [Makefile:127: cmTC_14126/fast] Error 2
+gmake[1]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+
+Performing Curl Test HAVE_O_NONBLOCK failed with the following output:
+Change Dir: '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_53fc2/fast
+gmake[1]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_53fc2.dir/build.make CMakeFiles/cmTC_53fc2.dir/build
+gmake[2]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_53fc2.dir/CurlTests.c.o
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_O_NONBLOCK  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -o CMakeFiles/cmTC_53fc2.dir/CurlTests.c.o -c /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:516: warning: ISO C forbids an empty translation unit [-Wpedantic]
+Linking C executable cmTC_53fc2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_53fc2.dir/link.txt --verbose=1
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_O_NONBLOCK  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H CMakeFiles/cmTC_53fc2.dir/CurlTests.c.o -o cmTC_53fc2 
+/usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':
+(.text+0x1b): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/cmTC_53fc2.dir/build.make:99: cmTC_53fc2] Error 1
+gmake[2]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [Makefile:127: cmTC_53fc2/fast] Error 2
+gmake[1]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+
+Performing Curl Test HAVE_GETHOSTBYNAME_R_3 failed with the following output:
+Change Dir: '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e462d/fast
+gmake[1]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_e462d.dir/build.make CMakeFiles/cmTC_e462d.dir/build
+gmake[2]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e462d.dir/CurlTests.c.o
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_GETHOSTBYNAME_R_3  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -o CMakeFiles/cmTC_e462d.dir/CurlTests.c.o -c /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c: In function ‘main’:
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:75:19: warning: initialization discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   75 |   char *address = "example.com";
+      |                   ^~~~~~~~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:82:23: error: storage size of ‘hdata’ isn’t known
+   82 |   struct hostent_data hdata;
+      |                       ^~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:94:8: error: too few arguments to function ‘gethostbyname_r’
+   94 |   rc = gethostbyname_r(address, &h, &hdata);
+      |        ^~~~~~~~~~~~~~~
+In file included from /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:72:
+/usr/include/netdb.h:177:12: note: declared here
+  177 | extern int gethostbyname_r (const char *__restrict __name,
+      |            ^~~~~~~~~~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:82:23: warning: unused variable ‘hdata’ [-Wunused-variable]
+   82 |   struct hostent_data hdata;
+      |                       ^~~~~
+gmake[2]: *** [CMakeFiles/cmTC_e462d.dir/build.make:78: CMakeFiles/cmTC_e462d.dir/CurlTests.c.o] Error 1
+gmake[2]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [Makefile:127: cmTC_e462d/fast] Error 2
+gmake[1]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+
+Performing Curl Test HAVE_GETHOSTBYNAME_R_5 failed with the following output:
+Change Dir: '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_eb3d2/fast
+gmake[1]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_eb3d2.dir/build.make CMakeFiles/cmTC_eb3d2.dir/build
+gmake[2]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_eb3d2.dir/CurlTests.c.o
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_GETHOSTBYNAME_R_5  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -o CMakeFiles/cmTC_eb3d2.dir/CurlTests.c.o -c /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c: In function ‘main’:
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:75:19: warning: initialization discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   75 |   char *address = "example.com";
+      |                   ^~~~~~~~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:97:51: warning: passing argument 5 of ‘gethostbyname_r’ from incompatible pointer type [-Wincompatible-pointer-types]
+   97 |   rc = gethostbyname_r(address, &h, buffer, 8192, &h_errnop);
+      |                                                   ^~~~~~~~~
+      |                                                   |
+      |                                                   int *
+In file included from /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:72:
+/usr/include/netdb.h:180:57: note: expected ‘struct hostent ** restrict’ but argument is of type ‘int *’
+  180 |                             struct hostent **__restrict __result,
+      |                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:97:8: error: too few arguments to function ‘gethostbyname_r’
+   97 |   rc = gethostbyname_r(address, &h, buffer, 8192, &h_errnop);
+      |        ^~~~~~~~~~~~~~~
+/usr/include/netdb.h:177:12: note: declared here
+  177 | extern int gethostbyname_r (const char *__restrict __name,
+      |            ^~~~~~~~~~~~~~~
+gmake[2]: *** [CMakeFiles/cmTC_eb3d2.dir/build.make:78: CMakeFiles/cmTC_eb3d2.dir/CurlTests.c.o] Error 1
+gmake[2]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [Makefile:127: cmTC_eb3d2/fast] Error 2
+gmake[1]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+
+Performing Curl Test HAVE_GETHOSTBYNAME_R_3_REENTRANT failed with the following output:
+Change Dir: '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_64db6/fast
+gmake[1]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_64db6.dir/build.make CMakeFiles/cmTC_64db6.dir/build
+gmake[2]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_64db6.dir/CurlTests.c.o
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_GETHOSTBYNAME_R_3_REENTRANT  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -o CMakeFiles/cmTC_64db6.dir/CurlTests.c.o -c /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c: In function ‘main’:
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:75:19: warning: initialization discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   75 |   char *address = "example.com";
+      |                   ^~~~~~~~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:82:23: error: storage size of ‘hdata’ isn’t known
+   82 |   struct hostent_data hdata;
+      |                       ^~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:94:8: error: too few arguments to function ‘gethostbyname_r’
+   94 |   rc = gethostbyname_r(address, &h, &hdata);
+      |        ^~~~~~~~~~~~~~~
+In file included from /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:72:
+/usr/include/netdb.h:177:12: note: declared here
+  177 | extern int gethostbyname_r (const char *__restrict __name,
+      |            ^~~~~~~~~~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:82:23: warning: unused variable ‘hdata’ [-Wunused-variable]
+   82 |   struct hostent_data hdata;
+      |                       ^~~~~
+gmake[2]: *** [CMakeFiles/cmTC_64db6.dir/build.make:78: CMakeFiles/cmTC_64db6.dir/CurlTests.c.o] Error 1
+gmake[2]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [Makefile:127: cmTC_64db6/fast] Error 2
+gmake[1]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+
+Performing Curl Test HAVE_GETHOSTBYNAME_R_5_REENTRANT failed with the following output:
+Change Dir: '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b8957/fast
+gmake[1]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_b8957.dir/build.make CMakeFiles/cmTC_b8957.dir/build
+gmake[2]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b8957.dir/CurlTests.c.o
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_GETHOSTBYNAME_R_5_REENTRANT  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -o CMakeFiles/cmTC_b8957.dir/CurlTests.c.o -c /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c: In function ‘main’:
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:75:19: warning: initialization discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   75 |   char *address = "example.com";
+      |                   ^~~~~~~~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:97:51: warning: passing argument 5 of ‘gethostbyname_r’ from incompatible pointer type [-Wincompatible-pointer-types]
+   97 |   rc = gethostbyname_r(address, &h, buffer, 8192, &h_errnop);
+      |                                                   ^~~~~~~~~
+      |                                                   |
+      |                                                   int *
+In file included from /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:72:
+/usr/include/netdb.h:180:57: note: expected ‘struct hostent ** restrict’ but argument is of type ‘int *’
+  180 |                             struct hostent **__restrict __result,
+      |                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:97:8: error: too few arguments to function ‘gethostbyname_r’
+   97 |   rc = gethostbyname_r(address, &h, buffer, 8192, &h_errnop);
+      |        ^~~~~~~~~~~~~~~
+/usr/include/netdb.h:177:12: note: declared here
+  177 | extern int gethostbyname_r (const char *__restrict __name,
+      |            ^~~~~~~~~~~~~~~
+gmake[2]: *** [CMakeFiles/cmTC_b8957.dir/build.make:78: CMakeFiles/cmTC_b8957.dir/CurlTests.c.o] Error 1
+gmake[2]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [Makefile:127: cmTC_b8957/fast] Error 2
+gmake[1]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+
+Performing Curl Test HAVE_GLIBC_STRERROR_R failed with the following output:
+Change Dir: '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b44f9/fast
+gmake[1]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_b44f9.dir/build.make CMakeFiles/cmTC_b44f9.dir/build
+gmake[2]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b44f9.dir/CurlTests.c.o
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_GLIBC_STRERROR_R  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -o CMakeFiles/cmTC_b44f9.dir/CurlTests.c.o -c /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:377:6: warning: no previous prototype for ‘check’ [-Wmissing-prototypes]
+  377 | void check(char c) {}
+      |      ^~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c: In function ‘check’:
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:377:17: warning: unused parameter ‘c’ [-Wunused-parameter]
+  377 | void check(char c) {}
+      |            ~~~~~^
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c: At top level:
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:380:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  380 | main () {
+      | ^~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c: In function ‘main’:
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:383:51: error: subscripted value is neither array nor pointer nor vector
+  383 |   check(strerror_r(EACCES, buffer, sizeof(buffer))[0]);
+      |                                                   ^
+gmake[2]: *** [CMakeFiles/cmTC_b44f9.dir/build.make:78: CMakeFiles/cmTC_b44f9.dir/CurlTests.c.o] Error 1
+gmake[2]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [Makefile:127: cmTC_b44f9/fast] Error 2
+gmake[1]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+
+Performing Curl Test HAVE_BUILTIN_AVAILABLE failed with the following output:
+Change Dir: '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9a1f4/fast
+gmake[1]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_9a1f4.dir/build.make CMakeFiles/cmTC_9a1f4.dir/build
+gmake[2]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9a1f4.dir/CurlTests.c.o
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_BUILTIN_AVAILABLE  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -o CMakeFiles/cmTC_9a1f4.dir/CurlTests.c.o -c /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:429:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  429 | main() {
+      | ^~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c: In function ‘main’:
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:430:6: warning: implicit declaration of function ‘__builtin_available’; did you mean ‘__builtin_scalbl’? [-Wimplicit-function-declaration]
+  430 |   if(__builtin_available(macOS 10.12, *)) {}
+      |      ^~~~~~~~~~~~~~~~~~~
+      |      __builtin_scalbl
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:430:6: warning: nested extern declaration of ‘__builtin_available’ [-Wnested-externs]
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:430:26: error: ‘macOS’ undeclared (first use in this function)
+  430 |   if(__builtin_available(macOS 10.12, *)) {}
+      |                          ^~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:430:26: note: each undeclared identifier is reported only once for each function it appears in
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:430:31: error: expected ‘)’ before numeric constant
+  430 |   if(__builtin_available(macOS 10.12, *)) {}
+      |                         ~     ^~~~~~
+      |                               )
+gmake[2]: *** [CMakeFiles/cmTC_9a1f4.dir/build.make:78: CMakeFiles/cmTC_9a1f4.dir/CurlTests.c.o] Error 1
+gmake[2]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [Makefile:127: cmTC_9a1f4/fast] Error 2
+gmake[1]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+
+Performing Curl Test HAVE_FSETXATTR_6 failed with the following output:
+Change Dir: '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_36f06/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_36f06.dir/build.make CMakeFiles/cmTC_36f06.dir/build
+gmake[1]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_36f06.dir/CurlTests.c.o
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_FSETXATTR_6  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -o CMakeFiles/cmTC_36f06.dir/CurlTests.c.o -c /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:405:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  405 | main() {
+      | ^~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c: In function ‘main’:
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:406:3: error: too many arguments to function ‘fsetxattr’
+  406 |   fsetxattr(0, 0, 0, 0, 0, 0);
+      |   ^~~~~~~~~
+In file included from /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:403:
+/usr/include/x86_64-linux-gnu/sys/xattr.h:54:12: note: declared here
+   54 | extern int fsetxattr (int __fd, const char *__name, const void *__value,
+      |            ^~~~~~~~~
+gmake[1]: *** [CMakeFiles/cmTC_36f06.dir/build.make:78: CMakeFiles/cmTC_36f06.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_36f06/fast] Error 2
+
+
+Performing Curl Test HAVE_IOCTLSOCKET failed with the following output:
+Change Dir: '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_4b07e/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_4b07e.dir/build.make CMakeFiles/cmTC_4b07e.dir/build
+gmake[1]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4b07e.dir/CurlTests.c.o
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_IOCTLSOCKET  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -o CMakeFiles/cmTC_4b07e.dir/CurlTests.c.o -c /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:199:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  199 | main ()
+      | ^~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c: In function ‘main’:
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:204:24: warning: implicit declaration of function ‘ioctlsocket’ [-Wimplicit-function-declaration]
+  204 |  unsigned long flags = ioctlsocket(socket, FIONBIO, &flags);
+      |                        ^~~~~~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:204:24: warning: nested extern declaration of ‘ioctlsocket’ [-Wnested-externs]
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:204:44: error: ‘FIONBIO’ undeclared (first use in this function)
+  204 |  unsigned long flags = ioctlsocket(socket, FIONBIO, &flags);
+      |                                            ^~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:204:44: note: each undeclared identifier is reported only once for each function it appears in
+gmake[1]: *** [CMakeFiles/cmTC_4b07e.dir/build.make:78: CMakeFiles/cmTC_4b07e.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_4b07e/fast] Error 2
+
+
+Performing Curl Test HAVE_IOCTLSOCKET_CAMEL failed with the following output:
+Change Dir: '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_24633/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_24633.dir/build.make CMakeFiles/cmTC_24633.dir/build
+gmake[1]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_24633.dir/CurlTests.c.o
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_IOCTLSOCKET_CAMEL  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -o CMakeFiles/cmTC_24633.dir/CurlTests.c.o -c /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:224:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  224 | main ()
+      | ^~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c: In function ‘main’:
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:228:13: warning: implicit declaration of function ‘IoctlSocket’ [-Wimplicit-function-declaration]
+  228 |     if(0 != IoctlSocket(0, 0, 0))
+      |             ^~~~~~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:228:13: warning: nested extern declaration of ‘IoctlSocket’ [-Wnested-externs]
+Linking C executable cmTC_24633
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_24633.dir/link.txt --verbose=1
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_IOCTLSOCKET_CAMEL  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H CMakeFiles/cmTC_24633.dir/CurlTests.c.o -o cmTC_24633 
+/usr/bin/ld: CMakeFiles/cmTC_24633.dir/CurlTests.c.o: in function `main':
+CurlTests.c:(.text+0x1d): undefined reference to `IoctlSocket'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_24633.dir/build.make:99: cmTC_24633] Error 1
+gmake[1]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_24633/fast] Error 2
+
+
+Performing Curl Test HAVE_IOCTLSOCKET_CAMEL_FIONBIO failed with the following output:
+Change Dir: '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8244d/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_8244d.dir/build.make CMakeFiles/cmTC_8244d.dir/build
+gmake[1]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8244d.dir/CurlTests.c.o
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_IOCTLSOCKET_CAMEL_FIONBIO  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -o CMakeFiles/cmTC_8244d.dir/CurlTests.c.o -c /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:247:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  247 | main ()
+      | ^~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c: In function ‘main’:
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:252:17: warning: implicit declaration of function ‘IoctlSocket’ [-Wimplicit-function-declaration]
+  252 |         if(0 != IoctlSocket(0, FIONBIO, &flags))
+      |                 ^~~~~~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:252:17: warning: nested extern declaration of ‘IoctlSocket’ [-Wnested-externs]
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:252:32: error: ‘FIONBIO’ undeclared (first use in this function)
+  252 |         if(0 != IoctlSocket(0, FIONBIO, &flags))
+      |                                ^~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:252:32: note: each undeclared identifier is reported only once for each function it appears in
+gmake[1]: *** [CMakeFiles/cmTC_8244d.dir/build.make:78: CMakeFiles/cmTC_8244d.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_8244d/fast] Error 2
+
+
+Performing Curl Test HAVE_IOCTLSOCKET_FIONBIO failed with the following output:
+Change Dir: '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_20667/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_20667.dir/build.make CMakeFiles/cmTC_20667.dir/build
+gmake[1]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_20667.dir/CurlTests.c.o
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_IOCTLSOCKET_FIONBIO  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -o CMakeFiles/cmTC_20667.dir/CurlTests.c.o -c /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:271:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  271 | main ()
+      | ^~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c: In function ‘main’:
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:275:17: warning: implicit declaration of function ‘ioctlsocket’ [-Wimplicit-function-declaration]
+  275 |         if(0 != ioctlsocket(0, FIONBIO, &flags))
+      |                 ^~~~~~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:275:17: warning: nested extern declaration of ‘ioctlsocket’ [-Wnested-externs]
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:275:32: error: ‘FIONBIO’ undeclared (first use in this function)
+  275 |         if(0 != ioctlsocket(0, FIONBIO, &flags))
+      |                                ^~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:275:32: note: each undeclared identifier is reported only once for each function it appears in
+gmake[1]: *** [CMakeFiles/cmTC_20667.dir/build.make:78: CMakeFiles/cmTC_20667.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_20667/fast] Error 2
+
+
+Performing Curl Test HAVE_SETSOCKOPT_SO_NONBLOCK failed with the following output:
+Change Dir: '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_99072/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_99072.dir/build.make CMakeFiles/cmTC_99072.dir/build
+gmake[1]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_99072.dir/CurlTests.c.o
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_SETSOCKOPT_SO_NONBLOCK  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -o CMakeFiles/cmTC_99072.dir/CurlTests.c.o -c /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:365:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  365 | main ()
+      | ^~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c: In function ‘main’:
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:367:43: error: ‘SO_NONBLOCK’ undeclared (first use in this function); did you mean ‘SOCK_NONBLOCK’?
+  367 |         if(0 != setsockopt(0, SOL_SOCKET, SO_NONBLOCK, 0, 0))
+      |                                           ^~~~~~~~~~~
+      |                                           SOCK_NONBLOCK
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:367:43: note: each undeclared identifier is reported only once for each function it appears in
+gmake[1]: *** [CMakeFiles/cmTC_99072.dir/build.make:78: CMakeFiles/cmTC_99072.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_99072/fast] Error 2
+
+
+Performing Curl Test HAVE_O_NONBLOCK failed with the following output:
+Change Dir: '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e1107/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_e1107.dir/build.make CMakeFiles/cmTC_e1107.dir/build
+gmake[1]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e1107.dir/CurlTests.c.o
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_O_NONBLOCK  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -o CMakeFiles/cmTC_e1107.dir/CurlTests.c.o -c /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:516: warning: ISO C forbids an empty translation unit [-Wpedantic]
+Linking C executable cmTC_e1107
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e1107.dir/link.txt --verbose=1
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_O_NONBLOCK  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H CMakeFiles/cmTC_e1107.dir/CurlTests.c.o -o cmTC_e1107 
+/usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':
+(.text+0x1b): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_e1107.dir/build.make:99: cmTC_e1107] Error 1
+gmake[1]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_e1107/fast] Error 2
+
+
+Performing Curl Test HAVE_GETHOSTBYNAME_R_3 failed with the following output:
+Change Dir: '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_20dca/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_20dca.dir/build.make CMakeFiles/cmTC_20dca.dir/build
+gmake[1]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_20dca.dir/CurlTests.c.o
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_GETHOSTBYNAME_R_3  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -o CMakeFiles/cmTC_20dca.dir/CurlTests.c.o -c /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c: In function ‘main’:
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:75:19: warning: initialization discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   75 |   char *address = "example.com";
+      |                   ^~~~~~~~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:82:23: error: storage size of ‘hdata’ isn’t known
+   82 |   struct hostent_data hdata;
+      |                       ^~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:94:8: error: too few arguments to function ‘gethostbyname_r’
+   94 |   rc = gethostbyname_r(address, &h, &hdata);
+      |        ^~~~~~~~~~~~~~~
+In file included from /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:72:
+/usr/include/netdb.h:177:12: note: declared here
+  177 | extern int gethostbyname_r (const char *__restrict __name,
+      |            ^~~~~~~~~~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:82:23: warning: unused variable ‘hdata’ [-Wunused-variable]
+   82 |   struct hostent_data hdata;
+      |                       ^~~~~
+gmake[1]: *** [CMakeFiles/cmTC_20dca.dir/build.make:78: CMakeFiles/cmTC_20dca.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_20dca/fast] Error 2
+
+
+Performing Curl Test HAVE_GETHOSTBYNAME_R_5 failed with the following output:
+Change Dir: '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_76bb0/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_76bb0.dir/build.make CMakeFiles/cmTC_76bb0.dir/build
+gmake[1]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_76bb0.dir/CurlTests.c.o
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_GETHOSTBYNAME_R_5  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -o CMakeFiles/cmTC_76bb0.dir/CurlTests.c.o -c /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c: In function ‘main’:
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:75:19: warning: initialization discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   75 |   char *address = "example.com";
+      |                   ^~~~~~~~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:97:51: warning: passing argument 5 of ‘gethostbyname_r’ from incompatible pointer type [-Wincompatible-pointer-types]
+   97 |   rc = gethostbyname_r(address, &h, buffer, 8192, &h_errnop);
+      |                                                   ^~~~~~~~~
+      |                                                   |
+      |                                                   int *
+In file included from /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:72:
+/usr/include/netdb.h:180:57: note: expected ‘struct hostent ** restrict’ but argument is of type ‘int *’
+  180 |                             struct hostent **__restrict __result,
+      |                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:97:8: error: too few arguments to function ‘gethostbyname_r’
+   97 |   rc = gethostbyname_r(address, &h, buffer, 8192, &h_errnop);
+      |        ^~~~~~~~~~~~~~~
+/usr/include/netdb.h:177:12: note: declared here
+  177 | extern int gethostbyname_r (const char *__restrict __name,
+      |            ^~~~~~~~~~~~~~~
+gmake[1]: *** [CMakeFiles/cmTC_76bb0.dir/build.make:78: CMakeFiles/cmTC_76bb0.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_76bb0/fast] Error 2
+
+
+Performing Curl Test HAVE_GETHOSTBYNAME_R_3_REENTRANT failed with the following output:
+Change Dir: '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_79365/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_79365.dir/build.make CMakeFiles/cmTC_79365.dir/build
+gmake[1]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_79365.dir/CurlTests.c.o
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_GETHOSTBYNAME_R_3_REENTRANT  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -o CMakeFiles/cmTC_79365.dir/CurlTests.c.o -c /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c: In function ‘main’:
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:75:19: warning: initialization discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   75 |   char *address = "example.com";
+      |                   ^~~~~~~~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:82:23: error: storage size of ‘hdata’ isn’t known
+   82 |   struct hostent_data hdata;
+      |                       ^~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:94:8: error: too few arguments to function ‘gethostbyname_r’
+   94 |   rc = gethostbyname_r(address, &h, &hdata);
+      |        ^~~~~~~~~~~~~~~
+In file included from /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:72:
+/usr/include/netdb.h:177:12: note: declared here
+  177 | extern int gethostbyname_r (const char *__restrict __name,
+      |            ^~~~~~~~~~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:82:23: warning: unused variable ‘hdata’ [-Wunused-variable]
+   82 |   struct hostent_data hdata;
+      |                       ^~~~~
+gmake[1]: *** [CMakeFiles/cmTC_79365.dir/build.make:78: CMakeFiles/cmTC_79365.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_79365/fast] Error 2
+
+
+Performing Curl Test HAVE_GETHOSTBYNAME_R_5_REENTRANT failed with the following output:
+Change Dir: '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d53d1/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_d53d1.dir/build.make CMakeFiles/cmTC_d53d1.dir/build
+gmake[1]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d53d1.dir/CurlTests.c.o
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_GETHOSTBYNAME_R_5_REENTRANT  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -o CMakeFiles/cmTC_d53d1.dir/CurlTests.c.o -c /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c: In function ‘main’:
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:75:19: warning: initialization discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   75 |   char *address = "example.com";
+      |                   ^~~~~~~~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:97:51: warning: passing argument 5 of ‘gethostbyname_r’ from incompatible pointer type [-Wincompatible-pointer-types]
+   97 |   rc = gethostbyname_r(address, &h, buffer, 8192, &h_errnop);
+      |                                                   ^~~~~~~~~
+      |                                                   |
+      |                                                   int *
+In file included from /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:72:
+/usr/include/netdb.h:180:57: note: expected ‘struct hostent ** restrict’ but argument is of type ‘int *’
+  180 |                             struct hostent **__restrict __result,
+      |                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:97:8: error: too few arguments to function ‘gethostbyname_r’
+   97 |   rc = gethostbyname_r(address, &h, buffer, 8192, &h_errnop);
+      |        ^~~~~~~~~~~~~~~
+/usr/include/netdb.h:177:12: note: declared here
+  177 | extern int gethostbyname_r (const char *__restrict __name,
+      |            ^~~~~~~~~~~~~~~
+gmake[1]: *** [CMakeFiles/cmTC_d53d1.dir/build.make:78: CMakeFiles/cmTC_d53d1.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_d53d1/fast] Error 2
+
+
+Performing Curl Test HAVE_GLIBC_STRERROR_R failed with the following output:
+Change Dir: '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_932cb/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_932cb.dir/build.make CMakeFiles/cmTC_932cb.dir/build
+gmake[1]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_932cb.dir/CurlTests.c.o
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_GLIBC_STRERROR_R  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -o CMakeFiles/cmTC_932cb.dir/CurlTests.c.o -c /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:377:6: warning: no previous prototype for ‘check’ [-Wmissing-prototypes]
+  377 | void check(char c) {}
+      |      ^~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c: In function ‘check’:
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:377:17: warning: unused parameter ‘c’ [-Wunused-parameter]
+  377 | void check(char c) {}
+      |            ~~~~~^
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c: At top level:
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:380:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  380 | main () {
+      | ^~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c: In function ‘main’:
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:383:51: error: subscripted value is neither array nor pointer nor vector
+  383 |   check(strerror_r(EACCES, buffer, sizeof(buffer))[0]);
+      |                                                   ^
+gmake[1]: *** [CMakeFiles/cmTC_932cb.dir/build.make:78: CMakeFiles/cmTC_932cb.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_932cb/fast] Error 2
+
+
+Performing Curl Test HAVE_BUILTIN_AVAILABLE failed with the following output:
+Change Dir: '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8dd79/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_8dd79.dir/build.make CMakeFiles/cmTC_8dd79.dir/build
+gmake[1]: Entering directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8dd79.dir/CurlTests.c.o
+/usr/bin/cc   -W -Wall -pedantic -Wbad-function-cast -Wconversion -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wno-multichar -Wpointer-arith -Wshadow -Wsign-compare -Wundef -Wunused -Wwrite-strings -Wcast-align -Wdeclaration-after-statement -Wempty-body -Wendif-labels -Wfloat-equal -Wignored-qualifiers -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -Wstrict-prototypes -Wtype-limits -Wvla -Wmissing-parameter-type -Wold-style-declaration -Wstrict-aliasing=3 -Wformat=2 -Warray-bounds=2 -ftree-vrp -Wduplicated-cond -Wnull-dereference -fdelete-null-pointer-checks -Wshift-negative-value -Wshift-overflow=2 -Walloc-zero -Wduplicated-branches -Wformat-overflow=2 -Wformat-truncation=1 -Wrestrict -Warith-conversion -Wdouble-promotion -Wenum-conversion -Wunused-const-variable -DHAVE_BUILTIN_AVAILABLE  -DHAVE_INTTYPES_H -DHAVE_SYS_WAIT_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_NETINET_UDP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -o CMakeFiles/cmTC_8dd79.dir/CurlTests.c.o -c /home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:429:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  429 | main() {
+      | ^~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c: In function ‘main’:
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:430:6: warning: implicit declaration of function ‘__builtin_available’; did you mean ‘__builtin_scalbl’? [-Wimplicit-function-declaration]
+  430 |   if(__builtin_available(macOS 10.12, *)) {}
+      |      ^~~~~~~~~~~~~~~~~~~
+      |      __builtin_scalbl
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:430:6: warning: nested extern declaration of ‘__builtin_available’ [-Wnested-externs]
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:430:26: error: ‘macOS’ undeclared (first use in this function)
+  430 |   if(__builtin_available(macOS 10.12, *)) {}
+      |                          ^~~~~
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:430:26: note: each undeclared identifier is reported only once for each function it appears in
+/home/tim/OverGuard/backend/build/_deps/curl-src/CMake/CurlTests.c:430:31: error: expected ‘)’ before numeric constant
+  430 |   if(__builtin_available(macOS 10.12, *)) {}
+      |                         ~     ^~~~~~
+      |                               )
+gmake[1]: *** [CMakeFiles/cmTC_8dd79.dir/build.make:78: CMakeFiles/cmTC_8dd79.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/home/tim/OverGuard/backend/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_8dd79/fast] Error 2
+
+

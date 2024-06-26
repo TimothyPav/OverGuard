@@ -1,0 +1,54 @@
+body {
+  background-image: url("background.2071e429.png");
+  margin-left: 7em;
+  margin-right: 7em;
+  font-family: Comfortaa, cursive;
+  font-weight: bolder;
+  position: fixed;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 4em;
+}
+
+.container {
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 100vh;
+  padding: .5%;
+  display: flex;
+}
+
+.ui-box {
+  background-color: #fff;
+  align-self: center;
+  width: 30vh;
+  padding: 20px;
+  font-size: 1.5rem;
+}
+
+#hero-img {
+  opacity: 1;
+  max-width: 100%;
+  height: auto;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  transition: opacity .1s ease-in-out;
+}
+
+.charts-container {
+  flex-flow: wrap;
+  height: 99vh;
+  display: flex;
+}
+
+.chart {
+  border-radius: 3%;
+  max-width: 49%;
+  max-height: 49%;
+  margin-bottom: .5%;
+  margin-left: .5%;
+}
+/*# sourceMappingURL=index.b2625c6b.css.map */

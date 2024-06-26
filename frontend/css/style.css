@@ -1,0 +1,56 @@
+body {
+    background-image: url("../assets/images/background.png");
+    font-family: 'Comfortaa', cursive;
+    margin-left: 7em;
+    margin-right: 7em;
+    font-weight: bolder;
+    position: fixed;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 4em
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    /*align-items: center; /* Center-align children horizontally */
+    justify-content: flex-start; /* Align children to the start vertically */
+    height: 100vh; /* Optional: full viewport height */
+    padding: 0.5%;
+}
+
+.ui-box {
+    font-size: 1.5rem;
+    width: 30vh; /* Adjust width as per design */
+    padding: 20px;
+    background-color: #fff;
+    align-self: center; /* Center the box in the container */  
+}
+
+#hero-img {
+    /*width: 100%;  /* or any specific size */
+    height: auto; /* maintain aspect ratio */
+    max-width: 100%; /* ensures the image is not larger than its container */
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    transition: opacity 0.1s ease-in-out; /* Adjust time as needed */
+    opacity: 1; /* Start fully visible */
+}
+
+.charts-container {
+    display: flex;
+    flex-direction: row; /* keeps items in a row but wraps them into multiple rows as needed */
+    flex-wrap: wrap;
+    height: 99vh;
+}
+
+.chart {
+    max-width: 49%;
+    max-height: 49%;
+    margin-bottom: 0.5%;
+    margin-left: 0.5%;
+    border-radius: 3%;
+}
