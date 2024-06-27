@@ -36,33 +36,33 @@ void Heroes::initialize_getters()
 {
     if (getters.empty())
     {
-        getters["deaths_per_10_mins"] = [this]() -> std::variant<int, double>
+        getters["Deaths per 10 mins"] = [this]() -> std::variant<int, double>
         { return get_deaths_per_10_mins(); };
-        getters["final_blows_avg_per_10_min"] = [this]() -> std::variant<int, double>
+        getters["Final Blows per 10 mins"] = [this]() -> std::variant<int, double>
         { return get_final_blows_per_10_mins(); };
-        getters["solo_kills_avg_per_10_min"] = [this]() -> std::variant<int, double>
+        getters["Solo Kills per 10 mins"] = [this]() -> std::variant<int, double>
         { return get_solo_kills_per_10_mins(); };
-        getters["hero_damage_done_avg_per_10_min"] = [this]() -> std::variant<int, double>
+        getters["Hero Damage Done per 10 mins"] = [this]() -> std::variant<int, double>
         { return get_hero_damage_done_per_10_mins(); };
-        getters["scoped_accuracy"] = [this]() -> std::variant<int, double>
+        getters["Scoped Accuracy"] = [this]() -> std::variant<int, double>
         { return get_scoped_accuracy(); };
-        getters["scoped_critical_hit_accuracy"] = [this]() -> std::variant<int, double>
+        getters["Scoped Crit Accuracy"] = [this]() -> std::variant<int, double>
         { return get_scoped_crit_accuracy(); };
-        getters["scoped_critical_hits_avg_per_10_min"] = [this]() -> std::variant<int, double>
+        getters["Scoped Crit Hits per 10 mins"] = [this]() -> std::variant<int, double>
         { return get_scoped_crit_hits_per_10_mins(); };
-        getters["scoped_critical_hit_kills_avg_per_10_min"] = [this]() -> std::variant<int, double>
+        getters["Scoped Crit Kills per 10 mins"] = [this]() -> std::variant<int, double>
         { return get_scoped_crit_kills_per_10_mins(); };
-        getters["critical_hit_accuracy"] = [this]() -> std::variant<int, double>
+        getters["Critical Hit Accuracy"] = [this]() -> std::variant<int, double>
         { return get_critical_hit_accuracy(); };
-        getters["critical_hits_avg_per_10_min"] = [this]() -> std::variant<int, double>
+        getters["Critical Hits per 10 mins"] = [this]() -> std::variant<int, double>
         { return get_critical_hits_per_10_mins(); };
-        getters["critical_hit_kills_avg_per_10_min"] = [this]() -> std::variant<int, double>
+        getters["Critical Hit kills per 10 mins"] = [this]() -> std::variant<int, double>
         { return get_critical_hit_kills_per_10_mins(); };
-        getters["charged_shot_accuracy"] = [this]() -> std::variant<int, double>
+        getters["Charged Shot Accuracy"] = [this]() -> std::variant<int, double>
         { return get_charged_shot_accuracy(); };
-        getters["charged_shot_critical_accuracy"] = [this]() -> std::variant<int, double>
+        getters["Charged Shot Crit Accuracy"] = [this]() -> std::variant<int, double>
         { return get_charged_shot_crit_accuracy(); };
-        getters["charged_shot_kills_avg_per_10_min"] = [this]() -> std::variant<int, double>
+        getters["Charged Shot Kills per 10 mins"] = [this]() -> std::variant<int, double>
         { return get_charged_shot_kills_per_10_mins(); };
     }
 }

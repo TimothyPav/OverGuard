@@ -22,24 +22,36 @@ const heroImages = {
 };
 
 let player_data = null;
+let battletag = null;
+let selectedHero = "ashe";
 let hero_select = document.getElementById("hero");
 let hero_portrait = document.getElementById("hero-img");
 change_hero_stats("ashe");
 if (hero_select && hero_portrait) {
-    hero_select.onchange = (e) => {
+    hero_select.onchange = async (e) => {
         for (let i = 0; i < 4; i++) {
             const canvas = document.getElementById(`myChart${i}`);
             canvas.style.display = 'none';
         }
+        change_hero_stats(selectedHero);
         hero_portrait.style.opacity = '0';
-
         setTimeout(() => {
-            const selectedHero = hero_select.value;
+            selectedHero = hero_select.value;
             const newSrc = heroImages[selectedHero];
             hero_portrait.src = newSrc;
             hero_portrait.style.opacity = '1';
             change_hero_stats(selectedHero);
-        }, 100); // Adjusted timeout to match a typical fade duration
+            if (player_data && battletag) {
+                setTimeout(() => {
+                    console.log("CHANGE DETECTED");
+                    update_hero_stats(battletag, player_data, selectedHero);
+                }, 300)
+            }
+        }, 100);
+
+        
+
+ // Adjusted timeout to match a typical fade duration
         //change_hero_stats(ashe);
 
     }
@@ -49,13 +61,13 @@ let text_input = document.getElementById("battletag");
 const submit_btn = document.getElementById("submit-btn");
 submit_btn.onclick = async (e) => {
     e.preventDefault();
-    const btag = text_input.value
+    battletag = text_input.value
     try {
-        console.log("btag: ", btag);
-        console.log("len: ", btag.length);
-        if (btag.length >= 8) {
-            player_data = await get_player_stat(btag);
-            update_hero_stats(btag, player_data, "ashe");
+        //console.log("btag: ", btag);
+        //console.log("len: ", btag.length);
+        if (battletag.length >= 8) {
+            player_data = await get_player_stat(battletag);
+            await update_hero_stats(battletag, player_data, selectedHero);
         } else {
             console.log("INVALID BTAG! :(");
         }
@@ -64,17 +76,9 @@ submit_btn.onclick = async (e) => {
     }
 }
 
-async function update_hero_stats(btag_ID, player_data, hero_name){
+async function update_hero_stats(btag_ID, player_data, hero_name) {
     const hero = heroes[hero_name];
-    for(let i=0; i< hero.len; i++){
-        if (hero[i].length == 2) {
-            //addData(`myChart${i}`, `test:`, player_data, "green");
-            updateAllCharts("test label", player_data, "blue");
-        }
-        else if (hero[i].length == 1) {
-
-        }
-    }
+    updateAllCharts(btag_ID, player_data[hero_name], "#39FF1480", hero);
 }
 
 async function change_hero_stats(hero_name) {

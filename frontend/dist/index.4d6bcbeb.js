@@ -613,35 +613,43 @@ const heroImages = {
     widowmaker: (0, _widowmakerPngDefault.default)
 };
 let player_data = null;
+let battletag = null;
+let selectedHero = "ashe";
 let hero_select = document.getElementById("hero");
 let hero_portrait = document.getElementById("hero-img");
 change_hero_stats("ashe");
-if (hero_select && hero_portrait) hero_select.onchange = (e)=>{
+if (hero_select && hero_portrait) hero_select.onchange = async (e)=>{
     for(let i = 0; i < 4; i++){
         const canvas = document.getElementById(`myChart${i}`);
         canvas.style.display = "none";
     }
+    change_hero_stats(selectedHero);
     hero_portrait.style.opacity = "0";
     setTimeout(()=>{
-        const selectedHero = hero_select.value;
+        selectedHero = hero_select.value;
         const newSrc = heroImages[selectedHero];
         hero_portrait.src = newSrc;
         hero_portrait.style.opacity = "1";
         change_hero_stats(selectedHero);
-    }, 100); // Adjusted timeout to match a typical fade duration
+        if (player_data && battletag) setTimeout(()=>{
+            console.log("CHANGE DETECTED");
+            update_hero_stats(battletag, player_data, selectedHero);
+        }, 300);
+    }, 100);
+// Adjusted timeout to match a typical fade duration
 //change_hero_stats(ashe);
 };
 let text_input = document.getElementById("battletag");
 const submit_btn = document.getElementById("submit-btn");
 submit_btn.onclick = async (e)=>{
     e.preventDefault();
-    const btag = text_input.value;
+    battletag = text_input.value;
     try {
-        console.log("btag: ", btag);
-        console.log("len: ", btag.length);
-        if (btag.length >= 8) {
-            player_data = await (0, _apiJs.get_player_stat)(btag);
-            update_hero_stats(btag, player_data, "ashe");
+        //console.log("btag: ", btag);
+        //console.log("len: ", btag.length);
+        if (battletag.length >= 8) {
+            player_data = await (0, _apiJs.get_player_stat)(battletag);
+            await update_hero_stats(battletag, player_data, selectedHero);
         } else console.log("INVALID BTAG! :(");
     } catch (e) {
         console.log("INVALID BTAG!", e);
@@ -649,9 +657,7 @@ submit_btn.onclick = async (e)=>{
 };
 async function update_hero_stats(btag_ID, player_data, hero_name) {
     const hero = (0, _heroObjectsJs.heroes)[hero_name];
-    for(let i = 0; i < hero.len; i++)if (hero[i].length == 2) //addData(`myChart${i}`, `test:`, player_data, "green");
-    (0, _charts.updateAllCharts)("test label", player_data, "blue");
-    else hero[i].length;
+    (0, _charts.updateAllCharts)(btag_ID, player_data[hero_name], "#39FF1480", hero);
 }
 async function change_hero_stats(hero_name) {
     //console.log("hero name: ", hero_name.name);
@@ -673,6 +679,7 @@ parcelHelpers.export(exports, "addData", ()=>addData);
 parcelHelpers.export(exports, "removeData", ()=>removeData);
 var _auto = require("chart.js/auto");
 var _autoDefault = parcelHelpers.interopDefault(_auto);
+var _heroObjectsJs = require("./hero_objects.js");
 var _apiJs = require("./api.js");
 (0, _autoDefault.default).defaults.color = "#000000";
 (0, _autoDefault.default).defaults.font.size = 14;
@@ -759,7 +766,6 @@ async function fetch_data_and_create_bar_chart(id, hero_name, columnDataY, color
     try {
         const columnData = await (0, _apiJs.get_hero_stat)(hero_name, columnDataY);
         const data = columnData[hero_name][columnDataY];
-        console.log(data);
         if (!data) {
             console.error("Data is missing or invalid");
             return;
@@ -815,16 +821,27 @@ function createBarChart(id, hero_name, data, columnData, color) {
         }
     });
 }
-function updateAllCharts(label, newData, newColor) {
+function updateAllCharts(label, newData, newColor, hero) {
+    let i = 0;
+    let testData = {
+        x: 0,
+        y: 0,
+        name: label
+    };
     Object.keys(chartInstances).forEach((chartId)=>{
         const chart = chartInstances[chartId];
         // Assume you have a function to fetch new data specific for this chart
-        addData(chart, label, newData, newColor);
+        testData.x = newData[hero[i][0]];
+        testData.y = newData[hero[i][1]];
+        addData(chart, label, testData, newColor);
+        console.log(`HI ${i} - ${testData.x} - ${testData.y}`);
+        i++;
     });
 }
 function addData(chart, label, newData, newColor) {
     // Adding the new label to the chart
     chart.data.labels.push(label);
+    console.log(newData);
     // Adding new data and specifying color for each dataset
     chart.data.datasets.forEach((dataset)=>{
         dataset.data.push(newData);
@@ -833,6 +850,7 @@ function addData(chart, label, newData, newColor) {
     });
     // Update the chart to reflect the changes
     chart.update();
+//chart.update();
 }
 function removeData(chartID) {
     const chart = document.getElementById(chartID);
@@ -843,7 +861,7 @@ function removeData(chartID) {
     chart.update();
 }
 
-},{"chart.js/auto":"d8NN9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./api.js":"8Zgej"}],"d8NN9":[function(require,module,exports) {
+},{"chart.js/auto":"d8NN9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./api.js":"8Zgej","./hero_objects.js":"4ZNgc"}],"d8NN9":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _chartJs = require("../dist/chart.js");
@@ -14325,6 +14343,7 @@ async function get_player_stat(btag) {
                 battletag: btag
             }
         });
+        //console.log(response.data);
         return response.data;
     } catch (e) {
         console.log("player not found: ", e);
@@ -19032,63 +19051,7 @@ Object.entries(HttpStatusCode).forEach(([key, value])=>{
 });
 exports.default = HttpStatusCode;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5BDRh":[function(require,module,exports) {
-module.exports = require("386316d71d78d9d8").getBundleURL("gnRNX") + "cassidy.00608e4c.png" + "?" + Date.now();
-
-},{"386316d71d78d9d8":"lgJ39"}],"lgJ39":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return "/";
-}
-function getBaseURL(url) {
-    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
-}
-// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
-    if (!matches) throw new Error("Origin not found");
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"doK9N":[function(require,module,exports) {
-module.exports = require("5dcd5390f0d0935").getBundleURL("gnRNX") + "hanzo.a8db7e13.png" + "?" + Date.now();
-
-},{"5dcd5390f0d0935":"lgJ39"}],"8KdUz":[function(require,module,exports) {
-module.exports = require("10956d36e777797f").getBundleURL("gnRNX") + "sojourn.88abdb41.png" + "?" + Date.now();
-
-},{"10956d36e777797f":"lgJ39"}],"5jwZT":[function(require,module,exports) {
-module.exports = require("85118e69b19fe1d4").getBundleURL("gnRNX") + "soldier76.aad185c9.png" + "?" + Date.now();
-
-},{"85118e69b19fe1d4":"lgJ39"}],"mfrqX":[function(require,module,exports) {
-module.exports = require("df2d8da7db4ad6cf").getBundleURL("gnRNX") + "tracer.fb87b1a2.png" + "?" + Date.now();
-
-},{"df2d8da7db4ad6cf":"lgJ39"}],"c3cYE":[function(require,module,exports) {
-module.exports = require("a2283857208c619c").getBundleURL("gnRNX") + "widowmaker.857d77dc.png" + "?" + Date.now();
-
-},{"a2283857208c619c":"lgJ39"}],"jMbK8":[function(require,module,exports) {
-module.exports = require("3e62c23053047f17").getBundleURL("gnRNX") + "ashe.e6f1d7b9.png" + "?" + Date.now();
-
-},{"3e62c23053047f17":"lgJ39"}],"4ZNgc":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4ZNgc":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "widowmaker", ()=>widowmaker);
@@ -19244,6 +19207,62 @@ const heroes = {
     tracer: tracer
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["anvqh","gLLPy"], "gLLPy", "parcelRequire10c2")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5BDRh":[function(require,module,exports) {
+module.exports = require("386316d71d78d9d8").getBundleURL("gnRNX") + "cassidy.00608e4c.png" + "?" + Date.now();
+
+},{"386316d71d78d9d8":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+}
+// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"doK9N":[function(require,module,exports) {
+module.exports = require("5dcd5390f0d0935").getBundleURL("gnRNX") + "hanzo.a8db7e13.png" + "?" + Date.now();
+
+},{"5dcd5390f0d0935":"lgJ39"}],"8KdUz":[function(require,module,exports) {
+module.exports = require("10956d36e777797f").getBundleURL("gnRNX") + "sojourn.88abdb41.png" + "?" + Date.now();
+
+},{"10956d36e777797f":"lgJ39"}],"5jwZT":[function(require,module,exports) {
+module.exports = require("85118e69b19fe1d4").getBundleURL("gnRNX") + "soldier76.aad185c9.png" + "?" + Date.now();
+
+},{"85118e69b19fe1d4":"lgJ39"}],"mfrqX":[function(require,module,exports) {
+module.exports = require("df2d8da7db4ad6cf").getBundleURL("gnRNX") + "tracer.fb87b1a2.png" + "?" + Date.now();
+
+},{"df2d8da7db4ad6cf":"lgJ39"}],"c3cYE":[function(require,module,exports) {
+module.exports = require("a2283857208c619c").getBundleURL("gnRNX") + "widowmaker.857d77dc.png" + "?" + Date.now();
+
+},{"a2283857208c619c":"lgJ39"}],"jMbK8":[function(require,module,exports) {
+module.exports = require("3e62c23053047f17").getBundleURL("gnRNX") + "ashe.e6f1d7b9.png" + "?" + Date.now();
+
+},{"3e62c23053047f17":"lgJ39"}]},["anvqh","gLLPy"], "gLLPy", "parcelRequire10c2")
 
 //# sourceMappingURL=index.4d6bcbeb.js.map

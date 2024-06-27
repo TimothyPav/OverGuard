@@ -24,9 +24,9 @@ export async function get_player_stat(btag) {
                 battletag: btag
             }
         });
+        //console.log(response.data);
         return response.data;
     } catch (e) {
         console.log("player not found: ", e);
     }
 }
-console.log("HHELELOEOEE")

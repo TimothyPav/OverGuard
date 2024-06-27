@@ -1,4 +1,5 @@
 import Chart from 'chart.js/auto';
+import { widowmaker, ashe, tracer, soldier76, sojourn, cassidy, hanzo, heroes } from './hero_objects.js';
 import { get_hero_stat } from './api.js';
 Chart.defaults.color = "#000000";
 Chart.defaults.font.size = 14;
@@ -93,7 +94,7 @@ export async function fetch_data_and_create_bar_chart(id, hero_name, columnDataY
   try {
     const columnData = await get_hero_stat(hero_name, columnDataY);
     const data = columnData[hero_name][columnDataY];
-    console.log(data);
+
     if (!data) {
       console.error('Data is missing or invalid');
       return;
@@ -155,17 +156,28 @@ function createBarChart(id, hero_name, data, columnData, color) {
   });
 }
 
-export function updateAllCharts(label, newData, newColor) {
+export function updateAllCharts(label, newData, newColor, hero) {
+  let i = 0;
+  let testData = {
+    x: 0,
+    y: 0,
+    name: label
+  }
   Object.keys(chartInstances).forEach((chartId) => {
     const chart = chartInstances[chartId];
     // Assume you have a function to fetch new data specific for this chart
-    addData(chart, label, newData, newColor);
+    testData.x = newData[hero[i][0]];
+    testData.y = newData[hero[i][1]];
+    addData(chart, label, testData, newColor);
+    console.log(`HI ${i} - ${testData.x} - ${testData.y}`);
+    i++;
   });
 }
 
 export function addData(chart, label, newData, newColor) {
   // Adding the new label to the chart
   chart.data.labels.push(label);
+  console.log(newData);
 
   // Adding new data and specifying color for each dataset
   chart.data.datasets.forEach((dataset) => {
@@ -176,6 +188,7 @@ export function addData(chart, label, newData, newColor) {
 
   // Update the chart to reflect the changes
   chart.update();
+  //chart.update();
 }
 
 export function removeData(chartID) {
