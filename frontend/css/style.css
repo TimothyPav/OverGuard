@@ -53,4 +53,12 @@ h1 {
     margin-bottom: 0.5%;
     margin-left: 0.5%;
     border-radius: 3%;
+    background-color: #f4f4f4;
+}
+
+#playtime {
+    margin-top: 5%;
+    color: red;
+    font-size: .8rem;
+    visibility: hidden;
 }

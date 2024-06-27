@@ -45,10 +45,18 @@ h1 {
 }
 
 .chart {
+  background-color: #f4f4f4;
   border-radius: 3%;
   max-width: 49%;
   max-height: 49%;
   margin-bottom: .5%;
   margin-left: .5%;
+}
+
+#playtime {
+  color: red;
+  visibility: hidden;
+  margin-top: 5%;
+  font-size: .8rem;
 }
 /*# sourceMappingURL=index.b2625c6b.css.map */

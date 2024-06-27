@@ -23,6 +23,7 @@ const heroImages = {
 
 let player_data = null;
 let battletag = null;
+let player_call = false;
 let selectedHero = "ashe";
 let hero_select = document.getElementById("hero");
 let hero_portrait = document.getElementById("hero-img");
@@ -33,7 +34,6 @@ if (hero_select && hero_portrait) {
             const canvas = document.getElementById(`myChart${i}`);
             canvas.style.display = 'none';
         }
-        change_hero_stats(selectedHero);
         hero_portrait.style.opacity = '0';
         setTimeout(() => {
             selectedHero = hero_select.value;
@@ -43,15 +43,15 @@ if (hero_select && hero_portrait) {
             change_hero_stats(selectedHero);
             if (player_data && battletag) {
                 setTimeout(() => {
-                    console.log("CHANGE DETECTED");
                     update_hero_stats(battletag, player_data, selectedHero);
+                    player_call = true;
                 }, 300)
             }
         }, 100);
 
-        
 
- // Adjusted timeout to match a typical fade duration
+
+        // Adjusted timeout to match a typical fade duration
         //change_hero_stats(ashe);
 
     }
@@ -62,17 +62,20 @@ const submit_btn = document.getElementById("submit-btn");
 submit_btn.onclick = async (e) => {
     e.preventDefault();
     battletag = text_input.value
-    try {
-        //console.log("btag: ", btag);
-        //console.log("len: ", btag.length);
-        if (battletag.length >= 8) {
-            player_data = await get_player_stat(battletag);
-            await update_hero_stats(battletag, player_data, selectedHero);
-        } else {
-            console.log("INVALID BTAG! :(");
+    if (!player_call) {
+        try {
+            //console.log("btag: ", btag);
+            //console.log("len: ", btag.length);
+            if (battletag.length >= 8) {
+                player_call = true;
+                player_data = await get_player_stat(battletag);
+                await update_hero_stats(battletag, player_data, selectedHero);
+            } else {
+                console.log("INVALID BTAG! :(");
+            }
+        } catch (e) {
+            console.log("INVALID BTAG!", e);
         }
-    } catch (e) {
-        console.log("INVALID BTAG!", e);
     }
 }
 

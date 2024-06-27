@@ -81,7 +81,7 @@ function createChart(id, data, columnDataX, columnDataY, color) {
           callbacks: {
             label: function (context) {
               const point = context.raw;
-              return `${point.name}: ${point.x} ${columnDataX}, ${point.y} ${columnDataY}`;
+              return `${point.name}: ${point.x}, ${point.y}`;
             }
           }
         }
@@ -134,7 +134,7 @@ function createBarChart(id, hero_name, data, columnData, color) {
       datasets: [{
         label: `Individual player vs. ${columnData}`,
         data: data,
-        backgroundColor: color,
+        backgroundColor: data.map(() => color),
       }]
     },
     options: {
@@ -142,7 +142,7 @@ function createBarChart(id, hero_name, data, columnData, color) {
         x: {
           ticks: {
             display: false //this will remove only the label
-       }
+          }
         },
         y: {
           beginAtZero: true,
@@ -156,46 +156,70 @@ function createBarChart(id, hero_name, data, columnData, color) {
   });
 }
 
+let warning_notif = document.getElementById("playtime");
 export function updateAllCharts(label, newData, newColor, hero) {
   let i = 0;
   let testData = {
     x: 0,
     y: 0,
-    name: label
+    name: label,
   }
   Object.keys(chartInstances).forEach((chartId) => {
     const chart = chartInstances[chartId];
-    // Assume you have a function to fetch new data specific for this chart
-    testData.x = newData[hero[i][0]];
-    testData.y = newData[hero[i][1]];
-    addData(chart, label, testData, newColor);
-    console.log(`HI ${i} - ${testData.x} - ${testData.y}`);
-    i++;
+    if (i < hero.len) {
+      try{
+      if (hero[i].length == 2) {
+        testData.x = newData[hero[i][0]];
+        warning_notif.style.visibility = ("hidden")
+        testData.y = newData[hero[i][1]];
+      }
+      else if (hero[i].length == 1) {
+        testData.value = newData[hero[i][0]];
+      }
+      addData(chart, label, testData, newColor);
+      i++;
+    } catch{
+      warning_notif.style.visibility = ("visible")
+    }
+  }
   });
 }
 
 export function addData(chart, label, newData, newColor) {
   // Adding the new label to the chart
   chart.data.labels.push(label);
-  console.log(newData);
 
   // Adding new data and specifying color for each dataset
   chart.data.datasets.forEach((dataset) => {
-      dataset.data.push(newData);
-      // Append new color or default to last color used if newColor is not specified
-      dataset.backgroundColor.push(newColor || dataset.backgroundColor[dataset.backgroundColor.length - 1]);
+    if (chart.config.type === 'scatter') {
+      // For scatter chart, push object with x, y, and name properties
+      dataset.data.push({
+        x: newData.x,
+        y: newData.y,
+        name: newData.name
+      });
+    } else if (chart.config.type === 'bar') {
+      // For bar chart, push only the value and store additional data
+      dataset.data.push({
+        x: newData.name,
+        y: newData.value,
+      });
+      console.log("pushing... ", newData);
+    }
+    dataset.backgroundColor.push(newColor || dataset.backgroundColor[dataset.backgroundColor.length - 1]);
+
+    // Append new color or default to last color used if newColor is not specified
   });
 
   // Update the chart to reflect the changes
   chart.update();
-  //chart.update();
 }
 
 export function removeData(chartID) {
   const chart = document.getElementById(chartID);
   chart.data.labels.pop();
   chart.data.datasets.forEach((dataset) => {
-      dataset.data.pop();
+    dataset.data.pop();
   });
   chart.update();
 }

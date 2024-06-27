@@ -614,6 +614,7 @@ const heroImages = {
 };
 let player_data = null;
 let battletag = null;
+let player_call = false;
 let selectedHero = "ashe";
 let hero_select = document.getElementById("hero");
 let hero_portrait = document.getElementById("hero-img");
@@ -623,7 +624,6 @@ if (hero_select && hero_portrait) hero_select.onchange = async (e)=>{
         const canvas = document.getElementById(`myChart${i}`);
         canvas.style.display = "none";
     }
-    change_hero_stats(selectedHero);
     hero_portrait.style.opacity = "0";
     setTimeout(()=>{
         selectedHero = hero_select.value;
@@ -632,8 +632,8 @@ if (hero_select && hero_portrait) hero_select.onchange = async (e)=>{
         hero_portrait.style.opacity = "1";
         change_hero_stats(selectedHero);
         if (player_data && battletag) setTimeout(()=>{
-            console.log("CHANGE DETECTED");
             update_hero_stats(battletag, player_data, selectedHero);
+            player_call = true;
         }, 300);
     }, 100);
 // Adjusted timeout to match a typical fade duration
@@ -644,10 +644,11 @@ const submit_btn = document.getElementById("submit-btn");
 submit_btn.onclick = async (e)=>{
     e.preventDefault();
     battletag = text_input.value;
-    try {
+    if (!player_call) try {
         //console.log("btag: ", btag);
         //console.log("len: ", btag.length);
         if (battletag.length >= 8) {
+            player_call = true;
             player_data = await (0, _apiJs.get_player_stat)(battletag);
             await update_hero_stats(battletag, player_data, selectedHero);
         } else console.log("INVALID BTAG! :(");
@@ -754,7 +755,7 @@ function createChart(id, data, columnDataX, columnDataY, color) {
                     callbacks: {
                         label: function(context) {
                             const point = context.raw;
-                            return `${point.name}: ${point.x} ${columnDataX}, ${point.y} ${columnDataY}`;
+                            return `${point.name}: ${point.x}, ${point.y}`;
                         }
                     }
                 }
@@ -799,7 +800,7 @@ function createBarChart(id, hero_name, data, columnData, color) {
                 {
                     label: `Individual player vs. ${columnData}`,
                     data: data,
-                    backgroundColor: color
+                    backgroundColor: data.map(()=>color)
                 }
             ]
         },
@@ -821,6 +822,7 @@ function createBarChart(id, hero_name, data, columnData, color) {
         }
     });
 }
+let warning_notif = document.getElementById("playtime");
 function updateAllCharts(label, newData, newColor, hero) {
     let i = 0;
     let testData = {
@@ -830,27 +832,43 @@ function updateAllCharts(label, newData, newColor, hero) {
     };
     Object.keys(chartInstances).forEach((chartId)=>{
         const chart = chartInstances[chartId];
-        // Assume you have a function to fetch new data specific for this chart
-        testData.x = newData[hero[i][0]];
-        testData.y = newData[hero[i][1]];
-        addData(chart, label, testData, newColor);
-        console.log(`HI ${i} - ${testData.x} - ${testData.y}`);
-        i++;
+        if (i < hero.len) try {
+            if (hero[i].length == 2) {
+                testData.x = newData[hero[i][0]];
+                warning_notif.style.visibility = "hidden";
+                testData.y = newData[hero[i][1]];
+            } else if (hero[i].length == 1) testData.value = newData[hero[i][0]];
+            addData(chart, label, testData, newColor);
+            i++;
+        } catch  {
+            warning_notif.style.visibility = "visible";
+        }
     });
 }
 function addData(chart, label, newData, newColor) {
     // Adding the new label to the chart
     chart.data.labels.push(label);
-    console.log(newData);
     // Adding new data and specifying color for each dataset
     chart.data.datasets.forEach((dataset)=>{
-        dataset.data.push(newData);
-        // Append new color or default to last color used if newColor is not specified
+        if (chart.config.type === "scatter") // For scatter chart, push object with x, y, and name properties
+        dataset.data.push({
+            x: newData.x,
+            y: newData.y,
+            name: newData.name
+        });
+        else if (chart.config.type === "bar") {
+            // For bar chart, push only the value and store additional data
+            dataset.data.push({
+                x: newData.name,
+                y: newData.value
+            });
+            console.log("pushing... ", newData);
+        }
         dataset.backgroundColor.push(newColor || dataset.backgroundColor[dataset.backgroundColor.length - 1]);
+    // Append new color or default to last color used if newColor is not specified
     });
     // Update the chart to reflect the changes
     chart.update();
-//chart.update();
 }
 function removeData(chartID) {
     const chart = document.getElementById(chartID);
