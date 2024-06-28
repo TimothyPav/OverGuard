@@ -636,11 +636,10 @@ if (hero_select && hero_portrait) hero_select.onchange = async (e)=>{
             player_call = true;
         }, 300);
     }, 100);
-// Adjusted timeout to match a typical fade duration
-//change_hero_stats(ashe);
 };
 let text_input = document.getElementById("battletag");
 const submit_btn = document.getElementById("submit-btn");
+let warning_notif = document.getElementById("playtime");
 submit_btn.onclick = async (e)=>{
     e.preventDefault();
     battletag = text_input.value;
@@ -649,15 +648,20 @@ submit_btn.onclick = async (e)=>{
         //console.log("len: ", btag.length);
         if (battletag.length >= 8) {
             player_call = true;
+            battletag = battletag.split("#").join("-");
             player_data = await (0, _apiJs.get_player_stat)(battletag);
             await update_hero_stats(battletag, player_data, selectedHero);
         } else console.log("INVALID BTAG! :(");
     } catch (e) {
-        console.log("INVALID BTAG!", e);
+        warning_notif.innerHTML = `Not enough playtime/data`;
     }
+    setTimeout(()=>{
+        player_call = false;
+    }, 2000);
 };
 async function update_hero_stats(btag_ID, player_data, hero_name) {
     const hero = (0, _heroObjectsJs.heroes)[hero_name];
+    console.log(player_data);
     (0, _charts.updateAllCharts)(btag_ID, player_data[hero_name], "#39FF1480", hero);
 }
 async function change_hero_stats(hero_name) {
@@ -14353,8 +14357,8 @@ async function get_hero_stat(heroName, columnData) {
         return null; // Handle error cases or return an error indicator
     }
 }
+let warning_notif = document.getElementById("playtime");
 async function get_player_stat(btag) {
-    console.log("WE R IN THE FUNCTION GET_PLAYER_STAT");
     try {
         const response = await (0, _axiosDefault.default).get("http://0.0.0.0:3000/api/player", {
             params: {
@@ -14364,7 +14368,8 @@ async function get_player_stat(btag) {
         //console.log(response.data);
         return response.data;
     } catch (e) {
-        console.log("player not found: ", e);
+        warning_notif.innerHTML = `Player with battletag '${battletag}' not found or profile is private`;
+        warning_notif.style.visibility = "visible";
     }
 }
 

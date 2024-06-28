@@ -11,22 +11,28 @@
   <body>
     <div class="container">
       <div class="ui-box">
-        <label for="hero">Choose a Hero!:</label>
-        <select name="hero" id="hero">
-          <option value="ashe">Ashe</option>
-          <option value="cassidy">Cassidy</option>
-          <option value="hanzo">Hanzo</option>
-          <option value="sojourn">Sojourn</option>
-          <option value="soldier76">Soldier 76</option>
-          <option value="tracer">Tracer</option>
-          <option value="widowmaker">Widowmaker</option>
-        </select>
+        <div class="inline-container">
+          <label id="hero-label" for="hero">Choose a Hero!:</label>
+          <select name="hero" id="hero">
+            <option value="ashe">Ashe</option>
+            <option value="cassidy">Cassidy</option>
+            <option value="hanzo">Hanzo</option>
+            <option value="sojourn">Sojourn</option>
+            <option value="soldier76">Soldier 76</option>
+            <option value="tracer">Tracer</option>
+            <option value="widowmaker">Widowmaker</option>
+          </select>
+        </div>
         <img id="hero-img" src="/ashe.e6f1d7b9.png" alt="ashe picture">
         <form class="btag_form">
-          <p>See where you rank! (capitalization matters)</p>
-          <label for="battletag">Battle tag:</label>
-          <input type="text" id="battletag" name="battletag">
-          <button id="submit-btn">Submit</button>
+          <h2>See where you rank!</h2>
+          <div class="inline-container">
+            <label id="battletag-id" for="battletag">Battle tag:</label>
+            <input type="text" id="battletag" name="battletag">
+
+            <button id="submit-btn">Submit</button>
+          </div>
+          <p id="caps-matter">*capitalization matters</p>
         </form>
         <p id="playtime">Not enough playtime/data</p>
       </div>

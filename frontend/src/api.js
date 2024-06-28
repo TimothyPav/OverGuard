@@ -16,8 +16,8 @@ export async function get_hero_stat(heroName, columnData) {
     }
 }
 
+let warning_notif = document.getElementById("playtime");
 export async function get_player_stat(btag) {
-    console.log("WE R IN THE FUNCTION GET_PLAYER_STAT");
     try{
         const response = await axios.get('http://0.0.0.0:3000/api/player', {
             params: {
@@ -27,6 +27,7 @@ export async function get_player_stat(btag) {
         //console.log(response.data);
         return response.data;
     } catch (e) {
-        console.log("player not found: ", e);
+        warning_notif.innerHTML = `Player with battletag '${battletag}' not found or profile is private`;
+        warning_notif.style.visibility = ("visible")
     }
 }

@@ -4,7 +4,6 @@ body {
   margin-right: 7em;
   font-family: Comfortaa, cursive;
   font-weight: bolder;
-  position: fixed;
 }
 
 h1 {
@@ -16,22 +15,28 @@ h1 {
 .container {
   flex-direction: row;
   justify-content: flex-start;
-  height: 100vh;
+  height: 98vh;
   padding: .5%;
   display: flex;
 }
 
 .ui-box {
-  background-color: #fff;
+  background-color: #f4f4f4;
+  flex-direction: column;
+  justify-content: center;
   align-self: center;
-  width: 30vh;
-  padding: 20px;
+  align-items: center;
+  width: 20%;
+  max-width: 20%;
+  height: 45rem;
+  padding: 1.5%;
   font-size: 1.5rem;
+  display: flex;
 }
 
 #hero-img {
+  max-width: auto;
   opacity: 1;
-  max-width: 100%;
   height: auto;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
@@ -40,17 +45,17 @@ h1 {
 
 .charts-container {
   flex-flow: wrap;
-  height: 99vh;
   display: flex;
 }
 
 .chart {
   background-color: #f4f4f4;
-  border-radius: 3%;
+  flex-direction: row;
   max-width: 49%;
-  max-height: 49%;
-  margin-bottom: .5%;
-  margin-left: .5%;
+  max-height: 50%;
+  margin-bottom: .3%;
+  margin-left: .3%;
+  display: flex;
 }
 
 #playtime {
@@ -58,5 +63,29 @@ h1 {
   visibility: hidden;
   margin-top: 5%;
   font-size: .8rem;
+}
+
+#caps-matter {
+  font-size: small;
+}
+
+.inline-container {
+  display: inline-block;
+}
+
+.inline-container input {
+  width: 7rem;
+}
+
+#battletag-id {
+  font-size: large;
+}
+
+#hero-label {
+  font-size: larger;
+}
+
+.inline-container select {
+  width: 7rem;
 }
 /*# sourceMappingURL=index.b2625c6b.css.map */
