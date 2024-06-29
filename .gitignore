@@ -1,3 +1,6 @@
 /frontend/.parcel-cache/
 /frontend/node_modules/
 /backend/build/
+/.vscode/
+/frontend/dist/
+/backend/lib/

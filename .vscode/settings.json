@@ -82,5 +82,6 @@
         "source_location": "cpp",
         "shared_mutex": "cpp",
         "typeindex": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "/home/tim/projects/OverGuard/backend/build/_deps/cpr-src/include"
 }
