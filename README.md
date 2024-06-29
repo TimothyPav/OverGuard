@@ -51,7 +51,7 @@ The interface users interact with to compare stats against themselves and other 
 
 ![widowmakerpreview](images/widowpreview.png)
 
-In this screen shot you can see that certain players are "excelling". Widowmaker is the sniper hero in Overwatch and a cheater's best friend. The liklehood this player is using extrenal software is very high when you consider many of the other purple dots are professional players...
+In this screenshot, you can see that certain players are 'excelling'. Widowmaker is the sniper hero in Overwatch and a cheater's best friend. The likelihood this player is using external software is very high when you consider many of the other purple dots are professional players...
 
 ### Compare Stats
 
