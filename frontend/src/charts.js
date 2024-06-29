@@ -158,31 +158,33 @@ function createBarChart(id, hero_name, data, columnData, color) {
 
 let warning_notif = document.getElementById("playtime");
 export function updateAllCharts(label, newData, newColor, hero) {
-  let i = 0;
-  let testData = {
-    x: 0,
-    y: 0,
-    name: label,
-  }
-  Object.keys(chartInstances).forEach((chartId) => {
-    const chart = chartInstances[chartId];
-    if (i < hero.len) {
-      try{
-      if (hero[i].length == 2) {
-        testData.x = newData[hero[i][0]];
-        warning_notif.style.visibility = ("hidden")
-        testData.y = newData[hero[i][1]];
-      }
-      else if (hero[i].length == 1) {
-        testData.value = newData[hero[i][0]];
-      }
-      addData(chart, label, testData, newColor);
-      i++;
-    } catch{
-      warning_notif.style.visibility = ("visible")
+  try {
+    let i = 0;
+    let testData = {
+      x: 0,
+      y: 0,
+      name: label,
     }
+    Object.keys(chartInstances).forEach((chartId) => {
+      const chart = chartInstances[chartId];
+      if (i < hero.len) {
+        if (hero[i].length == 2) {
+          testData.x = newData[hero[i][0]];
+          warning_notif.style.visibility = ("hidden")
+          testData.y = newData[hero[i][1]];
+        }
+        else if (hero[i].length == 1) {
+          testData.value = newData[hero[i][0]];
+        }
+        addData(chart, label, testData, newColor);
+        i++;
+
+      }
+    });
+  } catch (e) {
+    warning_notif.style.visibility = ("visible");
+    warning_notif.innerHTML = `Not enough playtime/data for this hero`;
   }
-  });
 }
 
 export function addData(chart, label, newData, newColor) {
@@ -204,7 +206,6 @@ export function addData(chart, label, newData, newColor) {
         x: newData.name,
         y: newData.value,
       });
-      console.log("pushing... ", newData);
     }
     dataset.backgroundColor.push(newColor || dataset.backgroundColor[dataset.backgroundColor.length - 1]);
 

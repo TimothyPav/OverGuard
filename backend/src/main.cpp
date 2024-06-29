@@ -1,7 +1,8 @@
 #include "Json_Serializer.h"
-#include "crow/middlewares/cors.h"
+#include "crow_all.h"
 
-#include <crow.h>
+
+
 #include <string>
 #include <nlohmann/json.hpp>
 

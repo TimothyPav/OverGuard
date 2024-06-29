@@ -602,7 +602,6 @@ var _tracerPng = require("../assets/images/tracer.png");
 var _tracerPngDefault = parcelHelpers.interopDefault(_tracerPng);
 var _widowmakerPng = require("../assets/images/widowmaker.png");
 var _widowmakerPngDefault = parcelHelpers.interopDefault(_widowmakerPng);
-// Map these imports to hero names
 const heroImages = {
     ashe: (0, _ashePngDefault.default),
     cassidy: (0, _cassidyPngDefault.default),
@@ -640,24 +639,27 @@ if (hero_select && hero_portrait) hero_select.onchange = async (e)=>{
 let text_input = document.getElementById("battletag");
 const submit_btn = document.getElementById("submit-btn");
 let warning_notif = document.getElementById("playtime");
+let spinner = document.getElementById("loader");
 submit_btn.onclick = async (e)=>{
     e.preventDefault();
     battletag = text_input.value;
     if (!player_call) try {
-        //console.log("btag: ", btag);
-        //console.log("len: ", btag.length);
         if (battletag.length >= 8) {
             player_call = true;
+            spinner.style.visibility = "visible";
             battletag = battletag.split("#").join("-");
             player_data = await (0, _apiJs.get_player_stat)(battletag);
+            await change_hero_stats(selectedHero);
             await update_hero_stats(battletag, player_data, selectedHero);
+            spinner.style.visibility = "hidden";
         } else console.log("INVALID BTAG! :(");
     } catch (e) {
-        warning_notif.innerHTML = `Not enough playtime/data`;
+        warning_notif.innerHTML = `Not enough playtime/data for this hero ${e}`;
+        spinner.style.visibility = "hidden";
     }
     setTimeout(()=>{
         player_call = false;
-    }, 2000);
+    }, 500);
 };
 async function update_hero_stats(btag_ID, player_data, hero_name) {
     const hero = (0, _heroObjectsJs.heroes)[hero_name];
@@ -665,10 +667,8 @@ async function update_hero_stats(btag_ID, player_data, hero_name) {
     (0, _charts.updateAllCharts)(btag_ID, player_data[hero_name], "#39FF1480", hero);
 }
 async function change_hero_stats(hero_name) {
-    //console.log("hero name: ", hero_name.name);
     const hero = (0, _heroObjectsJs.heroes)[hero_name];
     for(let i = 0; i < hero.len; i++){
-        //console.log(hero[i].length)
         if (hero[i].length == 2) await (0, _charts.fetch_data_and_create_scatter_plot)(`myChart${i}`, hero.name, hero[i][0], hero[i][1], hero.color);
         else if (hero[i].length == 1) await (0, _charts.fetch_data_and_create_bar_chart)(`myChart${i}`, hero.name, hero[i][0], hero.color);
     }
@@ -828,26 +828,29 @@ function createBarChart(id, hero_name, data, columnData, color) {
 }
 let warning_notif = document.getElementById("playtime");
 function updateAllCharts(label, newData, newColor, hero) {
-    let i = 0;
-    let testData = {
-        x: 0,
-        y: 0,
-        name: label
-    };
-    Object.keys(chartInstances).forEach((chartId)=>{
-        const chart = chartInstances[chartId];
-        if (i < hero.len) try {
-            if (hero[i].length == 2) {
-                testData.x = newData[hero[i][0]];
-                warning_notif.style.visibility = "hidden";
-                testData.y = newData[hero[i][1]];
-            } else if (hero[i].length == 1) testData.value = newData[hero[i][0]];
-            addData(chart, label, testData, newColor);
-            i++;
-        } catch  {
-            warning_notif.style.visibility = "visible";
-        }
-    });
+    try {
+        let i = 0;
+        let testData = {
+            x: 0,
+            y: 0,
+            name: label
+        };
+        Object.keys(chartInstances).forEach((chartId)=>{
+            const chart = chartInstances[chartId];
+            if (i < hero.len) {
+                if (hero[i].length == 2) {
+                    testData.x = newData[hero[i][0]];
+                    warning_notif.style.visibility = "hidden";
+                    testData.y = newData[hero[i][1]];
+                } else if (hero[i].length == 1) testData.value = newData[hero[i][0]];
+                addData(chart, label, testData, newColor);
+                i++;
+            }
+        });
+    } catch (e) {
+        warning_notif.style.visibility = "visible";
+        warning_notif.innerHTML = `Not enough playtime/data for this hero`;
+    }
 }
 function addData(chart, label, newData, newColor) {
     // Adding the new label to the chart
@@ -860,14 +863,11 @@ function addData(chart, label, newData, newColor) {
             y: newData.y,
             name: newData.name
         });
-        else if (chart.config.type === "bar") {
-            // For bar chart, push only the value and store additional data
-            dataset.data.push({
-                x: newData.name,
-                y: newData.value
-            });
-            console.log("pushing... ", newData);
-        }
+        else if (chart.config.type === "bar") // For bar chart, push only the value and store additional data
+        dataset.data.push({
+            x: newData.name,
+            y: newData.value
+        });
         dataset.backgroundColor.push(newColor || dataset.backgroundColor[dataset.backgroundColor.length - 1]);
     // Append new color or default to last color used if newColor is not specified
     });
@@ -14350,7 +14350,6 @@ async function get_hero_stat(heroName, columnData) {
                 column: columnData
             }
         });
-        //console.log(response.data); // to check what you get back
         return response.data; // ensure this value is returned to the caller
     } catch (error) {
         console.error(error);
@@ -14365,10 +14364,9 @@ async function get_player_stat(btag) {
                 battletag: btag
             }
         });
-        //console.log(response.data);
         return response.data;
     } catch (e) {
-        warning_notif.innerHTML = `Player with battletag '${battletag}' not found or profile is private`;
+        warning_notif.innerHTML = `player '${btag}' not found or profile is private`;
         warning_notif.style.visibility = "visible";
     }
 }
@@ -19125,7 +19123,7 @@ const ashe = {
     ],
     name: "ashe",
     len: 4,
-    color: "#7C7C7C80"
+    color: "#4A4A4A80"
 };
 const cassidy = {
     0: [
@@ -19165,7 +19163,7 @@ const hanzo = {
     ],
     name: "hanzo",
     len: 4,
-    color: "#E5DB6280"
+    color: "#893B3B80"
 };
 const sojourn = {
     0: [

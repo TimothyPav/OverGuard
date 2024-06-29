@@ -227,9 +227,9 @@ CMakeFiles/sqlite.dir/clean:
 # Target rules for target CMakeFiles/OverGuard.dir
 
 # All Build rule for target.
+CMakeFiles/OverGuard.dir/all: _deps/cpr-build/cpr/CMakeFiles/cpr.dir/all
 CMakeFiles/OverGuard.dir/all: _deps/curl-build/lib/CMakeFiles/libcurl_shared.dir/all
 CMakeFiles/OverGuard.dir/all: CMakeFiles/sqlite.dir/all
-CMakeFiles/OverGuard.dir/all: _deps/cpr-build/cpr/CMakeFiles/cpr.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OverGuard.dir/build.make CMakeFiles/OverGuard.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/tim/OverGuard/backend/build/CMakeFiles --progress-num=1 "Built target OverGuard"

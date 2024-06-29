@@ -22,8 +22,8 @@ h1 {
     /* Align children to the start vertically */
     /* Optional: full viewport height */
     padding: 0.5%;
-    
-    
+
+
 }
 
 .ui-box {
@@ -85,9 +85,11 @@ h1 {
 .inline-container {
     display: inline-block;
 }
+
 .inline-container input {
-    width: 7rem; /* Adjust this value to your desired width */
-  }
+    width: 7rem;
+    /* Adjust this value to your desired width */
+}
 
 #battletag-id {
     font-size: large;
@@ -98,5 +100,28 @@ h1 {
 }
 
 .inline-container select {
-    width: 7rem; /* Adjust this value to your desired width */
-  }
+    width: 7rem;
+    /* Adjust this value to your desired width */
+}
+
+#loader {
+    border: 5px solid #5c5c5c;
+    /* Light grey */
+    border-top: 5px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    animation: spin 1s linear infinite;
+    visibility: hidden;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

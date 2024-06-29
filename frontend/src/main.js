@@ -10,7 +10,6 @@ import soldier76Image from '../assets/images/soldier76.png';
 import tracerImage from '../assets/images/tracer.png';
 import widowmakerImage from '../assets/images/widowmaker.png';
 
-// Map these imports to hero names
 const heroImages = {
     ashe: asheImage,
     cassidy: cassidyImage,
@@ -54,28 +53,31 @@ if (hero_select && hero_portrait) {
 let text_input = document.getElementById("battletag");
 const submit_btn = document.getElementById("submit-btn");
 let warning_notif = document.getElementById("playtime");
+let spinner = document.getElementById("loader");
 submit_btn.onclick = async (e) => {
     e.preventDefault();
     battletag = text_input.value
     if (!player_call) {
         try {
-            //console.log("btag: ", btag);
-            //console.log("len: ", btag.length);
             if (battletag.length >= 8) {
                 player_call = true;
+                spinner.style.visibility = ("visible")
                 battletag = battletag.split('#').join('-');
                 player_data = await get_player_stat(battletag);
+                await change_hero_stats(selectedHero);
                 await update_hero_stats(battletag, player_data, selectedHero);
+                spinner.style.visibility = ("hidden")
             } else {
                 console.log("INVALID BTAG! :(");
             }
         } catch (e) {
-            warning_notif.innerHTML = `Not enough playtime/data`;
+            warning_notif.innerHTML = `Not enough playtime/data for this hero ${e}`;
+            spinner.style.visibility = ("hidden")
         }
     }
     setTimeout(() => {
         player_call = false;
-    }, 2000)
+    }, 500)
 }
 
 async function update_hero_stats(btag_ID, player_data, hero_name) {
@@ -85,10 +87,8 @@ async function update_hero_stats(btag_ID, player_data, hero_name) {
 }
 
 async function change_hero_stats(hero_name) {
-    //console.log("hero name: ", hero_name.name);
     const hero = heroes[hero_name];
     for (let i = 0; i < hero.len; i++) {
-        //console.log(hero[i].length)
         if (hero[i].length == 2) {
             await fetch_data_and_create_scatter_plot(`myChart${i}`, hero.name, hero[i][0], hero[i][1], hero.color);
         }

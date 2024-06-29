@@ -307,8 +307,7 @@ CMakeFiles/OverGuard.dir/src/main.cpp.o: \
  /usr/include/c++/13/any \
  /home/tim/OverGuard/backend/build/_deps/json-src/include/nlohmann/detail/macro_unscope.hpp \
  /home/tim/OverGuard/backend/build/_deps/json-src/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
- /usr/local/include/crow/middlewares/cors.h \
- /usr/local/include/crow/http_request.h /usr/include/asio.hpp \
+ /home/tim/OverGuard/backend/lib/crow/crow_all.h /usr/include/asio.hpp \
  /usr/include/asio/any_completion_executor.hpp \
  /usr/include/asio/detail/config.hpp /usr/include/unistd.h \
  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
@@ -930,31 +929,18 @@ CMakeFiles/OverGuard.dir/src/main.cpp.o: \
  /usr/include/asio/windows/stream_handle.hpp \
  /usr/include/asio/writable_pipe.hpp /usr/include/asio/write.hpp \
  /usr/include/asio/write_at.hpp /usr/include/asio/impl/write_at.hpp \
- /usr/local/include/crow/common.h /usr/local/include/crow/utility.h \
- /usr/include/c++/13/random /usr/include/c++/13/bits/random.h \
+ /usr/include/asio/version.hpp /usr/include/c++/13/random \
+ /usr/include/c++/13/bits/random.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/opt_random.h \
- /usr/include/c++/13/bits/random.tcc /usr/local/include/crow/settings.h \
- /usr/local/include/crow/ci_map.h /usr/local/include/crow/query_string.h \
- /usr/local/include/crow/http_response.h /usr/include/c++/13/fstream \
+ /usr/include/c++/13/bits/random.tcc /usr/include/c++/13/cfloat \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h \
+ /usr/include/c++/13/fstream \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
- /usr/include/c++/13/bits/fstream.tcc \
- /usr/local/include/crow/socket_adaptors.h /usr/include/asio/version.hpp \
- /usr/local/include/crow/logging.h /usr/local/include/crow/mime_types.h \
- /usr/local/include/crow/returnable.h /usr/local/include/crow/routing.h \
- /usr/local/include/crow/websocket.h /usr/local/include/crow/TinySHA1.hpp \
- /usr/local/include/crow/mustache.h /usr/local/include/crow/json.h \
- /usr/include/c++/13/cfloat \
- /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h \
- /usr/local/include/crow/middleware.h /usr/local/include/crow.h \
- /usr/local/include/crow/http_parser_merged.h \
- /usr/local/include/crow/TinySHA1.hpp \
- /usr/local/include/crow/task_timer.h /usr/local/include/crow/parser.h \
- /usr/local/include/crow/multipart.h \
- /usr/local/include/crow/middleware_context.h \
- /usr/local/include/crow/compression.h \
- /usr/local/include/crow/http_connection.h \
- /usr/local/include/crow/compression.h \
- /usr/local/include/crow/http_server.h /usr/local/include/crow/version.h \
- /usr/local/include/crow/app.h /usr/include/c++/13/thread \
- /usr/include/c++/13/bits/this_thread_sleep.h
+ /usr/include/c++/13/bits/fstream.tcc /usr/include/c++/13/unordered_set \
+ /usr/include/c++/13/bits/unordered_set.h /usr/include/c++/13/set \
+ /usr/include/c++/13/bits/stl_set.h \
+ /usr/include/c++/13/bits/stl_multiset.h /usr/include/c++/13/queue \
+ /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_deque.h \
+ /usr/include/c++/13/bits/deque.tcc /usr/include/c++/13/bits/stl_queue.h \
+ /usr/include/c++/13/thread /usr/include/c++/13/bits/this_thread_sleep.h

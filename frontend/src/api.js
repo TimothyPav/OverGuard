@@ -8,7 +8,6 @@ export async function get_hero_stat(heroName, columnData) {
                 column: columnData
             }
         });
-        //console.log(response.data); // to check what you get back
         return response.data; // ensure this value is returned to the caller
     } catch (error) {
         console.error(error);
@@ -24,10 +23,9 @@ export async function get_player_stat(btag) {
                 battletag: btag
             }
         });
-        //console.log(response.data);
         return response.data;
     } catch (e) {
-        warning_notif.innerHTML = `Player with battletag '${battletag}' not found or profile is private`;
+        warning_notif.innerHTML = `player '${btag}' not found or profile is private`;
         warning_notif.style.visibility = ("visible")
     }
 }

@@ -88,4 +88,24 @@ h1 {
 .inline-container select {
   width: 7rem;
 }
+
+#loader {
+  visibility: hidden;
+  border: 5px solid #5c5c5c;
+  border-top-color: #3498db;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  animation: 1s linear infinite spin;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
 /*# sourceMappingURL=index.b2625c6b.css.map */

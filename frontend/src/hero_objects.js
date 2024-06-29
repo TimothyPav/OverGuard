@@ -15,7 +15,7 @@ export const ashe = {
     3: ["Hero Damage Done per 10 mins", "Deaths per 10 mins"],
     name: "ashe",
     len: 4,
-    color: '#7C7C7C80'
+    color: '#4A4A4A80'
 }
 
 export const cassidy = {
@@ -35,7 +35,7 @@ export const hanzo = {
     3: ["Critical Hit Accuracy"],
     name: "hanzo",
     len: 4,
-    color: '#E5DB6280'
+    color: '#893B3B80'
 }
 
 export const sojourn = {

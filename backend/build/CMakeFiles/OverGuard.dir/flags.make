@@ -3,15 +3,15 @@
 
 # compile C with /usr/bin/cc
 # compile CXX with /usr/bin/c++
-C_DEFINES = -DASIO_STANDALONE
+C_DEFINES = 
 
-C_INCLUDES = -I/home/tim/OverGuard/backend/include -I/home/tim/OverGuard/backend/build/_deps/cpr-src/include -I/home/tim/OverGuard/backend/build/_deps/cpr-build/cpr_generated_includes -I/home/tim/OverGuard/backend/build/_deps/curl-src/include -I/home/tim/OverGuard/backend/build/_deps/json-src/include -I/home/tim/OverGuard/backend/lib/sqlite
+C_INCLUDES = -I/home/tim/OverGuard/backend/include -I/home/tim/OverGuard/backend/lib/crow -I/home/tim/OverGuard/backend/build/_deps/cpr-src/include -I/home/tim/OverGuard/backend/build/_deps/cpr-build/cpr_generated_includes -I/home/tim/OverGuard/backend/build/_deps/curl-src/include -I/home/tim/OverGuard/backend/build/_deps/json-src/include -I/home/tim/OverGuard/backend/lib/sqlite
 
 C_FLAGS = -O3 -DNDEBUG
 
-CXX_DEFINES = -DASIO_STANDALONE
+CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/tim/OverGuard/backend/include -I/home/tim/OverGuard/backend/build/_deps/cpr-src/include -I/home/tim/OverGuard/backend/build/_deps/cpr-build/cpr_generated_includes -I/home/tim/OverGuard/backend/build/_deps/curl-src/include -I/home/tim/OverGuard/backend/build/_deps/json-src/include -I/home/tim/OverGuard/backend/lib/sqlite
+CXX_INCLUDES = -I/home/tim/OverGuard/backend/include -I/home/tim/OverGuard/backend/lib/crow -I/home/tim/OverGuard/backend/build/_deps/cpr-src/include -I/home/tim/OverGuard/backend/build/_deps/cpr-build/cpr_generated_includes -I/home/tim/OverGuard/backend/build/_deps/curl-src/include -I/home/tim/OverGuard/backend/build/_deps/json-src/include -I/home/tim/OverGuard/backend/lib/sqlite
 
 CXX_FLAGS = -O3 -DNDEBUG -std=gnu++17
 
