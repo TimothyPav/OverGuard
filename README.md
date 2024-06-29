@@ -11,7 +11,7 @@
 
 ## 🌟 Project Overview
 
-OverGuard was initially a statistical analysis tool designed to attempt to catch cheaters that have abnormally high stats (see [potential cheater](#-potential-cheater)) which is the reason behind only featuring hitscan heroes (The most commonly used heroes for players with cheats).
+OverGuard was initially a statistical analysis tool designed to attempt to catch cheaters that have abnormally high stats (see [potential cheater](#potential-cheater-)) which is the reason behind only featuring hitscan heroes (The most commonly used heroes for players with cheats).
 Now OverGuard provides in-depth insights into player performances, focusing particularly on the top 500 players with substantial playtime on selected heroes and associated stats. The application enables users to compare their stats against these top performers, offering an easy way to compare your performance with the best. All players featured in OverGuard are top-500 with atleast 1.5 hours on the selected hero.
 
 ## 🔥 Key Features
