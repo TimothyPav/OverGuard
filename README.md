@@ -1,5 +1,7 @@
 ![Logo](/images/OverGuardLogo.png)
 
+# 🍾 [SITE IS LIVE](https://overguard.me)
+
 ## 📚 Table of Contents
 
 - [🌟 Project Overview](#-project-overview)
