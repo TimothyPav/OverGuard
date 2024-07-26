@@ -1,0 +1,246 @@
+body {
+    background-image: url("../assets/images/background.png");
+    font-family: 'Comfortaa', cursive;
+    margin-left: 7em;
+    margin-right: 7em;
+    font-weight: bolder;
+    height: auto;
+
+}
+
+h1 {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 4em
+}
+
+.container {
+    display: flex;
+    flex-direction: row; /* Maintains row direction but needs better space management */
+    flex-wrap: wrap; /* Ensures elements wrap if not enough space */
+    justify-content: space-between; /* Spreads children across the main axis */
+    align-items: center; /* Aligns items to the start of the cross axis */
+    padding: 1%;
+    height: auto; /* Changes from a fixed height to auto to accommodate content */
+    width: 100%; /* Use a relative width for better responsiveness */
+}
+
+.ui-box {
+    display: flex;
+    flex-direction: column; /* Keeps items vertically aligned */
+    align-items: center; /* Centers them horizontally */
+    /* Allows the box to grow and shrink but base around 20% of the parent container */
+    max-width: 100%;
+    /* Sets a max-width for larger screens */
+    min-width: 280px;
+    /* Ensures the box doesn't get too small on narrow screens */
+    /* Makes height dynamic based on content */
+    padding: 20px;
+    /* More consistent padding */
+    /* background-color: #f4f4f4; */
+}
+
+#hero-img {
+    /*width: 100%;  /* or any specific size */
+    height: auto;
+    /* maintain aspect ratio */
+    max-width: auto;
+    /* ensures the image is not larger than its container */
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    transition: opacity 0.1s ease-in-out;
+    /* Adjust time as needed */
+    opacity: 1;
+    /* Start fully visible */
+}
+
+.charts-container {
+    flex: 1 ;
+    display: flex;
+    flex-direction: row;
+    height: 97vh;
+    /* keeps items in a row but wraps them into multiple rows as needed */
+    flex-wrap: wrap;
+}
+
+.chart {
+    max-width: 49%;
+    max-height: 50%;
+    display: flex;
+    flex-direction: row;
+    background-color: #f4f4f4;
+    margin-left: 0.3%;
+    margin-bottom: .3%
+}
+
+#playtime {
+    margin-top: 5%;
+    color: red;
+    font-size: .8rem;
+    visibility: hidden;
+}
+
+#caps-matter {
+    font-size: small;
+}
+
+.inline-container {
+    display: inline-block;
+}
+
+.inline-container input {
+    width: 7rem;
+    /* Adjust this value to your desired width */
+}
+
+#battletag-id {
+    font-size: large;
+}
+
+#hero-label {
+    display: flex;
+    flex-direction: row;
+    /* keeps items in a row but wraps them into multiple rows as needed */
+    flex-wrap: wrap;
+    width: 7rem;
+    font-size: larger;
+    /* Adjust this value to your desired width */
+}
+
+#hero {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 1rem;
+    font-family: 'Comfortaa', cursive;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    width: 100%;
+    /* ensures the dropdown fills the container */
+}
+
+/* Style for the submit button */
+#submit-btn {
+    background-color: #4CAF50;
+    /* Green background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 1rem;
+    font-family: 'Comfortaa', cursive;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 10%;
+    /* ensures the button fills the container */
+}
+
+#submit-btn:hover {
+    background-color: #45a049;
+    /* Darker green on hover */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+#battletag {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 1rem;
+    font-family: 'Comfortaa', cursive;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    width: calc(100% - 28px);
+    /* adjusts width considering padding */
+}
+
+#battletag:focus {
+    border-color: #4CAF50;
+    /* Green color to indicate focus */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+#loader {
+    border: 5px solid #5c5c5c;
+    /* Light grey */
+    border-top: 5px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    animation: spin 1s linear infinite;
+    visibility: hidden;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+h2 {
+    font-size: larger;
+}
+
+#hero-label, #hero, #battletag-id, #submit-btn, #caps-matter {
+    width: 100%; /* Forces full width, comment this out if inline is preferred */
+    display: block; /* Change to 'inline-block' if inline layout is needed */
+    text-align: center; /* Centers text and elements */
+    margin: 5px 0; /* Adds vertical spacing */
+}
+
+/* Adjustments for form and its internal elements */
+.btag_form, .inline-container {
+    width: 100%; /* Full width for form containers */
+    display: flex;
+    flex-direction: column; /* Stacks form elements vertically */
+    align-items: center; /* Center alignment for all child elements */
+}
+
+@media (max-width: 768px) {
+    body {
+        background-image: url("../assets/images/background.png");
+        font-family: 'Comfortaa', cursive;
+        margin-left: 1em;
+        margin-right: 1em;
+        font-weight: bolder;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row; 
+        align-items: center;  
+        height: 150vh;
+        justify-content: center;  
+    }
+
+    .ui-box {
+        justify-content: center;  
+        width: 100%;          
+        max-width: 100%;    
+        order: 1;           
+    }
+
+    .charts-container {
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+        justify-content: center;  
+        order: 2;
+        margin: 0;       
+    }
+
+    .chart {
+        max-height: none;
+        margin-bottom: 10px;
+        padding: 0;
+    }
+
+    #hero-img {
+        display: none;
+    }
+}
